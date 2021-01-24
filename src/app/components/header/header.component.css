@@ -1,0 +1,39 @@
+.bar{
+    width: 100%;
+    height: 39px;
+    background-color: #c46449;
+}
+.menu{
+    position: absolute;
+    top: 40px;
+    left: 15px;
+}
+.navbar-brand{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.navbar-collapse{
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-between;
+}
+.nav-link{
+    color: #a3a3a3;
+    font-family: "Raleway Thin";
+    font-size: 20px;
+    font-weight: 100;
+}
+.dropdown-toggle::after{
+    content: url(../../../assets/down-arrow.svg);
+    border: none;
+    vertical-align: unset;
+    margin-left: 0.5em;
+}
+.side{
+    align-self: flex-start;
+    flex-direction: row;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+}

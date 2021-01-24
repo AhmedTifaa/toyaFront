@@ -1,0 +1,30 @@
+img{
+    width: 100%;
+}
+.carousel-caption{
+    left: 100px;
+    text-align: left;
+}
+h3{
+    color: #c46449;
+    font-family: "Great Vibes";
+    font-size: 136px;
+    font-weight: 400;
+}
+p{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 41px;
+    font-weight: 100;
+}
+.shop{
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 28px;
+    font-weight: 100;
+    width: 341px;
+    height: 70px;
+    background-color: #c46449;
+    border-radius: 0;
+    line-height: 3rem;
+}
