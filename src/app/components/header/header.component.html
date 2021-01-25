@@ -1,14 +1,14 @@
 <div class="bar"></div>
 
-<nav class="navbar navbar-expand-lg mb-3">
+<nav class="navbar navbar-expand-lg">
   
   <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
   </button>
-  <a class="navbar-brand navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
+  <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
 
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-5 mb-3">
-    <ul class="navbar-nav">
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
+    <ul class="navbar-nav mt-4">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
       </li>
@@ -31,7 +31,7 @@
         <a  [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
       </div>
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mt-4">
       <li ngbDropdown class="nav-item d-inline-block">
         <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Our Company</a>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -55,24 +55,17 @@
     </ul>
 
   </div>
-
+  <ul class="navbar-nav mt-4 side">
+    <li class="nav-item mr-4">
+      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
+    </li>
+    <li class="nav-item mr-4">
+      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/cart.png" alt=""></a>
+    </li>
+  </ul>
 
 </nav>
-
-
-<ul class="navbar-nav mt-5 side">
-  <li class="nav-item mr-4">
-    <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
-  </li>
-  <li class="nav-item mr-4">
-    <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/cart.png" alt=""></a>
-  </li>
-</ul>
-
-<!-- <div class="seperate text-center mt-5 mb-5">
-  <img src="../../../../assets/seperate1.png" alt="">
-</div> -->
 

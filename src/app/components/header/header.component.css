@@ -1,6 +1,9 @@
+*{
+    transition: all ease-in-out 0.5s;
+}
 .bar{
     width: 100%;
-    height: 39px;
+    height: 15px;
     background-color: #c46449;
 }
 .menu{
@@ -19,10 +22,10 @@
     align-content: space-between;
 }
 .nav-link{
-    color: #a3a3a3;
+    color: #6e6e6e;
     font-family: "Raleway Thin";
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 700;
 }
 .dropdown-toggle::after{
     content: url(../../../assets/down-arrow.svg);
@@ -34,6 +37,16 @@
     align-self: flex-start;
     flex-direction: row;
     position: absolute;
-    top: 40px;
-    right: 15px;
+    right: 26px;
+}
+.nav-logo{
+    width: 83px;
+    padding: 0px;
+    margin: 0 auto;
+}
+.nav-logo >img{
+    
+    display: block;
+    width: inherit;
+
 }
