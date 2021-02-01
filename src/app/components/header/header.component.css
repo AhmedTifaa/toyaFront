@@ -21,6 +21,53 @@
     align-items: flex-start;
     align-content: space-between;
 }
+nav.scroll{
+    padding-bottom: 0px;
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 12;
+    box-shadow: 0px 1px 6px -4px #000;
+}
+nav.scroll.active{
+    top: 0px;
+}
+nav.scroll .navbar-collapse{
+    justify-content: initial;
+}
+nav.scroll .navbar-collapse img{
+    width: 70px;
+}
+nav.scroll .navbar-collapse .nav-link{
+    font-size: 16px;
+    color: #000;
+}
+nav.scroll ul.side input#search-box{
+    outline: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-right: 0px;
+    border-right: none !important;
+    box-shadow: none;
+    border: 1px solid #cacaca;
+    font-size: 17px;
+    width: 250px;
+    height: 33px;
+    color: #000;
+    font-family: sans-serif;
+    padding: 3px 11px;
+}
+nav.scroll ul.side span.search-icon{
+    width: 40px;
+    height: 33px;
+    display: inline-block;
+    text-align: center;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #c46449;
+}
 .nav-link{
     color: #6e6e6e;
     font-family: "Raleway Thin";

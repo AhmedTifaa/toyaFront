@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sliderService } from './slider.service';
 
 @Component({
   selector: 'app-slider',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-
-  constructor() { }
+  width = window.innerWidth < 449 ? 449: window.innerWidth;
+  height = (Math.ceil(this.width * (33.333 / 100))) < 333 ? 333 : (Math.ceil(this.width * (33.333 / 100)));
+  data:any;
+  constructor(private sliderService:sliderService) { 
+    this.sliderService.getSlider().subscribe(data=>{
+      this.data = data["data"];
+    });
+  }
 
   ngOnInit() {
+    
   }
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  onResize(event){
+    
+  }
 }

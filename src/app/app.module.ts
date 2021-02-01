@@ -13,6 +13,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SliderComponent } from './components/home/slider/slider.component';
 import { CategoriesComponent } from './components/home/categories/categories.component';
+import { sliderService } from './components/home/slider/slider.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,12 @@ import { CategoriesComponent } from './components/home/categories/categories.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    sliderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

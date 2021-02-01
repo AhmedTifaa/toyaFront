@@ -5,26 +5,51 @@ img{
     left: 100px;
     text-align: left;
 }
+.toya-slide{
+    position: relative;
+}
+.toya-slide a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+} 
+.toya-slide::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000003b;
+}
 h3{
     color: #c46449;
     font-family: "Great Vibes";
-    font-size: 136px;
+    font-size: 4rem;
     font-weight: 400;
 }
 p{
     color: #c46449;
     font-family: "Raleway Thin";
-    font-size: 41px;
+    font-size: 1.5rem;
     font-weight: 100;
+    margin-bottom: 10px;
 }
 .shop{
     color: #ffffff;
     font-family: "Raleway Thin";
-    font-size: 28px;
-    font-weight: 100;
-    width: 341px;
-    height: 70px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 11rem;
+    height: 51px;
     background-color: #c46449;
-    border-radius: 0;
-    line-height: 3rem;
+    line-height: 2.5rem;
+    border-radius: 3px;
+}
+ngb-carousel{
+    outline: none;
+    border: none;
 }
