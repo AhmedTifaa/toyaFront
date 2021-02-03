@@ -1,0 +1,41 @@
+h2{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 49px;
+    font-weight: 400;
+    margin: 56px 0 20px;
+}
+p{
+
+}
+form{
+    margin: 0 auto;
+}
+form .input-group{
+    position: relative;
+}
+form label{
+    padding: 0 5px;
+    position: absolute;
+    top: -15px;
+    z-index: 999;
+    background-color: #fff;
+    left: 20px;
+}
+form a{
+    display: block;
+    text-align: right;
+}
+form button{
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 11rem;
+    height: 51px;
+    background-color: #c46449;
+    line-height: 2.5rem;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: block;   
+}

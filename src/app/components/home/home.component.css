@@ -1,0 +1,100 @@
+.cat-nav{
+    justify-content: center;
+    height: 57px;
+    border: 1px solid #d1d1d1;
+    background-color: #ded2af;
+}
+
+.nav{
+    width: 100%;
+}
+.cat-nav .nav-link{
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 21px;
+    font-weight: 100;
+}
+.cat{
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    position: relative;
+}
+.product{
+    justify-content: space-between;
+}
+.cat-top .discount{
+    background-image: url('../../../assets/discount.svg');
+    width: 164px;
+    height: 61px;
+    color: #f9f9f9;
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.89px;
+    padding-top: 0.75rem;
+    position:absolute;
+    left: 0;
+}
+
+.cat-top img{
+    width: 100%;
+    height: 325px;
+    margin-top: 30px;
+}
+.cat p{
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 4.72px;
+}
+.star {
+    font-size: 1.5rem;
+    color: #b0c4de;
+}
+    .filled {
+    color: #fc8f77;
+}
+.price .off{
+    color: #606060;
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+}
+.currency{
+    font-size: 20px;
+}
+.line{
+    border-top: 1px solid;
+    width: 90px;
+    display: inline-block;
+    position: absolute;
+    top: 49%;
+    left: 0;
+}
+.new{
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 50px;
+}
+
+.viewall{
+    justify-content: center;
+}
+.viewall .btn{
+    width: 406px;
+    height: 68px;
+    border: 1px solid #c46449;
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 17px;
+    font-weight: 100;
+    letter-spacing: 2.49px;
+    border-radius: 50px;
+    line-height: 3rem;
+}

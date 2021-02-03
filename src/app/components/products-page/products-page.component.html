@@ -1,3 +1,29 @@
-<p>
-  products-page works!
-</p>
+<div class="container">
+  <div class="row mt-4 mb-4"> <!-- filter bar -->
+    <div class="filter-bar col-12">
+      <p class="filter-text mr-2">Filter By</p>
+      <p class="match mr-2">Best Match</p>
+      <p class="best mr-2">Top Seller</p>
+      <p class="result mr-2">1,000,456</p> 
+    </div>
+  </div>
+</div>
+
+<div class="container body">
+  <div class="row"> 
+    <div class="filter-section col-2">  <!-- filter section -->
+      <h3 class="mb-2">Filter</h3>
+      <ul class="filter-list">
+        <li>Product Type <span>+</span></li>
+        <li>Skyin Type <span>+</span></li>
+        <li>Concern <span>+</span></li>
+        <li>Preference <span>+</span></li>
+        <li>Ingredients <span>+</span></li>
+        <li>Rating <span>+</span></li>
+        <li>Price <span>+</span></li>
+      </ul>
+    </div>
+      <app-product-details class="col-7"></app-product-details>
+      <app-cart class="col-3"></app-cart>
+  </div>
+</div>
