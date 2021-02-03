@@ -5,8 +5,14 @@ h2{
     font-weight: 400;
     margin: 56px 0 20px;
 }
-p{
-
+.top-text{
+    color: #828282;
+    font-family: "Raleway Thin";
+    font-size: 29px;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
 }
 form{
     margin: 0 auto;
@@ -20,22 +26,66 @@ form label{
     top: -15px;
     z-index: 999;
     background-color: #fff;
-    left: 20px;
+    left: 50px;
+    color: #adadad;
+    font-family: "Raleway Thin";
+    font-size: 17px;
+    font-weight: 100;
+}
+form .icon{
+    position: absolute;
+    width: 50px;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 5px 10px;
+}
+form .icon img{
+    width: 100%;
+}
+form input{
+    color: #000000;
+    font-family: Raleway;
+    font-weight: 300;
+    padding-left: 50px;
+    border-radius: 0;
+}
+form .form-control:focus,
+.btn.focus, .btn:focus{
+    border-color: #c46449;
+    box-shadow: 0 0 0 0.2rem rgb(196 100 73 / 25%) 
 }
 form a{
     display: block;
     text-align: right;
+    
 }
 form button{
     color: #ffffff;
     font-family: "Raleway Thin";
     font-size: 1.3rem;
-    font-weight: bold;
-    width: 11rem;
+    font-weight: 100;
+    width: 100%;
     height: 51px;
-    background-color: #c46449;
+    background-color: #fc8f77;
     line-height: 2.5rem;
     border-radius: 3px;
     margin: 0 auto;
     display: block;   
+}
+a{
+    color: #254ef4;
+    font-family: "Raleway Thin";
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 18px;
+}
+p{
+    color: #828282;
+    font-family: "Raleway Thin";
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0 auto;
 }

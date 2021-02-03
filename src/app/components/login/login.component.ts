@@ -15,18 +15,20 @@ export class LoginComponent implements OnInit {
   });
 
   data:any;
+  response:any;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService) { }
 
   onSubmit(): void {
     
     this.data = this.loginForm.value;
-    this.loginService.login(this.data).subscribe(data=>{
-      this.data = data["data"];
+    this.loginService.login(this.data).subscribe(response=>{
+      this.response = response["response"];
     });
     
     console.warn('login form has been submitted', this.data);
 
+    console.log(this.response);
     // this.loginForm.reset();
   }
 

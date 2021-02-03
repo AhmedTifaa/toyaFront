@@ -13,7 +13,11 @@ export class CategoriesComponent implements OnInit {
     this.categoriesService.getCategory().subscribe(data=>{
       this.data = data["data"];
     });
+    console.log(this.data);
   }
+  
+  
+  
 
   ngOnInit() {
   }

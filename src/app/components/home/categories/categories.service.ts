@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class CategoriesService {
-  url:string = "http://localhost:8000/api/main_categories";
+  url:string = "http://localhost:8000/api/main_categories?limit=4";
 
   constructor(private http:HttpClient){
 

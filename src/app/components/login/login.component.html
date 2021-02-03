@@ -1,17 +1,23 @@
 <div class="container mt-5 mb-5">
   <div class="row">
     <h2 class="col-12 text-center">Welcome Back</h2>
-    <p class=" col-12 text-center">Sign to continue</p>
+    <p class=" col-12 text-center top-text">Sign to continue</p>
   </div>
   <div class="row mt-4">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-lg-6">
       <div class="input-group mb-5">
         <label>Email</label>
+        <span class="icon">
+          <img src="../../../assets/email-icon.svg" alt="email icon">
+        </span>
         <input type="email" class="form-control" placeholder="email" formControlName="email">
       </div>
 
       <div class="input-group mb-5">
         <label>Password</label>
+        <span class="icon">
+          <img src="../../../assets/password-icon.svg" alt="password icon">
+        </span>
         <input type="password" class="form-control" placeholder="password" formControlName="password">
       </div>
 
@@ -23,6 +29,10 @@
     <p class="col-12 text-center">Don't have account? <a routerLink="/register">Creat New Account</a></p>
   </div>
   <div class="row mt-2">
-    <p class="col-12 text-center">SignUp</p>
+    <p class="col-6 text-center"> Sign up for an account to take advantage of order
+
+      history as well as pre-ﬁlled forms during checkout
+     
+     on subsequent orders.</p>
   </div>
 </div>

@@ -1,12 +1,15 @@
-<h2 class="text-center">Categories</h2>
+<h2 class="text-center mb-4">Categories</h2>
 
 <!-- category blocks -->
 <div class="container">
   <div class="row">
-    <div class="col-md-3 col-sm-6 mb-4" *ngFor="let cat of data">
-      <div class="cat-block">
-        <img src="../../../../assets/skin.png" alt="">
-      </div>
+    <div class="col-md-3 col-6 mb-4" *ngFor="let cat of data">
+      <a class="cat-block" routerLink=".">
+        <div class="img-container">
+          <img [src]="cat.icon.url" alt="category icon">
+        </div>
+        <p class="name">{{cat.name_en}}</p>
+      </a>
     </div>
   </div>
 </div>

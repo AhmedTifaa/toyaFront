@@ -2,13 +2,29 @@ h2{
     color: #c46449;
     font-family: "Raleway Thin";
     font-size: 49px;
-    font-weight: 400;
+    font-weight: bold;
     margin: 56px 0 20px;
 }
 .cat-block{
-    width: 248px;
-    height: 249px;
+    /* width: 248px;
+    height: 249px; */
     border: 1px solid #eee;
     box-shadow: 10px 10px 10px #eee;
+    display: block;
+    text-decoration: none;
 }
-
+.img-container{
+    width: 50%;
+    margin: 30px auto 20px;
+}
+.img-container img{
+    width: 100%;
+}
+.name{
+    text-align: center;
+    text-decoration: none;
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 32px;
+    font-weight: 400;
+}
