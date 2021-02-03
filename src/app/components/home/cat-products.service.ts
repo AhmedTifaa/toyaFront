@@ -6,12 +6,12 @@ import { Injectable } from "@angular/core";
 })
 export class CatProductsService {
 
-  url:string = "http://localhost:8000/api/";
+  url:string = "http://localhost:8000/api/home/product/sections";
 
   constructor(private http:HttpClient){
 
   }
   getCatProduct(){
-    return  this.http.get(this.url,{});
+    return  this.http.post(this.url,{});
   }
 }

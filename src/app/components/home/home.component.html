@@ -2,22 +2,50 @@
   <app-slider></app-slider>
   
   <app-categories></app-categories>
-  
-  <!-- category -->
+
+  <div class="container">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel *ngFor="let cat of catData">
+        <ng-template ngbPanelTitle>
+          {{cat.name_en}}
+        </ng-template>
+    
+        <ng-template ngbPanelContent>
+          <div class="row mt-5 product">
+            <div class="cat col-3 text-center" *ngFor="let product of cat.products">
+              <div class="cat-top">
+                <div class="discount">10% OFF</div>
+                <img src="{{product[images][url]}}" alt="">
+              </div>
+              <p class="mt-5">{{product.name_en}}</p>
+              <div>
+                <ngb-rating [max]="6" [(rate)]="currentRate">
+                  <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                  </ng-template>
+                </ngb-rating>    
+              </div>
+              <div class="price mt-5 mb-5">
+                <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+                <span class="new">150<span class="currency"> EG</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 viewall">
+            <a class="btn">View All</a>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      
+    </ngb-accordion>
+  </div>
+
+  <!-- category
   <div class="container">
     <div class="row cat-nav">
       <ul class="nav text-center">
-        <li class="nav-item col-3">
-          <a class="nav-link active">Best Seller</a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link">Super Deals</a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link ">Trending Now</a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link">New Arrival</a>
+        <li class="nav-item col-3" *ngFor="let cat of catData">
+          <a class="nav-link active">{{cat.name_en}}</a>
         </li>
       </ul>
     </div>
@@ -43,50 +71,12 @@
         </div>
       </div>
 
-      <div class="cat col-3 text-center">
-        <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
-        </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
-        <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>    
-        </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-          <span class="new">150<span class="currency"> EG</span></span>
-        </div>
-      </div>
-
-      <div class="cat col-3 text-center">
-        <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
-        </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
-        <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>    
-        </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-          <span class="new">150<span class="currency"> EG</span></span>
-        </div>
-      </div>
-
     </div>
     <div class="row mt-5 viewall">
       <a class="btn">View All</a>
     </div>
 
-  </div>
+  </div> -->
 
   <!-- Blogs -->
 

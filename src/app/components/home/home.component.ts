@@ -13,12 +13,13 @@ export class HomeComponent implements OnInit {
   catData:any;
  
   constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService) { 
-    this.recentProductsService.getRecentProduct().subscribe(recentData=>{
-      this.recentData = recentData["recentData"];
+    this.recentProductsService.getRecentProduct().subscribe(data=>{
+      this.recentData = data["data"];
     });
 
-    this.catProductsService.getCatProduct().subscribe(catData=>{
-      this.catData = catData["catData"];
+    this.catProductsService.getCatProduct().subscribe(data=>{
+      this.catData = data["data"];
+      console.log(this.catData)
     });
   }
 
