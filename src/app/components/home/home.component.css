@@ -1,53 +1,35 @@
-/* .cat-nav{
-    justify-content: center;
-    height: 57px;
-    border: 1px solid #d1d1d1;
-    background-color: #ded2af;
-}
-
-.nav{
-    width: 100%;
-}
-.cat-nav .nav-link{
-    color: #ffffff;
-    font-family: "Raleway Thin";
-    font-size: 21px;
-    font-weight: 100;
-} */
-
-
 /* cat product */
 .cat{
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
     position: relative;
+    box-shadow: 10px 10px 10px #d1d1d1;
 }
 .product{
     justify-content: space-between;
 }
 .cat-top .discount{
     background-image: url('../../../assets/discount.svg');
-    width: 164px;
-    height: 61px;
     color: #f9f9f9;
     font-family: Roboto;
-    font-size: 26px;
+    font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.89px;
-    padding-top: 0.75rem;
-    position:absolute;
+    padding: 10px;
+    position: absolute;
     left: 0;
+    background-position: right;
+    padding-right: 27px;
 }
 
 .cat-top img{
     width: 100%;
-    height: 325px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .cat p{
     color: #c46449;
     font-family: Roboto;
-    font-size: 26px;
+    font-size: 15px;
     font-weight: bold;
     letter-spacing: 4.72px;
 }
@@ -83,9 +65,33 @@
     font-size: 24px;
     font-weight: bold;
     font-style: normal;
-    margin-left: 50px;
+    margin-left: 15%;
 }
-
+.cat .add-cart{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+.cat .btn{
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 100%;
+    height: 51px;
+    background-color: #fc8f77;
+    line-height: 2.5rem;
+    border-radius: 0;
+    visibility: hidden;
+}
+.btn.focus, 
+.btn:focus{
+    box-shadow: 0 0 0 0.2rem rgb(252 143 119 / 25%);
+}
+.cat:hover .btn{
+    visibility:visible
+}
 .viewall{
     justify-content: center;
 }
@@ -100,4 +106,37 @@
     letter-spacing: 2.49px;
     border-radius: 50px;
     line-height: 3rem;
+}
+
+/* recent section */
+
+h2{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 49px;
+    font-weight: bold;
+    margin: 56px 0 20px;
+}
+
+/* responsive */
+@media(min-width:768px) and (max-width:992px){
+    .cat-top .discount{font-size: 11px;}
+    .cat-top img{margin-top: 17px;}
+    .cat p{font-size: 12px;}
+    .price.mb-5{margin-bottom: 38px!important;}
+    .price .off{font-size: 15px;}
+    .price .currency{font-size: 11px;}
+    .price .line{width: 65px;}
+    .price .new{font-size: 15px;}
+    .add-cart .btn{font-size: 13px; line-height: unset; height: unset;}   
+}
+@media(max-width:574px){
+    .product{margin: auto; justify-content: space-between;}
+}
+@media(max-width:570px){
+    .price .off{font-size: 17px;}
+    .price .currency{font-size: 12px;}
+    .price .line{width: 70px;}
+    .price .new{font-size: 17px;}
+    .add-cart .btn{font-size: 18px; line-height: unset; height: unset;}   
 }

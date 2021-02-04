@@ -3,21 +3,21 @@
   
   <app-categories></app-categories>
 
-  <div class="container">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel *ngFor="let cat of catData">
-        <ng-template ngbPanelTitle>
+  
+  <div class="container mb-4">
+    <ngb-tabset>
+      <ngb-tab *ngFor="let cat of catData">
+        <ng-template ngbTabTitle>
           {{cat.name_en}}
         </ng-template>
-    
-        <ng-template ngbPanelContent>
+        <ng-template ngbTabContent>
           <div class="row mt-5 product">
-            <div class="cat col-3 text-center" *ngFor="let product of cat.products">
+            <div class="cat col-5 col-md-3 text-center mb-3" *ngFor="let product of cat.products">
               <div class="cat-top">
                 <div class="discount">{{product.discount_percentage}}% OFF</div>
                 <img [src]="product.images[0].url" alt="">
               </div>
-              <p class="mt-5">{{product.name_en}}</p>
+              <p class="mt-3">{{product.name_en}}</p>
               <div>
                 <ngb-rating [max]="6" [(rate)]="currentRate">
                   <ng-template let-fill="fill" let-index="index">
@@ -25,9 +25,12 @@
                   </ng-template>
                 </ngb-rating>    
               </div>
-              <div class="price mt-5 mb-5">
+              <div class="price mt-3 mb-5">
                 <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div> 
                 <span class="new">150<span class="currency"> EG</span></span>
+              </div>
+              <div class="add-cart">
+                <button class="btn">Add to cart</button>
               </div>
             </div>
           </div>
@@ -35,63 +38,23 @@
             <a class="btn">View All</a>
           </div>
         </ng-template>
-      </ngb-panel>
-      
-    </ngb-accordion>
+      </ngb-tab>
+    </ngb-tabset>
   </div>
-
-  <!-- category
-  <div class="container">
-    <div class="row cat-nav">
-      <ul class="nav text-center">
-        <li class="nav-item col-3" *ngFor="let cat of catData">
-          <a class="nav-link active">{{cat.name_en}}</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="row mt-5 product">
-
-      <div class="cat col-3 text-center">
-        <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
-        </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
-        <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>    
-        </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-          <span class="new">150<span class="currency"> EG</span></span>
-        </div>
-      </div>
-
-    </div>
-    <div class="row mt-5 viewall">
-      <a class="btn">View All</a>
-    </div>
-
-  </div> -->
 
   <!-- Blogs -->
 
   <!-- product -->
 
-  <h2 class="text-center">Best Seller</h2>
-  <div class="container">
+  <h2 class="text-center">Recent Products</h2>
+  <div class="container mb-4">
     <div class="row mt-5 product">
-
-      <div class="cat col-3 text-center">
+      <div class="cat col-5 col-md-3 text-center mb-3" *ngFor="let product of recentData">
         <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
+          <div class="discount">{{product.discount_percentage}}% OFF</div>
+          <img [src]="product.images[0].url" alt="">
         </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
+        <p class="mt-3">{{product.name_en}}</p>
         <div>
           <ngb-rating [max]="6" [(rate)]="currentRate">
             <ng-template let-fill="fill" let-index="index">
@@ -99,50 +62,14 @@
             </ng-template>
           </ngb-rating>    
         </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+        <div class="price mt-3 mb-5">
+          <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div> 
           <span class="new">150<span class="currency"> EG</span></span>
         </div>
-      </div>
-
-      <div class="cat col-3 text-center">
-        <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
-        </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
-        <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>    
-        </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-          <span class="new">150<span class="currency"> EG</span></span>
+        <div class="add-cart">
+          <button class="btn">Add to cart</button>
         </div>
       </div>
-
-      <div class="cat col-3 text-center">
-        <div class="cat-top">
-          <div class="discount">10% OFF</div>
-          <img src="../../../../assets/hair.png" alt="">
-        </div>
-        <p class="mt-5">REVIVE CONDITIONER</p>
-        <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>    
-        </div>
-        <div class="price mt-5 mb-5">
-          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-          <span class="new">150<span class="currency"> EG</span></span>
-        </div>
-      </div>
-
     </div>
     <div class="row mt-5 viewall">
       <a class="btn">View All</a>

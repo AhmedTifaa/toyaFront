@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 col-6 mb-4" *ngFor="let cat of data">
-      <a class="cat-block" routerLink=".">
+      <a class="cat-block" [routerLink]="['/categories', cat.id]">
         <div class="img-container">
           <img [src]="cat.icon.url" alt="category icon">
         </div>
