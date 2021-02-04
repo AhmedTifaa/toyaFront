@@ -14,8 +14,8 @@
           <div class="row mt-5 product">
             <div class="cat col-3 text-center" *ngFor="let product of cat.products">
               <div class="cat-top">
-                <div class="discount">10% OFF</div>
-                <img src="{{product[images][url]}}" alt="">
+                <div class="discount">{{product.discount_percentage}}% OFF</div>
+                <img [src]="product.images[0].url" alt="">
               </div>
               <p class="mt-5">{{product.name_en}}</p>
               <div>
@@ -26,7 +26,7 @@
                 </ngb-rating>    
               </div>
               <div class="price mt-5 mb-5">
-                <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+                <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div> 
                 <span class="new">150<span class="currency"> EG</span></span>
               </div>
             </div>
@@ -84,67 +84,68 @@
 
   <h2 class="text-center">Best Seller</h2>
   <div class="container">
-  <div class="row mt-5 product">
+    <div class="row mt-5 product">
 
-    <div class="cat col-3 text-center">
-      <div class="cat-top">
-        <div class="discount">10% OFF</div>
-        <img src="../../../../assets/hair.png" alt="">
+      <div class="cat col-3 text-center">
+        <div class="cat-top">
+          <div class="discount">10% OFF</div>
+          <img src="../../../../assets/hair.png" alt="">
+        </div>
+        <p class="mt-5">REVIVE CONDITIONER</p>
+        <div>
+          <ngb-rating [max]="6" [(rate)]="currentRate">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>    
+        </div>
+        <div class="price mt-5 mb-5">
+          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+          <span class="new">150<span class="currency"> EG</span></span>
+        </div>
       </div>
-      <p class="mt-5">REVIVE CONDITIONER</p>
-      <div>
-        <ngb-rating [max]="6" [(rate)]="currentRate">
-          <ng-template let-fill="fill" let-index="index">
-            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-          </ng-template>
-        </ngb-rating>    
+
+      <div class="cat col-3 text-center">
+        <div class="cat-top">
+          <div class="discount">10% OFF</div>
+          <img src="../../../../assets/hair.png" alt="">
+        </div>
+        <p class="mt-5">REVIVE CONDITIONER</p>
+        <div>
+          <ngb-rating [max]="6" [(rate)]="currentRate">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>    
+        </div>
+        <div class="price mt-5 mb-5">
+          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+          <span class="new">150<span class="currency"> EG</span></span>
+        </div>
       </div>
-      <div class="price mt-5 mb-5">
-        <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-        <span class="new">150<span class="currency"> EG</span></span>
+
+      <div class="cat col-3 text-center">
+        <div class="cat-top">
+          <div class="discount">10% OFF</div>
+          <img src="../../../../assets/hair.png" alt="">
+        </div>
+        <p class="mt-5">REVIVE CONDITIONER</p>
+        <div>
+          <ngb-rating [max]="6" [(rate)]="currentRate">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>    
+        </div>
+        <div class="price mt-5 mb-5">
+          <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
+          <span class="new">150<span class="currency"> EG</span></span>
+        </div>
       </div>
+
     </div>
-
-    <div class="cat col-3 text-center">
-      <div class="cat-top">
-        <div class="discount">10% OFF</div>
-        <img src="../../../../assets/hair.png" alt="">
-      </div>
-      <p class="mt-5">REVIVE CONDITIONER</p>
-      <div>
-        <ngb-rating [max]="6" [(rate)]="currentRate">
-          <ng-template let-fill="fill" let-index="index">
-            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-          </ng-template>
-        </ngb-rating>    
-      </div>
-      <div class="price mt-5 mb-5">
-        <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-        <span class="new">150<span class="currency"> EG</span></span>
-      </div>
+    <div class="row mt-5 viewall">
+      <a class="btn">View All</a>
     </div>
-
-    <div class="cat col-3 text-center">
-      <div class="cat-top">
-        <div class="discount">10% OFF</div>
-        <img src="../../../../assets/hair.png" alt="">
-      </div>
-      <p class="mt-5">REVIVE CONDITIONER</p>
-      <div>
-        <ngb-rating [max]="6" [(rate)]="currentRate">
-          <ng-template let-fill="fill" let-index="index">
-            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-          </ng-template>
-        </ngb-rating>    
-      </div>
-      <div class="price mt-5 mb-5">
-        <div class="off">180<span class="currency"> EG</span><span class="line"></span></div> 
-        <span class="new">150<span class="currency"> EG</span></span>
-      </div>
-    </div>
-
-  </div>
-  <div class="row mt-5 viewall">
-    <a class="btn">View All</a>
   </div>
 </div>

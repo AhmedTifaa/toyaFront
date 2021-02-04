@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 })
 export class RecentProductsService {
 
-  url:string = "http://localhost:8000/api/recent?limit=2";
+  url:string = "http://localhost:8000/api/product/recent?limit=2";
 
   constructor(private http:HttpClient){
 

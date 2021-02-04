@@ -1,4 +1,4 @@
-.cat-nav{
+/* .cat-nav{
     justify-content: center;
     height: 57px;
     border: 1px solid #d1d1d1;
@@ -13,7 +13,10 @@
     font-family: "Raleway Thin";
     font-size: 21px;
     font-weight: 100;
-}
+} */
+
+
+/* cat product */
 .cat{
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
@@ -58,13 +61,13 @@
 .price .off{
     color: #606060;
     font-family: Roboto;
-    font-size: 35px;
+    font-size: 24px;
     font-weight: 300;
     display: inline-block;
     position: relative;
 }
 .currency{
-    font-size: 20px;
+    font-size: 15px;
 }
 .line{
     border-top: 1px solid;
@@ -77,7 +80,7 @@
 .new{
     color: #c46449;
     font-family: Roboto;
-    font-size: 35px;
+    font-size: 24px;
     font-weight: bold;
     font-style: normal;
     margin-left: 50px;
