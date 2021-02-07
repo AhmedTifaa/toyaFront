@@ -1,6 +1,24 @@
 <div>
   <h3 class="mb-2">My Bag</h3>
   <div class="cart-container">
-    <img src="../../../assets/cart.png" alt="">
+    <div class="row" *ngIf="items != ''; else elsebag">
+      
+      <div class="product col-5 mb-3 text-center" *ngFor="let item of items">
+        <div class="product-top">
+          <img [src]="item.images[0].url" alt="">
+        </div>
+        <p class="mt-2 mb-2">{{item.name_en}}</p>
+        <div class="price mt-2 mb-2">
+          <span class="new">{{item.price}}<span class="currency"> EG</span></span>
+        </div>
+      </div>
+
+    </div>
+    
+    <ng-template #elsebag>
+      <div class="img-container">
+        <img src="../../../assets/bag.svg" alt="cart img">
+      </div>
+    </ng-template>
   </div>
 </div>

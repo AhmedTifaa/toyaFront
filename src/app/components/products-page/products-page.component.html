@@ -9,14 +9,60 @@
   </div>
 </div>
 
-<div class="container body">
+<div class="container body mb-5">
   <div class="row"> 
+    
     <div class="filter-section col-2">  <!-- filter section -->
       <h3 class="mb-2">Filter</h3>
-      <ul class="filter-list">
+      <!-- <ul class="filter-list">
         <li *ngFor="let filter of filterData">{{filter.property_name_en}} <span>+</span></li>
-      </ul>
+      </ul> -->
+
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel *ngFor="let filter of filterData">
+          <ng-template ngbPanelTitle>
+            {{filter.property_name_en}} <span>+</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div *ngIf="filter.input_type == 'range'" class="text-center">
+              <input class="form-control from" name="min" type="text" placeholder="min">
+              To
+              <input class="form-control to" name="max" type="text" placeholder="max">
+            </div>
+
+            <div *ngIf="filter.input_type == 'keyword'">
+              <input class="form-control" name="keyword" type="text">
+            </div>
+
+            <div *ngIf="filter.input_type == 'select'">
+              <select class="custom-select">
+                <option value="1" *ngFor="let value of filter.values">{{value}}</option>
+              </select>
+            </div>
+
+            <div *ngIf="filter.input_type == 'checkbox'">
+              <div  class="form-check" *ngFor="let value of filter.values">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                <label class="form-check-label" for="">
+                  {{value}}
+                </label>
+              </div>
+            </div>
+
+            <div *ngIf="filter.input_type == 'radio'">
+              <div  class="form-check" *ngFor="let value of filter.values">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="" value="">
+                <label class="form-check-label" for="">
+                  {{value}}
+                </label>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>        
+      </ngb-accordion>
+
     </div>
+
     <div class="row products col-8">
       <div class="product col-3 text-center" *ngFor="let product of data.products.data">
         <div class="product-top">
@@ -34,10 +80,10 @@
           <span class="new">{{product.price}}<span class="currency"> EG</span></span>
         </div>
         <div class="add-cart">
-          <button class="btn">Add to cart</button>
+          <button class="btn" (click)="addToCart(product)">Add to cart</button>
         </div>
       </div>
     </div>
-      <app-cart class="col-2"></app-cart>
+    <app-cart class="col-2 p-0"></app-cart>
   </div>
 </div>

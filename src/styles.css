@@ -20,3 +20,24 @@
     color: #c46449;
 }
 /* end home page - catproduct section */
+
+/* start category page filter section */
+.filter-section .card button{
+    width: 100%;
+    text-align: left;
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-weight: 100;
+}
+.filter-section .card button span{
+    position: absolute;
+    right: 0;
+}
+.filter-section .btn.focus,
+.filter-section .btn:focus{
+    box-shadow: none;
+}
+/* end category page filter section */

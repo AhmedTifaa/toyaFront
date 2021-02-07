@@ -1,10 +1,30 @@
+h3{
+    color: #0c2747;
+    font-family: "Raleway Thin";
+}
+
 .cart-container{
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
-    min-height: 270px;
+    height: 280px;
+    width: 100%;
+    padding: 10px;
     position: relative;
     box-shadow: 5px 5px 5px #eee;
 }
+.cart-container .img-container{
+    padding: 5px;
+    margin: 32% auto;
+}
 .cart-container img{
     width: 100%;
+}
+
+.cart-container .row{
+    justify-content: space-between;
+    margin: 0;
+}
+.product p,
+.product .price{
+    font-size: 10px;
 }

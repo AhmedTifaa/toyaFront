@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from "./category.service";
+import { CartService } from "../cart/cart.service";
 
 @Component({
   selector: 'app-products-page',
@@ -10,7 +11,8 @@ import { CategoryService } from "./category.service";
 export class ProductsPageComponent implements OnInit {
   data:any;
   filterData:any;
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService) { 
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) { 
+    
     const routeParams = this.route.snapshot.paramMap;
     const categoryIdFromRoute = Number(routeParams.get('categoryId'));
     this.categoryService.url = "http://localhost:8000/api/category/" + categoryIdFromRoute;
@@ -27,6 +29,16 @@ export class ProductsPageComponent implements OnInit {
       console.log(this.filterData);
     });
     
+  }
+
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
+
+  removeFromCart(id){
+    this.cartService.delItem(id);
+    window.alert('The product has been removed from the cart');
   }
 
   ngOnInit() {
