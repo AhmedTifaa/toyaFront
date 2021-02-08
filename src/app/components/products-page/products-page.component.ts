@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from "./category.service";
 import { CartService } from "../cart/cart.service";
@@ -11,6 +11,11 @@ import { CartService } from "../cart/cart.service";
 export class ProductsPageComponent implements OnInit {
   data:any;
   filterData:any;
+  
+  // status:boolean = true;
+
+  @ViewChild('status') buttonElement:ElementRef; 
+
   constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) { 
     
     const routeParams = this.route.snapshot.paramMap;
@@ -33,6 +38,9 @@ export class ProductsPageComponent implements OnInit {
 
   addToCart(product) {
     this.cartService.addToCart(product);
+    this.buttonElement.nativeElement
+    console.log(this.buttonElement.nativeElement);
+
     window.alert('Your product has been added to the cart!');
   }
 

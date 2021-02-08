@@ -80,7 +80,10 @@
           <span class="new">{{product.price}}<span class="currency"> EG</span></span>
         </div>
         <div class="add-cart">
-          <button class="btn" (click)="addToCart(product)">Add to cart</button>
+          <button class="btn" (click)="addToCart(product);" *ngIf="true; else remove" #status>Add to cart</button>
+          <ng-template #remove> 
+            <button class="btn" (click)="removeFromCart(product.id); status = !status">Remove From cart</button>
+          </ng-template>
         </div>
       </div>
     </div>
