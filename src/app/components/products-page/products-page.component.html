@@ -69,13 +69,13 @@
           <img [src]="product.images[0].url" alt="">
         </div>
         <p class="mt-2 mb-2">{{product.name_en}}</p>
-        <div>
+        <!-- <div>
           <ngb-rating [max]="6" [(rate)]="currentRate">
             <ng-template let-fill="fill" let-index="index">
               <span class="star" [class.filled]="fill === 100">&#9733;</span>
             </ng-template>
           </ngb-rating>    
-        </div>
+        </div> -->
         <div class="price mt-2 mb-2">
           <span class="new">{{product.price}}<span class="currency"> EG</span></span>
         </div>
