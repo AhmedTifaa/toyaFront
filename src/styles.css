@@ -1,9 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-
+body{
+  position: relative;
+}
+a{
+  text-decoration: none !important;
+}
 /* start home page - catproduct section */
 .nav-tabs{
     border: 1px solid #d1d1d1;
     background-color: #ded2af;
+    padding: 0 30px;
+    justify-content: center !important;
+    box-shadow: 0px 7px 10px -9px #00000047;
 }
 .nav-tabs .nav-link{
     color: #ffffff;
@@ -11,13 +19,22 @@
     font-size: 21px;
     font-weight: 100;
     border: none;
-    margin: 0;    
+    margin: 0;
+}
+.clear{
+  clear:both;
+}
+.toya-container{
+  width: 95%;
+  margin: 60px auto;
 }
 .nav-tabs .nav-item.show .nav-link,
  .nav-tabs .nav-link.active{
     border: none;
     background: none;
-    color: #c46449;
+    font-weight: bold;
+    color: #974027;
+    font-size: 20px;
 }
 /* end home page - catproduct section */
 
@@ -41,3 +58,49 @@
     box-shadow: none;
 }
 /* end category page filter section */
+/* start Loading overlay */
+
+.overlay-loading  .parent{
+  background-image: url(assets/nav-logo-color.svg);
+  width: 150px;
+height: 150px;
+background-size: cover;
+animation: flip 6s linear infinite;
+margin: 23% auto;
+}
+.overlay-loading .entire{
+  background-image: url(assets/nav-logo-gray.svg);
+  width: 150px;
+height: 150px;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.overlay-loading .entire {animation: color 6s linear infinite;}
+.overlay-loading{
+  background: #0000006e;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+@keyframes color {
+0%   {height: 100px;}
+25%  {height: 50px;}
+50%  {height: 0px;}
+75% {height: 50px;}
+100% {height: 100px;}
+
+}
+@keyframes flip {
+0%   {transform: rotateY(0deg);}
+25%  {transform: rotateY(90deg);}
+50%  {transform: rotateY(180deg);}
+75%  {transform: rotateY(90deg);}
+100% {transform: rotateY(0deg);}
+
+}
+
+/* end loading */

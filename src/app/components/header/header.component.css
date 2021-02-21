@@ -31,6 +31,15 @@ nav.scroll{
     z-index: 12;
     box-shadow: 0px 1px 6px -4px #000;
 }
+.cart-icon{
+  position: relative;
+}
+.cart-icon span{
+  position: absolute;
+    left: 40%;
+    top: 11px;
+}
+
 nav.scroll.active{
     top: 0px;
 }
@@ -92,7 +101,7 @@ nav.scroll ul.side span.search-icon{
     margin: 0 auto;
 }
 .nav-logo >img{
-    
+
     display: block;
     width: inherit;
 

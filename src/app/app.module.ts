@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ProductDetailsService } from './components/product-details/product-details.service';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
+import { ThanksComponent } from './components/thanks/thanks.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { CartComponent } from './components/cart/cart.component';
     LoginComponent,
     RegisterComponent,
     CartComponent,
-    
+    ViewCartComponent,
+    ThanksComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule
   ],
   providers: [
-    sliderService
+    sliderService,
   ],
   bootstrap: [AppComponent]
 })

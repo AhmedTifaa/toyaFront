@@ -1,0 +1,195 @@
+.cart-page table {
+  background: #f1f1f199;
+}
+
+.cart-page thead {
+  color: #a1a1a1;
+  font-family: "Raleway Thin";
+}
+
+.cart-page thead th,.cart-page tbody td {
+  border: none;
+}
+
+.cart-page tbody {
+  color: #c46449;
+}
+
+.cart-page tbody .thumbnail {
+  margin-right: 10px;
+}
+
+.cart-page .table-hover tbody tr:hover:not(.no-hover) {
+  color: #c46449;
+}
+
+.cart-page tbody h4 a {
+  color: #c46449;
+}
+
+.cart-page .no-hover {
+  background: none;
+  color: initial;
+}
+
+.cart-page tbody h5 {
+  color: #474747;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.cart-page tr.total {
+  color: black;
+}
+
+.cart-page tr.total strong {
+  color: #f6c650;
+}
+
+.cart-page .btn.checkout {
+  color: #ffffff;
+  font-family: "Raleway Thin";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #c45239;
+  line-height: 2.5rem;
+  padding: 0px 34px;
+  border-radius: 5px;
+}
+
+div.btn-container {
+  text-align: center;
+}
+
+.cart-head h1 {
+  font-family: "Raleway Thin";
+  color: #c45239;
+  font-weight: bold;
+}
+
+.cart-head h5 {
+  font-family: "Raleway Thin";
+  color: #747474;
+  font-weight: 600;
+}
+.cart-page input[type='number']{
+  color: #c45239;
+}
+.cart-page .del-item{
+  width:27px;
+}
+
+/****************STEPS CSS****************/
+.shop-tracking-status{
+  margin: 0 auto;
+  width: 50%;
+}
+.shop-tracking-status .form-horizontal {
+  margin-bottom: 50px
+}
+
+.shop-tracking-status .order-status {
+  margin-top: 50px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.shop-tracking-status .order-status-timeline {
+  height: 7px;
+  background: #bcbcbc;
+}
+
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion {
+  height: 8px;
+  margin: 1px;
+  border-radius: 7px;
+  background: #44a909;
+  width: 0px
+}
+
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c1 {
+  width: 0%
+}
+
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c2 {
+  width: 47%
+}
+
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c3 {
+  width: 100%
+}
+
+.shop-tracking-status .image-order-status {
+  border: 1px solid #ddd;
+    padding: 7px;
+    box-shadow: 0px 0px 15px -8px #999;
+    background-color: #fdfdfd;
+    position: absolute;
+    margin-top: -35px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+
+
+.shop-tracking-status .image-order-status.active {
+
+}
+.shop-tracking-status .image-order-status.active .icon{
+  color: #44a909;
+}
+
+.shop-tracking-status .image-order-status.active .status {
+  color: #44a909;
+  text-shadow: 0px 0px 1px #777
+}
+
+.shop-tracking-status .image-order-status .icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #d7d7d7;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 4px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.shop-tracking-status .image-order-status .status {
+  position: absolute;
+  text-shadow: 1px 1px #eee;
+  color: #333;
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  width: 180px;
+  top: -50px;
+  left: 50px
+}
+
+.shop-tracking-status .image-order-status-cart {
+  left: 0
+}
+
+.shop-tracking-status .image-order-status-cart .icon {
+
+}
+
+.shop-tracking-status .image-order-status-checkout {
+  left: 46%
+}
+
+.shop-tracking-status .image-order-status-checkout .icon {
+
+}
+
+.shop-tracking-status .image-order-status-thanks {
+  left: 100%
+}
+
+.shop-tracking-status .image-order-status-thanks .icon {
+
+}

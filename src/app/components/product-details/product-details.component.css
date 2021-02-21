@@ -1,62 +1,71 @@
-/*products*/
-.products{
-    justify-content: space-around;
+.title{
+  color: #c46449;
+  font-family: "Raleway Thin";
+  font-size: 33px;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
 }
-
-.products .product{
-    border: 1px solid #d1d1d1;
-    background-color: #f9f9f9;
-    height: 395px;
-    position: relative;
-    box-shadow: 5px 5px 5px #eee;
+.properties{
+  list-style: none;
+  padding-left: 15px;
+  margin: 15px 0px;
+  border-radius: 4px;
 }
-.products .product:hover .btn{
-    visibility:visible
+.properties li span,.properties li p{
+  display: inline-block;
 }
-.product-top img{
-    width: 100%;
-    height: 200px;
-    margin-top: 15px;
+.properties li span{
+    color: #0c2747;
+    font-family: sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    margin-right: 12px;
 }
-.product p{
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 4.72px;
+.properties li p{
+  color: #fc8f77;
+  font-family: sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 0;
 }
-.star {
-    font-size: 1.5rem;
-    color: #b0c4de;
+.description h5{
+  color: #c46449;
+  font-family: "Raleway Thin";
+  font-weight: bold;
+  font-size: 23px;
+  border-bottom: 1px solid #c46449;
+  padding-bottom: 6px;
 }
-    .filled {
-    color: #fc8f77;
+.description p{
+  color: #747474;
+  text-align: left;
 }
-.currency{
-    font-size: 12px;
+.add-cart .btn{
+  color: #ffffff;
+  font-family: "Raleway Thin";
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #c45239;
+  line-height: 2.5rem;
+  padding: 0px 10px;
+  border-radius: 0px;
 }
-.new{
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
+.user-interact{
+  margin: 30px 0px 60px;
 }
-.product .add-cart{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
+.user-interact input{
+  border: 1.6px solid #070707fa;
+  width: 80px;
+  margin-right: 15px;
+  position: relative;
+  top: 5px;
+  font-size: 24px;
+  padding: 1px 0px;
+  text-align: center;
+  color: #c45239;
 }
-.product .btn{
-    color: #ffffff;
-    font-family: "Raleway Thin";
-    font-size: 1.3rem;
-    font-weight: bold;
-    width: 100%;
-    height: 51px;
-    background-color: #c46449;
-    line-height: 2.5rem;
-    border-radius: 3px;
-    visibility: hidden;
+.user-interact >div {
+  display: inline-block;
 }

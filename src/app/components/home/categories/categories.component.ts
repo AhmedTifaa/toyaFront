@@ -9,15 +9,15 @@ import { CategoriesService } from './categories.service';
 export class CategoriesComponent implements OnInit {
 
   data:any;
-  constructor(private categoriesService:CategoriesService) { 
+  constructor(private categoriesService:CategoriesService) {
     this.categoriesService.getCategory().subscribe(data=>{
       this.data = data["data"];
+      console.log(this.data);
     });
-    console.log(this.data);
   }
-  
-  
-  
+
+
+
 
   ngOnInit() {
   }

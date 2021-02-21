@@ -11,19 +11,21 @@ import { CartService } from "../cart/cart.service";
 export class ProductsPageComponent implements OnInit {
   data:any;
   filterData:any;
-  
+  space:any;
+  filterStatus:boolean = false;
+
   // status:boolean = true;
 
-  @ViewChild('status') buttonElement:ElementRef; 
+  @ViewChild('status') buttonElement:ElementRef;
 
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) { 
-    
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) {
+
     const routeParams = this.route.snapshot.paramMap;
     const categoryIdFromRoute = Number(routeParams.get('categoryId'));
     this.categoryService.url = "http://localhost:8000/api/category/" + categoryIdFromRoute;
     this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + categoryIdFromRoute;
     console.log(this.categoryService.url);
-    
+
     this.categoryService.getCategory().subscribe(data=>{
       this.data = data["data"];
       console.log(this.data);
@@ -31,27 +33,39 @@ export class ProductsPageComponent implements OnInit {
 
     this.categoryService.getFilter().subscribe(data=>{
       this.filterData = data["filters"];
+      if(this.filterData.length > 0){
+        this.filterStatus = true;
+      }
+      console.log(this.filterStatus);
       console.log(this.filterData);
     });
-    
+
   }
 
   addToCart(product) {
-    this.cartService.addToCart(product);
-    this.buttonElement.nativeElement
-    console.log(this.buttonElement.nativeElement);
-
-    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(product,1);
   }
 
   removeFromCart(id){
     this.cartService.delItem(id);
-    window.alert('The product has been removed from the cart');
+  }
+
+  discountValidate(discountValue){
+    var valid = false;
+    if(parseInt(discountValue) > 0){
+      valid = true;
+    }
+    return valid;
+  }
+
+  calcProductWidth(){
+    this.space = document.querySelectorAll('.products')[0].clientWidth;
+
   }
 
   ngOnInit() {
-    
-    
+
+
   }
 
 }

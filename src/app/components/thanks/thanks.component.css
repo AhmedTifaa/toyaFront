@@ -1,0 +1,34 @@
+.thanks-container{
+  text-align: center;
+}
+.thanks-container img{
+  width: 200px;
+}
+.thanks-container .message{
+  margin: 50px 0px;
+}
+.thanks-container .message h1 {
+  font-family: "Raleway Thin";
+  color: #c45239;
+  font-weight: bold;
+}
+
+.thanks-container .message h5 {
+  font-family: "Raleway Thin";
+  color: #747474;
+  font-weight: 600;
+}
+.thanks-container .btn.home {
+  color: #ffffff;
+  font-family: "Raleway Thin";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #c45239;
+  line-height: 2.5rem;
+  padding: 0px 34px;
+  border-radius: 5px;
+}
+
+div.btn-container {
+  text-align: center;
+}

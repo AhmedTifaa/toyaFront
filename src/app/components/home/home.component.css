@@ -3,7 +3,8 @@
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
     position: relative;
-    box-shadow: 10px 10px 10px #d1d1d1;
+    width: calc(95% / 4);
+    /* box-shadow: 10px 10px 10px #d1d1d1; */
 }
 .product{
     justify-content: space-between;
@@ -14,7 +15,6 @@
     font-family: Roboto;
     font-size: 15px;
     font-weight: bold;
-    letter-spacing: 0.89px;
     padding: 10px;
     position: absolute;
     left: 0;
@@ -23,30 +23,26 @@
 }
 
 .cat-top img{
-    width: 100%;
-    margin-top: 20px;
+  width: 196px;
+  height: 180px;
+  margin-top: 20px;
 }
 .cat p{
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 4.72px;
+  color: #c46449;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
-.star {
-    font-size: 1.5rem;
-    color: #b0c4de;
-}
-    .filled {
-    color: #fc8f77;
-}
+
+
 .price .off{
-    color: #606060;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: 300;
-    display: inline-block;
-    position: relative;
+  color: #606060;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  display: inline-block;
+  position: relative;
 }
 .currency{
     font-size: 15px;
@@ -60,12 +56,12 @@
     left: 0;
 }
 .new{
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
-    margin-left: 15%;
+  color: #c46449;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  margin-left: 15px;
 }
 .cat .add-cart{
     position: absolute;
@@ -85,7 +81,7 @@
     border-radius: 0;
     visibility: hidden;
 }
-.btn.focus, 
+.btn.focus,
 .btn:focus{
     box-shadow: 0 0 0 0.2rem rgb(252 143 119 / 25%);
 }
@@ -96,16 +92,18 @@
     justify-content: center;
 }
 .viewall .btn{
-    width: 406px;
-    height: 68px;
-    border: 1px solid #c46449;
-    color: #c46449;
-    font-family: "Raleway Thin";
-    font-size: 17px;
-    font-weight: 100;
-    letter-spacing: 2.49px;
-    border-radius: 50px;
-    line-height: 3rem;
+  width: 173px;
+  border: 1px solid #c46449;
+  color: #c46449;
+  font-family: "Raleway Thin";
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 50px;
+  line-height: 2rem;
+}
+.viewall .btn:hover{
+  background-color: #c46449;
+  color: #fff;
 }
 
 /* recent section */
@@ -128,7 +126,7 @@ h2{
     .price .currency{font-size: 11px;}
     .price .line{width: 65px;}
     .price .new{font-size: 15px;}
-    .add-cart .btn{font-size: 13px; line-height: unset; height: unset;}   
+    .add-cart .btn{font-size: 13px; line-height: unset; height: unset;}
 }
 @media(max-width:574px){
     .product{margin: auto; justify-content: space-between;}
@@ -138,5 +136,83 @@ h2{
     .price .currency{font-size: 12px;}
     .price .line{width: 70px;}
     .price .new{font-size: 17px;}
-    .add-cart .btn{font-size: 18px; line-height: unset; height: unset;}   
+    .add-cart .btn{font-size: 18px; line-height: unset; height: unset;}
 }
+
+
+
+
+
+/* block product */
+.cat{
+  border: 1px solid #d1d1d1;
+  background-color: #f9f9f9;
+  position: relative;
+  display: inline-block;
+  width: calc(95% / 4);
+  margin: 0px 0.6% 10px;
+  /* box-shadow: 10px 10px 10px #d1d1d1; */
+}
+
+.cat-top .discount{
+  background-image: url('../../../assets/discount.svg');
+  color: #f9f9f9;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  background-position: right;
+  padding-right: 27px;
+}
+
+.cat-top img{
+width: 196px;
+height: 180px;
+margin-top: 20px;
+}
+.cat p{
+color: #c46449;
+font-family: Roboto;
+font-size: 14px;
+font-weight: bold;
+margin-bottom: 0;
+}
+.star {
+  font-size: 1.5rem;
+  color: #b0c4de;
+}
+  .filled {
+  color: #fc8f77;
+}
+
+.cat .add-cart{
+  position: absolute;
+  top: 125px;
+  width: 50%;
+  left: 25%;
+  opacity: 0;
+  transition: top ease-in-out 0.3s,opacity 0.5s ease-in-out;
+}
+.cat .btn{
+  color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #c45239;
+    line-height: 2.5rem;
+    padding: 0px 10px;
+    border-radius: 15px;
+}
+
+.cat:hover .add-cart{
+  top: 133px;
+  opacity: 1;
+}
+
+
+
+
+
+

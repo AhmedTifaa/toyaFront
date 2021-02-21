@@ -1,7 +1,7 @@
 <div class="bar"></div>
 
 <nav class="navbar navbar-expand-lg">
-  
+
   <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
   </button>
@@ -12,65 +12,47 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
       </li>
-      
-      <li ngbDropdown class="nav-item d-inline-block">
-        <a class="nav-link" [routerLink]="'.'"  id="dropdownBasic1" ngbDropdownToggle>Shop</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
-      </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
       </li>
+
     </ul>
-      
+
       <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
         <a  [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
       </div>
 
     <ul class="navbar-nav mt-4">
-      <li ngbDropdown class="nav-item d-inline-block">
-        <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Our Company</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
       </li>
 
-      <li ngbDropdown class="nav-item d-inline-block">
-        <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Contact</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Contact</a>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
+      </li> -->
     </ul>
 
   </div>
   <ul class="navbar-nav mt-4 side">
-    <li class="nav-item mr-4">
+    <!-- <li class="nav-item mr-4">
       <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
     </li>
     <li class="nav-item mr-4">
       <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
-    </li>
+    </li> -->
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/cart.png" alt=""></a>
+      <a class="nav-link cart-icon" [routerLink]="['/cart']" ><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
     </li>
   </ul>
 
 </nav>
 <!-- NavBar with Window Scroll -->
 <nav class="navbar navbar-expand-lg scroll">
-  
+
   <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
   </button>
@@ -84,58 +66,48 @@
       <li class="nav-item ml-3 active">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
       </li>
-      
-      <li ngbDropdown class="nav-item ml-3 d-inline-block">
-        <a class="nav-link" [routerLink]="'.'"  id="dropdownBasic1" ngbDropdownToggle>Shop</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
+
+      <li class="nav-item ml-3">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
       </li>
 
       <li class="nav-item ml-3">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
       </li>
-      <li ngbDropdown class="nav-item ml-3 d-inline-block">
+      <!-- <li ngbDropdown class="nav-item ml-3 d-inline-block">
         <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Our Company</a>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
           <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
           <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
         </div>
-      </li>
+      </li> -->
 
-      <li ngbDropdown class="nav-item ml-3 d-inline-block">
-        <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Contact</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
-      </li>
       <li class="nav-item ml-3">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Contact</a>
       </li>
+      <!-- <li class="nav-item ml-3">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
+      </li> -->
     </ul>
-      
-      
+
+
 
   </div>
   <ul class="navbar-nav mt-3 side">
     <li class="nav-item mr-4">
-      <a class="nav-link" [routerLink]="'.'" >
+      <!-- <a class="nav-link" [routerLink]="'.'" >
         <input type="text" name="search" id="search-box" placeholder="Search..." />
         <span class="search-icon">
           <img src="../../../assets/search-white.svg" alt="">
         </span>
-      </a>
+      </a> -->
     </li>
-    <li class="nav-item mr-4">
+    <!-- <li class="nav-item mr-4">
       <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
-    </li>
+    </li> -->
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/cart.png" alt=""></a>
+      <a class="nav-link cart-icon"  [routerLink]="['/cart']" ><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
     </li>
   </ul>
 

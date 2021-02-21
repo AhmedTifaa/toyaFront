@@ -4,20 +4,21 @@ h3{
 }
 
 .cart-container{
-    border: 1px solid #d1d1d1;
-    background-color: #f9f9f9;
-    height: 280px;
-    width: 100%;
-    padding: 10px;
-    position: relative;
-    box-shadow: 5px 5px 5px #eee;
+  border: 1px solid #d1d1d1;
+  background-color: #f9f9f9;
+  height: 266px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 5px 5px 5px #eeeeee47;
+  overflow: auto;
 }
 .cart-container .img-container{
     padding: 5px;
     margin: 32% auto;
 }
 .cart-container img{
-    width: 100%;
+    width: 114px;
 }
 
 .cart-container .row{
@@ -27,4 +28,14 @@ h3{
 .product p,
 .product .price{
     font-size: 10px;
+}
+
+.product-cart .product-top{
+  float: left;
+}
+.product-cart img{
+  width:65px;
+}
+.product-cart{
+  font-size: 10px;
 }

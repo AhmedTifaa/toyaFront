@@ -1,3 +1,32 @@
-<div> <!-- products section -->
-  
+<div *ngIf="data" class="toya-container"> <!-- products section -->
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 text-right">
+      <img [src]="data.images[0].url">
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <h3 class="title">{{data.name}}</h3>
+    <ul class="properties">
+        <li *ngFor="let property of data.properties">
+          <span>{{property.name}}</span><p>{{property.value}}</p>
+        </li>
+    </ul>
+
+    <div class="user-interact">
+      <div class="user-quantity">
+        <input #quantity type="number" min="1" value="1"/>
+      </div>
+      <div (click)="addToCart(data)" class="add-cart">
+        <button class="btn">Add to cart</button>
+      </div>
+    </div>
+    <div class="description">
+        <h5>Description</h5>
+        <p>
+          {{data.description}}
+        </p>
+    </div>
+</div>
+
+  </div>
+
 </div>

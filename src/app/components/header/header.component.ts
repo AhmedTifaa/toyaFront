@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { $ } from 'protractor';
+import { CartService } from '../cart/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +9,19 @@ import { $ } from 'protractor';
 })
 export class HeaderComponent implements OnInit {
   scrollVal:any;
-  constructor() {
-    
+  itemsCount:number = 0;
+  subscription:Subscription;
+  constructor(private cartService:CartService) {
    }
 
     hasClass(ele,cls) {
     return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
   }
-  
+
    addClass(ele,cls) {
     if (!this.hasClass(ele,cls)) ele.className += " "+cls;
   }
-  
+
    removeClass(ele,cls) {
     if (this.hasClass(ele,cls)) {
       var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
@@ -28,14 +30,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.subscription = this.cartService.currentitemsCount.subscribe(count => this.itemsCount = count);
     this.scrollVal = (document.querySelectorAll(".navbar:not(.scroll)")[0] as HTMLInputElement).offsetHeight +
     (document.querySelectorAll(".navbar:not(.scroll)")[0] as HTMLInputElement).offsetTop;
     var ele = (document.querySelectorAll(".navbar.scroll")[0] as HTMLInputElement)
     window.onscroll = ()=>{
       if(window.scrollY > this.scrollVal){
-        
+
         this.addClass(ele,"active");
-        
+
       }else{
         this.removeClass(ele,"active");
       }
