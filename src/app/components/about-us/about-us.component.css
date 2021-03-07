@@ -1,0 +1,55 @@
+h2{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 49px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+.top-text{
+    color: #828282;
+    font-family: "Raleway Thin";
+    font-size: 29px;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+}
+/* content */
+.content .col-lg-6{
+    padding: 0 30px;
+}
+.content h2{
+    font-family: "Great Vibes";
+    font-size: 60px;
+    margin-top: 30px;
+}
+.content p{
+    color: #a3a3a3;
+    font-family: Raleway;
+    font-size: 20px;
+}
+.content .img-container{
+    background-color: #c46449;
+    width: 100%;
+}
+.content .img-container img{
+    width: 100%;
+    transform: translate(-10%, 10%);
+}
+.content:last-child .img-container img{
+    transform: translate(10%, 10%);
+}
+
+/* responsive */
+@media(max-width: 991px){
+    .content:nth-child(2){
+        flex-direction: column-reverse;
+    }
+    .content .col-12{
+        padding: 0 60px;
+    }
+    .content .description{
+        margin-top: 50px;
+    }
+}

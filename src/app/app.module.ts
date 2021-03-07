@@ -21,6 +21,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailsService } from './components/product-details/product-details.service';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { ThanksComponent } from './components/thanks/thanks.component';
     CartComponent,
     ViewCartComponent,
     ThanksComponent,
+    AboutUsComponent,
+    ContactUsComponent,
 
   ],
   imports: [
