@@ -1,0 +1,35 @@
+<div class="container">
+  <!-- links -->
+  <div class="row links">
+    <div class="col-12">
+      <a routerLink="/">home </a> / <a routerLink="/my-account"> My Account</a>  
+    </div>
+  </div>
+  <!-- title -->
+  <div class="row mb-3">
+    <div class="col-12">
+      <h2>My Account</h2>
+    </div>
+  </div>
+  <!-- body -->
+  <div class="row">
+    <!-- menu -->
+    <div class="col-12 col-lg-3">
+      <ul class="menu">
+        <li #element1 (click) = 'active(element1)' class="active" data-content="app-my-details"><span><img src="../../../assets/profile.svg" alt=""></span> My Details</li>
+        <li #element2 (click) = 'active(element2)' data-content="app-my-address"><span><img src="../../../assets/location2.svg" alt=""></span> My Address</li>
+        <li #element3 (click) = 'active(element3)' data-content="app-my-orders"><span><img src="../../../assets/cart.png" alt=""></span> My Orders</li>
+        <li #element4 (click) = 'active(element4)' data-content="app-newsletters"><span><img src="../../../assets/newsletters.svg" alt=""></span> My Newsletters</li>
+        <li #element5 (click) = 'active(element5)' data-content="app-settings"><span><img src="../../../assets/setting.svg" alt=""></span> Settings</li>
+      </ul>
+    </div>
+    <!-- content -->
+    <div class="col-12 col-lg-9">
+      <app-my-details class="d-block"></app-my-details>
+      <app-my-address class="d-none"></app-my-address>
+      <app-my-orders class="d-none"></app-my-orders>
+      <app-newsletters class="d-none"></app-newsletters>
+      <app-settings class="d-none"></app-settings>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+/* content */
+.content h2{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 46px;
+    font-weight: bold;
+}
+.content p{
+    color: #fc8f77;
+    font-family: "Raleway Thin";
+    font-size: 31px;
+    font-weight: bold;
+}
+.content .seprator{
+    width: 100%;
+    border: 1px solid #c46449;
+}
+/* form */
+.form label{
+    color: #fc8f77;
+    font-family: "Raleway Thin";
+    font-size: 31px;
+}
+.form input{
+    width: 100%;
+    border: 1px solid #c46449;
+    padding: 10px;
+}
+.form input:focus{
+outline: none;
+}

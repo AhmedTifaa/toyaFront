@@ -1,0 +1,37 @@
+<div class="container">
+  <!-- title -->
+  <div class="row content mb-3">
+    <div class="col-12">
+      <h2>My Details</h2>
+      <p>Personal Information</p>
+      <div class="seprator"></div>
+    </div>
+  </div>
+  <!-- form -->
+  <div class="form mb-5">
+    <form [formGroup]="" (ngSubmit)="onSubmit()" class="">
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="">First Name</label>
+          <input type="text">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="">Last Name</label>
+          <input type="text">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="">Birth date</label>
+          <input type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label for="">Phone Number</label>
+          <input type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

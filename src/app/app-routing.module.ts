@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AboutUsComponent } from "./components/about-us/about-us.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
+import { MyAccountComponent } from "./components/my-account/my-account.component";
 
 import { ViewCartComponent } from "./components/view-cart/view-cart.component";
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'product/:productId', component: ProductDetailsComponent },
   { path: 'cart', component: ViewCartComponent },
   { path: 'about-us', component:AboutUsComponent },
-  { path: 'contact-us', component:ContactUsComponent }
+  { path: 'contact-us', component:ContactUsComponent },
+  { path: 'my-account', component:MyAccountComponent }
 ];
 
 @NgModule({

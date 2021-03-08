@@ -23,6 +23,12 @@ import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { MyDetailsComponent } from './components/my-account/my-details/my-details.component';
+import { MyAddressComponent } from './components/my-account/my-address/my-address.component';
+import { MyOrdersComponent } from './components/my-account/my-orders/my-orders.component';
+import { NewslettersComponent } from './components/my-account/newsletters/newsletters.component';
+import { SettingsComponent } from './components/my-account/settings/settings.component';
 
 
 @NgModule({
@@ -43,6 +49,12 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     ThanksComponent,
     AboutUsComponent,
     ContactUsComponent,
+    MyAccountComponent,
+    MyDetailsComponent,
+    MyAddressComponent,
+    MyOrdersComponent,
+    NewslettersComponent,
+    SettingsComponent,
 
   ],
   imports: [

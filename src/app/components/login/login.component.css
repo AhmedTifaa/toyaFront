@@ -2,7 +2,7 @@ h2{
     color: #c46449;
     font-family: "Raleway Thin";
     font-size: 49px;
-    font-weight: 400;
+    font-weight: bold;
     margin: 56px 0 20px;
 }
 .top-text{
@@ -66,7 +66,7 @@ form button{
     color: #ffffff;
     font-family: "Raleway Thin";
     font-size: 1.3rem;
-    font-weight: 100;
+    font-weight: bold;
     width: 100%;
     height: 51px;
     background-color: #fc8f77;
@@ -78,7 +78,7 @@ form button{
 a{
     color: #254ef4;
     font-family: "Raleway Thin";
-    font-weight: 100;
+    font-weight: bold;
     text-decoration: none;
     font-size: 18px;
 }
