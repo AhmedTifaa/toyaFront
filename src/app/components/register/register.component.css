@@ -1,11 +1,12 @@
-h2{
+h2 {
     color: #c46449;
     font-family: "Raleway Thin";
     font-size: 49px;
     font-weight: bold;
     margin: 56px 0 20px;
 }
-.top-text{
+
+.top-text {
     color: #828282;
     font-family: "Raleway Thin";
     font-size: 29px;
@@ -14,13 +15,20 @@ h2{
     letter-spacing: normal;
     line-height: normal;
 }
-form{
+
+form {
     margin: 0 auto;
 }
-form .input-group{
+
+form .alert {
+    color: #fc8f77;
+}
+
+form .input-group {
     position: relative;
 }
-form label{
+
+form label {
     padding: 0 5px;
     position: absolute;
     top: -15px;
@@ -32,7 +40,8 @@ form label{
     font-size: 17px;
     font-weight: 100;
 }
-form .icon{
+
+form .icon {
     position: absolute;
     width: 50px;
     display: inline-block;
@@ -42,30 +51,42 @@ form .icon{
     height: calc(1.5em + .75rem + 2px);
     padding: 5px 10px;
 }
-form .icon img{
+
+form .icon img {
     width: 100%;
 }
-form .icon .phone{
+
+form .icon .phone {
     width: 50%;
     margin-left: 25%;
 }
-form input{
+
+form input {
     color: #000000;
     font-family: Raleway;
     font-weight: 300;
     padding-left: 50px;
     border-radius: 0;
 }
-form .form-control:focus,
-.btn.focus, .btn:focus{
-    border-color: #c46449;
-    box-shadow: 0 0 0 0.2rem rgb(196 100 73 / 25%) 
+
+form input.error {
+    border-color: #F00;
+    box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 25%)
 }
-form a{
+
+form .form-control:focus,
+.btn.focus,
+.btn:focus {
+    border-color: #c46449;
+    box-shadow: 0 0 0 0.2rem rgb(196 100 73 / 25%)
+}
+
+form a {
     display: block;
     text-align: right;
 }
-form button{
+
+form button {
     color: #ffffff;
     font-family: "Raleway Thin";
     font-size: 1.3rem;
@@ -76,16 +97,18 @@ form button{
     line-height: 2.5rem;
     border-radius: 3px;
     margin: 0 auto;
-    display: block;   
+    display: block;
 }
-a{
+
+a {
     color: #254ef4;
     font-family: "Raleway Thin";
     font-weight: bold;
     text-decoration: none;
     font-size: 18px;
 }
-p{
+
+p {
     color: #828282;
     font-family: "Raleway Thin";
     font-size: 20px;

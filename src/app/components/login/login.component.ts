@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 
 @Component({
@@ -14,25 +16,32 @@ export class LoginComponent implements OnInit {
     password: ''
   });
 
-  data:any;
-  response:any;
+  data: any;
+  response: any;
+  isLoginError: any;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router:Router) { }
 
-  onSubmit(): void {
-    
-    this.data = this.loginForm.value;
-    this.loginService.login(this.data).subscribe(response=>{
-      this.response = response["response"];
-    });
-    
-    console.warn('login form has been submitted', this.data);
-
-    console.log(this.response);
-    // this.loginForm.reset();
-  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+
+    this.data = this.loginForm.value;
+    this.loginService.login(this.data).subscribe(response => {
+      this.response = response;
+      // console.log('login form has been submitted', this.data);
+      // console.log(this.response.token);
+      sessionStorage.setItem('userToken', this.response.token);
+      this.router.navigate(['/my-account']);      
+    },
+    (err: HttpErrorResponse) => {
+      this.isLoginError = true;
+    });
+
+
+    // this.loginForm.reset();
   }
 
 }

@@ -12,7 +12,7 @@ export class LoginService {
 
     }
     login(data){
-      console.log(data);
+      // console.log(data);
       return  this.http.post(this.url,data);
       
     }

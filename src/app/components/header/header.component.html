@@ -2,79 +2,79 @@
 
 <nav class="navbar navbar-expand-lg">
 
-  <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
   </button>
-  <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
+    <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
 
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
-    <ul class="navbar-nav mt-4">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
-      </li>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
+        <ul class="navbar-nav mt-4">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
-      </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
+            </li>
 
-    </ul>
+        </ul>
 
-      <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
-        <a  [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
-      </div>
+        <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
+            <a [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
+        </div>
 
-    <ul class="navbar-nav mt-4">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
-      </li>
+        <ul class="navbar-nav mt-4">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'contact-us'" (click)="isMenuCollapsed = true">Contact</a>
-      </li>
-      <!-- <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'contact-us'" (click)="isMenuCollapsed = true">Contact</a>
+            </li>
+            <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
       </li> -->
-    </ul>
+        </ul>
 
-  </div>
-  <ul class="navbar-nav mt-4 side">
-    <!-- <li class="nav-item mr-4">
+    </div>
+    <ul class="navbar-nav mt-4 side">
+        <!-- <li class="nav-item mr-4">
       <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
-    </li>
-    <li class="nav-item mr-4">
-      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
     </li> -->
-    <li class="nav-item">
-      <a class="nav-link cart-icon" [routerLink]="['/cart']" ><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
-    </li>
-  </ul>
+        <li class="nav-item mr-4">
+            <a class="nav-link" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link cart-icon" [routerLink]="['/cart']"><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
+        </li>
+    </ul>
 
 </nav>
 <!-- NavBar with Window Scroll -->
 <nav class="navbar navbar-expand-lg scroll">
 
-  <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
   </button>
-  <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
+    <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
 
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
-    <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
-      <a  [routerLink]="'.'"> <img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
-    </div>
-    <ul class="navbar-nav mt-3">
-      <li class="nav-item ml-3 active">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
-      </li>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
+        <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
+            <a [routerLink]="'.'"> <img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
+        </div>
+        <ul class="navbar-nav mt-3">
+            <li class="nav-item ml-3 active">
+                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
+            </li>
 
-      <li class="nav-item ml-3">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
-      </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
+            </li>
 
-      <li class="nav-item ml-3">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
-      </li>
-      <!-- <li ngbDropdown class="nav-item ml-3 d-inline-block">
+            <li class="nav-item ml-3">
+                <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
+            </li>
+            <!-- <li ngbDropdown class="nav-item ml-3 d-inline-block">
         <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Our Company</a>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
@@ -83,33 +83,32 @@
         </div>
       </li> -->
 
-      <li class="nav-item ml-3">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Contact</a>
-      </li>
-      <!-- <li class="nav-item ml-3">
+            <li class="nav-item ml-3">
+                <a class="nav-link" [routerLink]="'contact-us'" (click)="isMenuCollapsed = true">Contact</a>
+            </li>
+            <!-- <li class="nav-item ml-3">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
       </li> -->
-    </ul>
+        </ul>
 
 
 
-  </div>
-  <ul class="navbar-nav mt-3 side">
-    <li class="nav-item mr-4">
-      <!-- <a class="nav-link" [routerLink]="'.'" >
+    </div>
+    <ul class="navbar-nav mt-3 side">
+        <li class="nav-item mr-4">
+            <!-- <a class="nav-link" [routerLink]="'.'" >
         <input type="text" name="search" id="search-box" placeholder="Search..." />
         <span class="search-icon">
           <img src="../../../assets/search-white.svg" alt="">
         </span>
       </a> -->
-    </li>
-    <!-- <li class="nav-item mr-4">
-      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/profile.png" alt=""></a>
-    </li> -->
-    <li class="nav-item">
-      <a class="nav-link cart-icon"  [routerLink]="['/cart']" ><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
-    </li>
-  </ul>
+        </li>
+        <li class="nav-item mr-4">
+            <a class="nav-link" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link cart-icon" [routerLink]="['/cart']"><img src="../../../assets/cart.png" alt=""><span *ngIf="itemsCount > 0">{{itemsCount}}</span></a>
+        </li>
+    </ul>
 
 </nav>
-
