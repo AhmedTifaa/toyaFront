@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   catData:any;
   isOn:boolean = false;
 
-  constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService,private cartService:CartService) {
+  constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService, private cartService:CartService) {
     this.recentProductsService.getRecentProduct().subscribe(data=>{
       this.recentData = data["data"];
       this.recentServiceStatus = true;

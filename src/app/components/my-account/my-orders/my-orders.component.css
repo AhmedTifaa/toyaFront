@@ -16,32 +16,40 @@
     width: 100%;
     border: 1px solid #c46449;
 }
-.products .col-3 img{
+.products .col-lg-3 img{
     width: 100%;
 }
-.products .col-3 p{
+.products .col-lg-3 p{
     color: #fc8f77;
-    font-family: "Raleway Thin";
+    font-family: "Raleway";
     font-size: 16px;
     margin: 10% 0;
 }
-.products .col-3 p.title{
+.products .col-lg-3 p.title{
     font-weight: bold;
 }
-.products .col-2 p{
-    color: #0c2747;
+.products .col-lg-2 p,
+p.d-lg-none{
+    color: #0c2747 !important;
     font-family: Raleway;
     font-size: 16px;
     margin: 50% 0;
+    font-weight: bold;
 }
-.products .col-4 .row{
+.products .col-lg-4 .row{
     justify-content: center;
 }
-.products .col-4 a{
+.products .col-lg-4 a{
     color: #efddc5;
     font-family: Raleway;
     font-size: 15px;
     background-color: #0c2747;
     width: 100%;
     margin: 50% 0;
+}
+/* responsive */
+@media(max-width: 991px){
+    .products .col-lg-4 a{
+        margin: 0;    
+    }    
 }

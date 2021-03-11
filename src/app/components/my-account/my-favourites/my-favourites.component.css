@@ -1,0 +1,115 @@
+/* content */
+.content h2{
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 46px;
+    font-weight: bold;
+}
+.content p{
+    color: #fc8f77;
+    font-family: "Raleway Thin";
+    font-size: 31px;
+    font-weight: bold;
+}
+/* products */
+.fav{
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    position: relative;
+    display: inline-block;
+    width: calc(95% / 4);
+    margin: 0px 0.6% 10px;
+}
+.fav-top .discount{
+    background-image: url('../../../../assets/discount.svg');
+    color: #f9f9f9;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    background-position: right;
+    padding-right: 27px;
+}
+.fav-top img{
+    width: 80%;
+    margin-top: 20px;
+}
+.fav p{
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+}  
+.price .off{
+    color: #606060;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+}
+.currency{
+    font-size: 15px;
+}
+.line{
+    border-top: 1px solid;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 49%;
+    left: 0;
+}
+.new{
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 15px;
+}
+.fav .add-cart{
+    position: absolute;
+    top: 125px;
+    width: 50%;
+    left: 25%;
+    opacity: 0;
+    transition: top ease-in-out 0.3s,opacity 0.5s ease-in-out;
+}
+.fav .btn{
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #c45239;
+    line-height: 2.5rem;
+    padding: 0px 10px;
+    border-radius: 15px;
+}
+.fav:hover .add-cart{
+    top: 133px;
+    opacity: 1;
+}
+
+/* responsive */
+@media(max-width: 991px){
+    .products .col-lg-4 a{
+        margin: 0;    
+    }
+    .fav{
+        width: calc(95% / 2);
+    }
+    .fav .add-cart{
+        bottom: 0 !important;
+        top: unset !important;
+        width: 100%;
+        left: 0 !important;
+        opacity: 1;
+    }
+    .fav .btn{
+        width: 100%;
+        border-radius: 0;
+    }    
+}

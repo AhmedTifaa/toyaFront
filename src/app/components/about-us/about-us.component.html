@@ -5,26 +5,26 @@
   </div>
 
   <!-- about-us content -->
-  <div class="row content mt-3">
+  <div class="row content mt-3" *ngIf="check">
     <div class="col-12 col-lg-6 description">
-        <h2>Our Vesion</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit voluptate inventore repellat repudiandae accusamus sapiente. Itaque ullam, eaque tempora alias, similique totam fugit voluptatem placeat ex mollitia facere quidem inventore.</p>
+        <h2>{{data.about_us_title_1_en}}</h2>
+        <p [innerHTML]="data.about_us_content_body_1_en"></p>
     </div>
     <div class="col-12 col-lg-6">
       <div class="img-container">
-        <img src="../../../assets/hygene.png" alt="">
+        <img [src]="data.about_us_image_1" alt="">
       </div>
     </div>
   </div>
-  <div class="row content mt-5">
+  <div class="row content mt-5" *ngIf="check">
     <div class="col-12 col-lg-6">
       <div class="img-container">
-        <img src="../../../assets/hygene.png" alt="">
+        <img [src]="data.about_us_image_2" alt="">
       </div>
     </div>
     <div class="col-12 col-lg-6 description">
-        <h2>Our Vesion</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit voluptate inventore repellat repudiandae accusamus sapiente. Itaque ullam, eaque tempora alias, similique totam fugit voluptatem placeat ex mollitia facere quidem inventore.</p>
+        <h2>{{data.about_us_title_2_en}}</h2>
+        <p [innerHTML]="data.about_us_content_body_1_en"></p>
     </div>
   </div>
 </div>

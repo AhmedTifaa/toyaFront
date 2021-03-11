@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactUsService } from "./contact-us.service";
 
 @Component({
   selector: 'app-contact-us',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  check:boolean = false;
+  data:any;
+  constructor( private contactUsService:ContactUsService) { 
+    this.contactUsService.getContactUS().subscribe(data=>{
+      this.data = data["contact_us"];
+      this.check = true;
+      // console.log(this.data);
+    });
+  }
 
   ngOnInit() {
   }

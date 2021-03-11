@@ -29,6 +29,7 @@ import { MyAddressComponent } from './components/my-account/my-address/my-addres
 import { MyOrdersComponent } from './components/my-account/my-orders/my-orders.component';
 import { NewslettersComponent } from './components/my-account/newsletters/newsletters.component';
 import { SettingsComponent } from './components/my-account/settings/settings.component';
+import { MyFavouritesComponent } from './components/my-account/my-favourites/my-favourites.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { SettingsComponent } from './components/my-account/settings/settings.com
     MyOrdersComponent,
     NewslettersComponent,
     SettingsComponent,
+    MyFavouritesComponent,
 
   ],
   imports: [
