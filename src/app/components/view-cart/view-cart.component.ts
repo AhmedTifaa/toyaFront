@@ -9,11 +9,15 @@ import { CheckoutComponent } from '../checkout/checkout.component';
 })
 export class ViewCartComponent implements OnInit {
   cartItems:any;
+  isEmpty:boolean = true;
   total:number = 0;
   currentStep:number = 1;
+  currentQuantity:number = 1;
   constructor(private cartService:CartService) {
     this.cartItems = this.cartService.getItems();
+    this.cartItems.length > 0 ? this.isEmpty = false : this.isEmpty = true;
     this.cartItems.forEach(product => {
+      this.currentQuantity = product.quantity;
       this.total += (product.price - product.price * product.discount_percentage / 100)*product.quantity;
     });
    }
@@ -21,6 +25,23 @@ export class ViewCartComponent implements OnInit {
   ngOnInit() {
     console.log(this.cartItems);
 
+  }
+  removeProduct(id){
+    // console.log(id);
+    this.cartService.delItem(id);
+    this.cartItems.length > 0 ? this.isEmpty = false : this.isEmpty = true;
+    console.log(this.cartItems);
+  }
+  changeQuantity($event,id){
+    var index = this.cartItems.findIndex(p => p.id == id);
+    console.log(this.cartItems[index].quantity);
+    this.cartItems[index].quantity = parseInt($event.target.value);
+    console.log(this.cartItems[index].quantity);
+    this.cartService.updateQuantity(id,$event.target.value);
+    this.total = 0;
+    this.cartItems.forEach(product => {
+      this.total += (product.price - product.price * product.discount_percentage / 100)*product.quantity;
+    });
   }
    nextStep(currentStep){
     this.currentStep = currentStep;

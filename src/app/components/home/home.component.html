@@ -20,7 +20,7 @@
             <div class="cat text-center mb-3" *ngFor="let product of cat.products">
               <a [routerLink]="['/product', product.id]">
               <div class="cat-top">
-                <div class="discount">{{product.discount_percentage}}% OFF</div>
+                <div *ngIf="discountValidate(product.discount_percentage)" class="discount">{{product.discount_percentage}}% OFF</div>
                 <img [src]="product.images[0].url" alt="">
               </div>
               <p class="mt-1">{{product.name}}</p>
@@ -32,7 +32,7 @@
                 </ngb-rating>
               </div> -->
               <div class="price mb-5">
-                <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
+                <div *ngIf="discountValidate(product.discount_percentage)" class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
                 <span class="new">{{product.price - product.price * product.discount_percentage / 100}}<span class="currency"> EG</span></span>
               </div>
             </a>
@@ -71,7 +71,7 @@
           </ngb-rating>
         </div> -->
         <div class="price mt-3 mb-5">
-          <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
+          <div *ngIf="discountValidate(product.discount_percentage)" class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
           <span class="new">{{product.price - product.price * product.discount_percentage / 100}}<span class="currency"> EG</span></span>
         </div>
       </a>

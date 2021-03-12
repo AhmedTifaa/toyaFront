@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
   items = JSON.parse(window.sessionStorage.getItem('cart-toya')) || [];
-  sessionItems = [];
+  sessionItems = JSON.parse(window.sessionStorage.getItem('cart')) || [];
   private itemsCount = new BehaviorSubject(this.items.length);
   currentitemsCount = this.itemsCount.asObservable() ;
 
@@ -31,16 +31,17 @@ export class CartService {
   }
 
   delItem(id) {
-    let index;
-    for (let i=0; i < this.items.length; i++){
-      if(this.items[i].id == id){
-         index = i;
-         this.items.splice(i, 1);
-         break;
-      }
-    }
-    this.getItems();
-    return this.items;
+    var index = this.getItems().findIndex(p => p.id == id);
+    this.items.splice(index, 1);
+    this.sessionItems.splice(index, 1);
+    window.sessionStorage.setItem('cart-toya',JSON.stringify(this.items));
+    window.sessionStorage.setItem('cart',JSON.stringify(this.sessionItems));
+    this.changeItemsCount(this.itemsCount.value - 1);
+  }
+  updateQuantity(id,quantity){
+    var index = this.sessionItems.findIndex(p => p.id == id);
+    this.sessionItems[index].quantity = quantity;
+    window.sessionStorage.setItem('cart',JSON.stringify(this.sessionItems));
   }
 
   clearCart() {

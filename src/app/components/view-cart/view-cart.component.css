@@ -78,6 +78,9 @@ div.btn-container {
 .cart-page .del-item{
   width:27px;
 }
+.del-item{
+  cursor: pointer;
+}
 
 /****************STEPS CSS****************/
 .shop-tracking-status{

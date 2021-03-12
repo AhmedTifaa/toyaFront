@@ -1,4 +1,4 @@
-<div *ngIf="cartItems == []" class="toya-container">
+<div *ngIf="isEmpty" class="toya-container">
   <div class="cart-head text-center">
     <h1>Review Cart</h1>
     <h5>Your Cart Is Empty</h5>
@@ -9,7 +9,7 @@
     </a>
   </div>
 </div>
-<div *ngIf="cartItems != [] && currentStep < 3" class="toya-container">
+<div *ngIf="!isEmpty && currentStep < 3" class="toya-container">
   <div class="cart-head text-center">
     <h1>Review Cart</h1>
     <h5>Compelete Your Purchase</h5>
@@ -62,12 +62,12 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="number" min="1" class="form-control" id="" value="{{product.quantity}}">
+                        <input (change)="changeQuantity($event,product.id)" type="number" min="1" class="form-control" id="" value="{{currentQuantity}}">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${{product.price - product.price * product.discount_percentage / 100}}</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${{(product.price - product.price * product.discount_percentage / 100)*product.quantity}}</strong></td>
                         <td class="text-center col-sm-1 col-md-1">
-                          <img class="del-item" src="../../../assets/delete-icon.svg" />
+                          <img (click)="removeProduct(product.id)" class="del-item" src="../../../assets/delete-icon.svg" />
                         </td>
                     </tr>
 
