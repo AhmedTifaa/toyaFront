@@ -1,62 +1,68 @@
 <div class="container mt-5 mb-5">
-  <div class="row">
-    <h2 class="col-12 text-center">Register</h2>
-    <p class=" col-12 text-center top-text">Creat a new account</p>
-  </div>
-  <div class="row mt-4">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-lg-6">
-      <div class="input-group mb-5">
-        <label>Name</label>
-        <span class="icon">
-          <img src="../../../assets/profile-icon.svg" alt="profile icon">
-        </span>
-        <input type="text" class="form-control" placeholder="name" formControlName="name">
-      </div>
+    <div class="row">
+        <h2 class="col-12 text-center">Register</h2>
+        <p class=" col-12 text-center top-text">Creat a new account</p>
+    </div>
+    <div class="row mt-4">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-lg-6">
+            <!-- <div *ngIf="isLoginError" class="alert ">
+                please fill empty field
+            </div> -->
+            <div class="input-group mb-5">
+                <label>Name</label>
+                <span class="icon">
+                    <img src="../../../assets/profile-icon.svg" alt="profile icon">
+                </span>
+                <input type="text" class="form-control" placeholder="name" formControlName="name" [class.error]="error['name']">
+                <div *ngIf="isLoginError" class="alert w-100">
+                    {{error['name']}}
+                </div>
+            </div>
 
-      <div class="input-group mb-5">
-        <label>Email</label>
-        <span class="icon">
-          <img src="../../../assets/email-icon.svg" alt="email icon">
-        </span>
-        <input type="email" class="form-control" placeholder="email" formControlName="email">
-      </div>
+            <div class="input-group mb-5">
+                <label>Email</label>
+                <span class="icon">
+                    <img src="../../../assets/email-icon.svg" alt="email icon">
+                </span>
+                <input type="email" class="form-control" placeholder="email" formControlName="email" [class.error]="error['email']">
+            </div>
 
-      <div class="input-group mb-5">
-        <label>Phone</label>
-        <span class="icon">
-          <img src="../../../assets/phone-icon.svg" class="phone" alt="phone icon">
-        </span>
-        <input type="text" class="form-control" placeholder="phone" formControlName="mobile">
-      </div>
+            <div class="input-group mb-5">
+                <label>Phone</label>
+                <span class="icon">
+                    <img src="../../../assets/phone-icon.svg" class="phone" alt="phone icon">
+                </span>
+                <input type="text" class="form-control" placeholder="phone" formControlName="mobile" [class.error]="error['mobile']">
+            </div>
 
-      <div class="input-group mb-5">
-        <label>Password</label>
-        <span class="icon">
-          <img src="../../../assets/password-icon.svg" alt="password icon">
-        </span>
-        <input type="password" class="form-control" placeholder="password" formControlName="password">
-      </div>
+            <div class="input-group mb-5">
+                <label>Password</label>
+                <span class="icon">
+                    <img src="../../../assets/password-icon.svg" alt="password icon">
+                </span>
+                <input type="password" class="form-control" placeholder="password" formControlName="password" [class.error]="error['password']">
+            </div>
 
-      <div class="input-group mb-5">
-        <label>Confim Password</label>
-        <span class="icon">
-          <img src="../../../assets/password-icon.svg" alt="password icon">
-        </span>
-        <input type="password" class="form-control" placeholder="password" formControlName="password_confirmation">
-      </div>
+            <div class="input-group mb-5">
+                <label>Confim Password</label>
+                <span class="icon">
+                    <img src="../../../assets/password-icon.svg" alt="password icon">
+                </span>
+                <input type="password" class="form-control" placeholder="password" formControlName="password_confirmation" [class.error]="error['password']">
+            </div>
 
-      <div class="input-group mb-5">
-        <label>Country</label>
-        <select class="form-select form-control" aria-label="Default select example" formControlName="country_id">
-          <option value="1">Egypt</option>
-          <option value="2">Saudi Arebia</option>
-        </select>
-      </div>
+            <div class="input-group mb-5">
+                <label>Country</label>
+                <select class="form-select form-control" aria-label="Default select example" formControlName="country_id" [class.error]="error['country_id']">
+                    <option value="1">Egypt</option>
+                    <option value="2">Saudi Arebia</option>
+                </select>
+            </div>
 
-      <button class="btn mt-2" type="submit">Creat Account</button>
-    </form>
-  </div>
-  <div class="row mt-3">
-    <p class="col-12 text-center">Already have an account? <a routerLink="/login">Login</a></p>
-  </div>
+            <button class="btn mt-2" type="submit">Creat Account</button>
+        </form>
+    </div>
+    <div class="row mt-3">
+        <p class="col-12 text-center">Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
 </div>
