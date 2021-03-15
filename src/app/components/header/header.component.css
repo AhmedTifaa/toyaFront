@@ -1,27 +1,32 @@
-*{
+* {
     transition: all ease-in-out 0.5s;
 }
-.bar{
+
+.bar {
     width: 100%;
     height: 15px;
     background-color: #c46449;
 }
-.menu{
+
+.menu {
     position: absolute;
     top: 40px;
     left: 15px;
 }
-.navbar-brand{
+
+.navbar-brand {
     width: 100%;
     margin: 0;
     text-align: center;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     justify-content: center;
     align-items: flex-start;
     align-content: space-between;
 }
-nav.scroll{
+
+nav.scroll {
     padding-bottom: 0px;
     position: fixed;
     top: -100px;
@@ -31,29 +36,35 @@ nav.scroll{
     z-index: 12;
     box-shadow: 0px 1px 6px -4px #000;
 }
-.cart-icon{
-  position: relative;
+
+.cart-icon {
+    position: relative;
 }
-.cart-icon span{
-  position: absolute;
+
+.cart-icon span {
+    position: absolute;
     left: 40%;
     top: 11px;
 }
 
-nav.scroll.active{
+nav.scroll.active {
     top: 0px;
 }
-nav.scroll .navbar-collapse{
+
+nav.scroll .navbar-collapse {
     justify-content: initial;
 }
-nav.scroll .navbar-collapse img{
+
+nav.scroll .navbar-collapse img {
     width: 70px;
 }
-nav.scroll .navbar-collapse .nav-link{
+
+nav.scroll .navbar-collapse .nav-link {
     font-size: 16px;
     color: #000;
 }
-nav.scroll ul.side input#search-box{
+
+nav.scroll ul.side input#search-box {
     outline: none;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -68,7 +79,8 @@ nav.scroll ul.side input#search-box{
     font-family: sans-serif;
     padding: 3px 11px;
 }
-nav.scroll ul.side span.search-icon{
+
+nav.scroll ul.side span.search-icon {
     width: 40px;
     height: 33px;
     display: inline-block;
@@ -77,32 +89,48 @@ nav.scroll ul.side span.search-icon{
     border-bottom-right-radius: 3px;
     background: #c46449;
 }
-.nav-link{
+
+.nav-link {
     color: #6e6e6e;
     font-family: "Raleway Thin";
     font-size: 20px;
     font-weight: 700;
 }
-.dropdown-toggle::after{
+
+.dropdown-toggle::after {
     content: url(../../../assets/down-arrow.svg);
     border: none;
     vertical-align: unset;
     margin-left: 0.5em;
 }
-.side{
+
+.side {
     align-self: flex-start;
     flex-direction: row;
     position: absolute;
     right: 26px;
 }
-.nav-logo{
+
+.nav-logo {
     width: 83px;
     padding: 0px;
     margin: 0 auto;
 }
-.nav-logo >img{
 
+.nav-logo>img {
     display: block;
     width: inherit;
+}
 
+.btn.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #C4644C;
 }
