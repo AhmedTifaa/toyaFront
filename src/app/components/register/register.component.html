@@ -14,7 +14,7 @@
                     <img src="../../../assets/profile-icon.svg" alt="profile icon">
                 </span>
                 <input type="text" class="form-control" placeholder="name" formControlName="name" [class.error]="error['name']">
-                <div *ngIf="isLoginError" class="alert w-100">
+                <div *ngIf="error['name']" class="alert w-100">
                     {{error['name']}}
                 </div>
             </div>
@@ -25,6 +25,9 @@
                     <img src="../../../assets/email-icon.svg" alt="email icon">
                 </span>
                 <input type="email" class="form-control" placeholder="email" formControlName="email" [class.error]="error['email']">
+                <div *ngIf="error['email']" class="alert w-100">
+                    {{error['email']}}
+                </div>
             </div>
 
             <div class="input-group mb-5">
@@ -33,6 +36,9 @@
                     <img src="../../../assets/phone-icon.svg" class="phone" alt="phone icon">
                 </span>
                 <input type="text" class="form-control" placeholder="phone" formControlName="mobile" [class.error]="error['mobile']">
+                <div *ngIf="error['mobile']" class="alert w-100">
+                    {{error['mobile']}}
+                </div>
             </div>
 
             <div class="input-group mb-5">
@@ -41,6 +47,9 @@
                     <img src="../../../assets/password-icon.svg" alt="password icon">
                 </span>
                 <input type="password" class="form-control" placeholder="password" formControlName="password" [class.error]="error['password']">
+                <div *ngIf="error['password']" class="alert w-100">
+                    {{error['password']}}
+                </div>
             </div>
 
             <div class="input-group mb-5">
@@ -57,6 +66,9 @@
                     <option value="1">Egypt</option>
                     <option value="2">Saudi Arebia</option>
                 </select>
+                <div *ngIf="error['country_id']" class="alert w-100">
+                    {{error['country_id']}}
+                </div>
             </div>
 
             <button class="btn mt-2" type="submit">Creat Account</button>

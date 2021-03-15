@@ -4,6 +4,9 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 
+// import { Subscription } from 'rxjs';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,9 +21,16 @@ export class LoginComponent implements OnInit {
 
   data: any;
   response: any;
+  // isLogin:boolean;
   isLoginError: any;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router:Router) { }
+  // subscription:Subscription;
+
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router:Router) { 
+    if(sessionStorage.getItem('userToken') != null){
+      this.router.navigate(['/']);
+    }
+  }
 
 
   ngOnInit() {
@@ -34,6 +44,8 @@ export class LoginComponent implements OnInit {
       // console.log('login form has been submitted', this.data);
       // console.log(this.response.token);
       sessionStorage.setItem('userToken', this.response.token);
+      // this.isLogin = true;
+      this.loginService.checkLogin(true);
       this.router.navigate(['/my-account']);      
     },
     (err: HttpErrorResponse) => {

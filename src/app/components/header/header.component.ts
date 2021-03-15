@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,11 @@ export class HeaderComponent implements OnInit {
   scrollVal:any;
   itemsCount:number = 0;
   subscription:Subscription;
-  constructor(private cartService:CartService) {
+  isLogin:boolean ;
+  constructor(private cartService:CartService, private router:Router, private loginService:LoginService) {  
+
+   
+
    }
 
     hasClass(ele,cls) {
@@ -43,6 +49,19 @@ export class HeaderComponent implements OnInit {
         this.removeClass(ele,"active");
       }
     }
+    // console.log(sessionStorage.getItem('userToken'));
+    // if (sessionStorage.getItem('userToken')) {
+    //   this.isLogin = true;
+    // }
+    this.subscription = this.loginService.hasLogin.subscribe(data => this.isLogin = data)
   }
   public isMenuCollapsed = true;
+
+  
+  logout(){
+    sessionStorage.removeItem('userToken');
+    // this.isLogin = false;
+    this.router.navigate(['/login']);
+  }
+
 }

@@ -30,6 +30,7 @@ import { MyOrdersComponent } from './components/my-account/my-orders/my-orders.c
 import { NewslettersComponent } from './components/my-account/newsletters/newsletters.component';
 import { SettingsComponent } from './components/my-account/settings/settings.component';
 import { MyFavouritesComponent } from './components/my-account/my-favourites/my-favourites.component';
+import { AuthGuard } from './components/auth/auth.guard';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { MyFavouritesComponent } from './components/my-account/my-favourites/my-
   ],
   providers: [
     sliderService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
