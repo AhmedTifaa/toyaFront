@@ -69,9 +69,15 @@ form input {
     border-radius: 0;
 }
 
-form input.error {
+form input.error,
+form select.error {
     border-color: #F00;
-    box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 25%)
+    box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 25%);
+}
+
+form .alert.w-100 {
+    position: absolute;
+    top: 77%;
 }
 
 form .form-control:focus,

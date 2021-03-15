@@ -22,10 +22,14 @@ export class RegisterComponent implements OnInit {
 
   data:any;
   response:any;
-  isLoginError:any;
+  // isLogin:boolean = false;
   error: any = false;
 
-  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) {
+    if(sessionStorage.getItem('userToken') != null){
+      this.router.navigate(['/']);
+    }
+  }
 
   onSubmit() {
     
@@ -34,16 +38,13 @@ export class RegisterComponent implements OnInit {
       this.response = data;
       // console.warn('register form has been submitted', this.response);
       sessionStorage.setItem('userToken', this.response.token);
+      // this.isLogin = true;
       this.router.navigate(['/my-account']);
     },
     (err: HttpErrorResponse) => {
-      this.isLoginError = true;
       this.error = err['error']['errors'];
       console.log(err['error']['errors']);
     });
-    
-
-    // this.loginForm.reset();
   }
 
   ngOnInit() {

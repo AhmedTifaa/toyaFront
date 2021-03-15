@@ -11,6 +11,7 @@ import { MyAccountComponent } from "./components/my-account/my-account.component
 
 import { ViewCartComponent } from "./components/view-cart/view-cart.component";
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AuthGuard } from './components/auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'cart', component: ViewCartComponent },
   { path: 'about-us', component:AboutUsComponent },
   { path: 'contact-us', component:ContactUsComponent },
-  { path: 'my-account', component:MyAccountComponent }
+  { path: 'my-account', component:MyAccountComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({
