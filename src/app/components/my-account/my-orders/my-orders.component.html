@@ -1,59 +1,36 @@
 <div class="container">
-  <!-- title -->
-  <div class="row content mb-3">
-    <div class="col-12">
-      <h2>My Orders</h2>
-    </div>
-  </div>
-  <!-- products -->
-  <div class="products mb-5">
-    <div class="seprator mt-3 mb-3"></div>
-    <div class="product row">
-      <div class="col-6 col-lg-3">
-        <img src="../../../../assets/hair.png" alt="">
-      </div>
-      <div class="col-6 col-lg-3">
-        <p class="title">Revive Conditioner</p>
-        <p class="date">18 jan 2021 13:12</p>
-        <p class="order-id">Order Id: 11643121</p>
-        <p class="d-lg-none">Delivered</p>
-      </div>
-      <div class="col-lg-2 d-none d-lg-block">
-        <p>Delivered</p>
-      </div>
-      <div class="col-lg-4">
-        <div class="row">
-          <div class="col-6">
-            <a href="#" class="btn">Rate Order</a>
-          </div>
-          <div class="col-6">
-            <a href="#" class="btn">Reorder</a>
-          </div>
+    <!-- title -->
+    <div class="row content mb-3">
+        <div class="col-12">
+            <h2>My Orders</h2>
         </div>
-      </div>
     </div>
+    <!-- products -->
     <div class="seprator mt-3 mb-3"></div>
-    <div class="product row">
-      <div class="col-6 col-lg-3">
-        <img src="../../../../assets/hair.png" alt="">
-      </div>
-      <div class="col-6 col-lg-3">
-        <p class="title">Revive Conditioner</p>
-        <p class="date">18 jan 2021 13:12</p>
-        <p class="order-id">Order Id: 11643121</p>
-        <p class="d-lg-none">On The Way</p>
-      </div>
-      <div class="col-lg-2 d-none d-lg-block">
-        <p>On The Way</p>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="row">
-          <div class="col-6">
-            <a href="#" class="btn">Track Order</a>
-          </div>
+    <div class="products mb-5" *ngFor="let order of orders">
+        <div class="product row">
+            <div class="col-6 col-lg-3">
+                <img src="{{order.product_order[0].images[0].url}}" alt="">
+            </div>
+            <div class="col-6 col-lg-3">
+                <a *ngFor="let product of order.product_order" [routerLink]="['/product', product.id]">
+                    <p class="title">{{product.name}}</p>
+                </a>
+                <p class="date">18 jan 2021 13:12</p>
+                <p class="order-id">Order Id: {{order.id}}</p>
+                <p class="d-lg-none">{{order.status}}</p>
+            </div>
+            <div class="col-lg-2 d-none d-lg-block">
+                <p>{{order.status}}</p>
+            </div>
+            <div class="col-12 col-lg-4" *ngIf="order.status === 'Pending'">
+                <div class="row">
+                    <div class="col-6">
+                        <a (click)="cancel(order.id)" class="btn">Cancel</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="seprator mt-3 mb-3"></div>
     </div>
-    <div class="seprator mt-3 mb-3"></div>
-  </div>
 </div>

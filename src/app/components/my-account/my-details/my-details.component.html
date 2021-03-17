@@ -1,37 +1,61 @@
 <div class="container">
-  <!-- title -->
-  <div class="row content mb-3">
-    <div class="col-12">
-      <h2>My Details</h2>
-      <p>Personal Information</p>
-      <div class="seprator"></div>
+    <!-- title -->
+    <div class="row content mb-3">
+        <div class="col-12">
+            <h2>My Details</h2>
+            <p>Personal Information</p>
+            <div class="seprator"></div>
+        </div>
     </div>
-  </div>
-  <!-- form -->
-  <div class="form mb-5">
-    <form [formGroup]="" (ngSubmit)="onSubmit()" class="">
-      <div class="row">
-        <div class="col-12 col-lg-6 mb-3">
-          <label for="">First Name</label>
-          <input type="text">
-        </div>
-        <div class="col-12 col-lg-6 mb-3">
-          <label for="">Last Name</label>
-          <input type="text">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-6 mb-3">
-          <label for="">Birth date</label>
-          <input type="text">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-6 mb-3">
-          <label for="">Phone Number</label>
-          <input type="text">
-        </div>
-      </div>
-    </form>
-  </div>
+    <!-- form -->
+    <div class="form mb-5">
+        <form *ngIf="check" [formGroup]="detailsForm" (ngSubmit)="onSubmit()" class="">
+            <div class="row success text-success" *ngIf="success">
+                <div class="col-12">
+                    {{success}}
+                </div>
+            </div>
+            <div class="row error text-danger" *ngIf="error">
+                <div class="col-12">
+                    {{error}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-3">
+                    <label for="">Name</label>
+                    <input type="text" [value]="data['name']" formControlName="name">
+                </div>
+                <!-- <div class="col-12 col-lg-6 mb-3">
+                    <label for="">Last Name</label>
+                    <input type="text" formControlName="lastName">
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-3">
+                    <label for="">E-mail</label>
+                    <input type="email" value="{{data['email']}}" formControlName="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-3">
+                    <label for="">Phone Number</label>
+                    <input type="text" value="{{data['mobile']}}" formControlName="mobile">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-3">
+                    <label>Country</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="country_id">
+                      <option value="1" [selected]="country1">Egypt</option>
+                      <option value="2" [selected]="country2">Saudi Arebia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn mt-3" type="submit">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
