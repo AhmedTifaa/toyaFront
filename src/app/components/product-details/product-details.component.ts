@@ -10,6 +10,7 @@ import { CartService } from '../cart/cart.service';
 })
 export class ProductDetailsComponent implements OnInit {
   data:any;
+  response:any;
   @ViewChild('quantity') input:ElementRef;
   constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService) {
     const routeParams = this.aRoute.snapshot.paramMap;
@@ -29,6 +30,15 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  favourite(id){
+    console.log(id);
+    this.productService.data = {'product_id': id};
+    this.productService.favourite().subscribe(response => {
+      this.response = response;
+      this.router.navigate(['/my-account']);  
+    });
   }
 
 }

@@ -45,10 +45,10 @@
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 
             <div ngbDropdown class="d-inline-block nav-link" *ngIf="isLogin">
-                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
+                <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <a [routerLink]="'my-account'" ngbDropdownItem>My-account</a>
-                    <a (click)="logout()" ngbDropdownItem>Logout</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem>Logout</a>
                 </div>
             </div>
         </li>
@@ -115,10 +115,10 @@
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 
             <div ngbDropdown class="d-inline-block" *ngIf="isLogin">
-                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
+                <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <a [routerLink]="'my-account'" ngbDropdownItem>My-account</a>
-                    <a (click)="logout()" ngbDropdownItem>Logout</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem>Logout</a>
                 </div>
             </div>
         </li>

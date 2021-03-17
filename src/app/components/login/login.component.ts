@@ -21,10 +21,7 @@ export class LoginComponent implements OnInit {
 
   data: any;
   response: any;
-  // isLogin:boolean;
   isLoginError: any;
-
-  // subscription:Subscription;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router:Router) { 
     if(sessionStorage.getItem('userToken') != null){
@@ -41,19 +38,13 @@ export class LoginComponent implements OnInit {
     this.data = this.loginForm.value;
     this.loginService.login(this.data).subscribe(response => {
       this.response = response;
-      // console.log('login form has been submitted', this.data);
-      // console.log(this.response.token);
       sessionStorage.setItem('userToken', this.response.token);
-      // this.isLogin = true;
       this.loginService.checkLogin(true);
       this.router.navigate(['/my-account']);      
     },
     (err: HttpErrorResponse) => {
       this.isLoginError = true;
     });
-
-
-    // this.loginForm.reset();
   }
 
 }

@@ -1,100 +1,113 @@
-.filter-bar{
-  border: 1px solid #d1d1d1;
-  padding: 8px;
-  position: relative;
-  color: #b2b2b2;
-  font-size: 14px;
+.filter-bar {
+    border: 1px solid #d1d1d1;
+    padding: 8px;
+    position: relative;
+    color: #b2b2b2;
+    font-size: 14px;
 }
 
-.filter-bar p{
+.filter-bar p {
     display: inline-block;
     margin-bottom: 0;
 }
-.filter-bar .result{
-    position:absolute;
+
+.filter-bar .result {
+    position: absolute;
     right: 15px;
 }
 
+
 /* block product */
-.product{
-  border: 1px solid #d1d1d1;
-  background-color: #f9f9f9;
-  position: relative;
-  display: inline-block;
-  width: calc(95% / 4);
-  margin: 0px 0.6% 10px;
-  /* box-shadow: 10px 10px 10px #d1d1d1; */
+
+
+/* .product {
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    position: relative;
+    display: inline-block;
+    width: calc(95% / 4);
+    margin: 0px 0.6% 10px;
+    box-shadow: 10px 10px 10px #d1d1d1;
 }
 
-.product-top .discount{
-  background-image: url('../../../assets/discount.svg');
-  color: #f9f9f9;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 10px;
-  position: absolute;
-  left: 0;
-  background-position: right;
-  padding-right: 27px;
+.product-top .discount {
+    background-image: url('../../../assets/discount.svg');
+    color: #f9f9f9;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    background-position: right;
+    padding-right: 27px;
 }
 
-.product-top img{
-width: 196px;
-height: 180px;
-margin-top: 20px;
+.product-top img {
+    width: 196px;
+    height: 180px;
+    margin-top: 20px;
 }
-.product p{
-color: #c46449;
-font-family: Roboto;
-font-size: 14px;
-font-weight: bold;
-margin-bottom: 0;
+
+.product p {
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
 }
+
 .star {
-  font-size: 1.5rem;
-  color: #b0c4de;
+    font-size: 1.5rem;
+    color: #b0c4de;
 }
-  .filled {
-  color: #fc8f77;
+
+.filled {
+    color: #fc8f77;
 }
-.price .off{
-color: #606060;
-font-family: Roboto;
-font-size: 18px;
-font-weight: 300;
-display: inline-block;
-position: relative;
+
+.price .off {
+    color: #606060;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
 }
-.currency{
-  font-size: 15px;
+
+.currency {
+    font-size: 15px;
 }
-.line{
-  border-top: 1px solid;
-  width: 90px;
-  display: inline-block;
-  position: absolute;
-  top: 49%;
-  left: 0;
+
+.line {
+    border-top: 1px solid;
+    width: 90px;
+    display: inline-block;
+    position: absolute;
+    top: 49%;
+    left: 0;
 }
-.new{
-color: #c46449;
-font-family: Roboto;
-font-size: 20px;
-font-weight: bold;
-font-style: normal;
-margin-left: 15px;
+
+.new {
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 15px;
 }
-.product .add-cart{
-  position: absolute;
-  top: 125px;
-  width: 50%;
-  left: 25%;
-  opacity: 0;
-  transition: top ease-in-out 0.3s,opacity 0.5s ease-in-out;
+
+.product .add-cart {
+    position: absolute;
+    top: 125px;
+    width: 50%;
+    left: 25%;
+    opacity: 0;
+    transition: top ease-in-out 0.3s, opacity 0.5s ease-in-out;
 }
-.product .btn{
-  color: #ffffff;
+
+.product .btn {
+    color: #ffffff;
     font-family: "Raleway Thin";
     font-size: 1rem;
     font-weight: bold;
@@ -102,71 +115,188 @@ margin-left: 15px;
     line-height: 2.5rem;
     padding: 0px 10px;
     border-radius: 15px;
+} */
+
+.product {
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    position: relative;
+    display: inline-block;
+    width: calc(95% / 4);
+    margin: 0px 0.6% 10px;
 }
+
+.delete {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    top: 0px;
+    color: #c45239;
+    opacity: 0;
+    transition: top ease-in-out 0.3s, opacity 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.product-top .discount {
+    background-image: url('../../../assets/discount.svg');
+    color: #f9f9f9;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    background-position: right;
+    padding-right: 27px;
+}
+
+.product-top img {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.product p {
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.price .off {
+    color: #606060;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+}
+
+.currency {
+    font-size: 15px;
+}
+
+.line {
+    border-top: 1px solid;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 49%;
+    left: 0;
+}
+
+.new {
+    color: #c46449;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 15px;
+}
+
+.product .add-cart {
+    position: absolute;
+    top: 125px;
+    width: 50%;
+    left: 25%;
+    opacity: 0;
+    transition: top ease-in-out 0.3s, opacity 0.5s ease-in-out;
+}
+
+.product .btn {
+    color: #ffffff;
+    font-family: "Raleway Thin";
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #c45239;
+    line-height: 2.5rem;
+    padding: 0px 10px;
+    border-radius: 15px;
+}
+
+.product:hover .add-cart {
+    top: 133px;
+    opacity: 1;
+}
+
 .btn.focus,
-.btn:focus{
-  box-shadow: 0 0 0 0.2rem rgb(252 143 119 / 25%);
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgb(252 143 119 / 25%);
 }
-.product:hover .add-cart{
-  top: 133px;
-  opacity: 1;
+
+.product:hover .add-cart {
+    top: 133px;
+    opacity: 1;
 }
-.viewall{
-  justify-content: center;
+
+.viewall {
+    justify-content: center;
 }
-.viewall .btn{
-width: 173px;
-border: 1px solid #c46449;
-color: #c46449;
-font-family: "Raleway Thin";
-font-size: 17px;
-font-weight: bold;
-border-radius: 50px;
-line-height: 2rem;
+
+.viewall .btn {
+    width: 173px;
+    border: 1px solid #c46449;
+    color: #c46449;
+    font-family: "Raleway Thin";
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 2rem;
 }
-.viewall .btn:hover{
-background-color: #c46449;
-color: #fff;
+
+.viewall .btn:hover {
+    background-color: #c46449;
+    color: #fff;
 }
+
 
 /*body*/
-@media(max-width: 768px){
-  .product{
-    width: 95%;
-  }
-}
-@media (max-width: 1200px) and (min-width: 768px){
 
-    .product{
-      width: calc(95% / 2);
+@media(max-width: 768px) {
+    .product {
+        width: 95%;
     }
 }
-@media (max-width: 1332px) and (min-width: 1200px){
-  .product{
-    width: calc(95% / 3);
-  }
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .product {
+        width: calc(95% / 2);
+    }
 }
 
+@media (max-width: 1332px) and (min-width: 1200px) {
+    .product {
+        width: calc(95% / 3);
+    }
+}
+
+
 /*filter list*/
-h3{
+
+h3 {
     color: #0c2747;
     font-family: "Raleway Thin";
 }
-.filter-section{
-  float: left;
-  margin-top: 56px;
+
+.filter-section {
+    float: left;
+    margin-top: 56px;
 }
-.filter-section .form-control:focus{
+
+.filter-section .form-control:focus {
     border-color: rgb(252 143 119);
     box-shadow: 0 0 0 0.2rem rgb(252 143 119 / 25%);
 }
-app-cart{
-  float:left;
-  margin-top: 56px;
+
+app-cart {
+    float: left;
+    margin-top: 56px;
 }
 
+
 /*products*/
-.products{
+
+.products {
     text-align: left;
     float: left;
 }

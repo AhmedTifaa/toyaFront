@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../login/login.service';
 import { RegisterService } from './register.service';
 
 @Component({
@@ -22,10 +23,9 @@ export class RegisterComponent implements OnInit {
 
   data:any;
   response:any;
-  // isLogin:boolean = false;
   error: any = false;
 
-  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private router: Router, private loginService:LoginService) {
     if(sessionStorage.getItem('userToken') != null){
       this.router.navigate(['/']);
     }
@@ -36,9 +36,8 @@ export class RegisterComponent implements OnInit {
     this.data = this.registerForm.value;
     this.registerService.login(this.data).subscribe(data=>{
       this.response = data;
-      // console.warn('register form has been submitted', this.response);
       sessionStorage.setItem('userToken', this.response.token);
-      // this.isLogin = true;
+      this.loginService.checkLogin(true);
       this.router.navigate(['/my-account']);
     },
     (err: HttpErrorResponse) => {

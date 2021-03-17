@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -23,6 +23,6 @@ export class CheckoutService {
   }
   confirmOrder(data){
     console.log(data);
-    return  this.http.post(this.confirmOrderUrl,data);
+    return  this.http.post(this.confirmOrderUrl, data, {headers: new HttpHeaders({'Authorization':'Bearer ' + sessionStorage.getItem('userToken')})});
   }
 }

@@ -50,17 +50,17 @@ export class HeaderComponent implements OnInit {
       }
     }
     // console.log(sessionStorage.getItem('userToken'));
-    // if (sessionStorage.getItem('userToken')) {
-    //   this.isLogin = true;
-    // }
-    this.subscription = this.loginService.hasLogin.subscribe(data => this.isLogin = data)
+    this.subscription = this.loginService.hasLogin.subscribe(data => this.isLogin = data);
+    if (sessionStorage.getItem('userToken') != null) {
+      this.isLogin = true;
+    }
   }
   public isMenuCollapsed = true;
 
   
   logout(){
     sessionStorage.removeItem('userToken');
-    // this.isLogin = false;
+    this.loginService.checkLogin(false);
     this.router.navigate(['/login']);
   }
 
