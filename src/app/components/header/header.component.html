@@ -1,6 +1,6 @@
 <div class="bar"></div>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg main-nav">
 
     <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
@@ -8,7 +8,7 @@
     <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
-        <ul class="navbar-nav mt-4">
+        <ul class="navbar-nav mt-lg-4">
             <li class="nav-item active">
                 <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
             </li>
@@ -19,11 +19,11 @@
 
         </ul>
 
-        <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
+        <div class="d-none d-lg-block">
             <a [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
         </div>
 
-        <ul class="navbar-nav mt-4">
+        <ul class="navbar-nav mt-lg-4">
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
             </li>
@@ -67,7 +67,7 @@
     <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
-        <div [style.display]="!isMenuCollapsed ? 'none' : 'block'">
+        <div class="d-none d-lg-block">
             <a [routerLink]="'.'"> <img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
         </div>
         <ul class="navbar-nav mt-3">

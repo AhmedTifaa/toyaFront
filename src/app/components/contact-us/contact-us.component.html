@@ -1,42 +1,42 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <h2 class="col-12 text-center">Contact Us</h2>
-        <p class=" col-12 text-center top-text" *ngIf="check">{{data.contact_us_title_en}}</p>
+        <p class=" col-12 text-center top-text" *ngIf="check">{{data.contact_us_main_title}}</p>
     </div>
     <!-- body -->
     <!-- form -->
     <div class="row body" *ngIf="check">
         <div class="col-12 col-lg-8">
-            <h2>Contact Us</h2>
-            <p [innerHtml]="data.contact_us_body_en"></p>
+            <h2>{{data.contact_us_title}}</h2>
+            <p [innerHtml]="data.contact_us_body"></p>
             <div class="row details mt-5">
                 <div class="col-4">
                     <div class="img-container text-center">
-                        <img src="../../../assets/location.svg" alt="">
+                        <img [src]="data.contact_us_image_details_1" alt="">
                     </div>
-                    <h6 class="text-center mt-2">Address</h6>
-                    <p class="text-center">{{data.contact_us_address_en}}</p>
+                    <h6 class="text-center mt-2">{{data.contact_us_details_title_1}}</h6>
+                    <p class="text-center">{{data.contact_us_details_body_1}}</p>
                 </div>
                 <div class="col-4">
                     <div class="img-container text-center">
-                        <img src="../../../assets/time.svg" alt="">
+                        <img [src]="data.contact_us_image_details_2" alt="">
                     </div>
-                    <h6 class="text-center mt-2">Opening Hours</h6>
-                    <p class="text-center">{{data.contact_us_opening_hours_en}}</p>
+                    <h6 class="text-center mt-2">{{data.contact_us_details_title_2}}</h6>
+                    <p class="text-center">{{data.contact_us_details_body_2}}</p>
                 </div>
                 <div class="col-4">
                     <div class="img-container text-center">
-                        <img src="../../../assets/phone.svg" alt="">
+                        <img [src]="data.contact_us_image_details_3" alt="">
                     </div>
-                    <h6 class="text-center mt-2">Phone</h6>
-                    <p class="text-center">{{data.contact_us_phone_en}}</p>
+                    <h6 class="text-center mt-2">{{data.contact_us_details_title_3}}</h6>
+                    <p class="text-center">{{data.contact_us_details_body_3}}</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 d-none d-lg-flex">
             <div class="form">
-                <h3 class="text-center">{{data.contact_us_form_title_en}}</h3>
-                <p class="text-center">{{data.contact_us_form_body_en}}</p>
+                <h3 class="text-center">{{data.contact_us_form_title}}</h3>
+                <p class="text-center">{{data.contact_us_form_body}}</p>
                 <form [formGroup]="" (ngSubmit)="onSubmit()">
                     <input type="text" class="form-control mt-3" placeholder="Your Name">
                     <input type="email" class="form-control mt-3" placeholder="Your Email">
@@ -48,8 +48,8 @@
     </div>
     <!-- mobile form -->
     <div class="form mobile-form d-lg-none mt-4" *ngIf="check">
-        <h3 class="text-center">{{data.contact_us_form_title_en}}</h3>
-        <p class="text-center">{{data.contact_us_form_body_en}}</p>
+        <h3 class="text-center">{{data.contact_us_form_title}}</h3>
+        <p class="text-center">{{data.contact_us_form_body}}</p>
         <form [formGroup]="" (ngSubmit)="onSubmit()">
             <input type="text" class="form-control mt-3" placeholder="Your Name">
             <input type="email" class="form-control mt-3" placeholder="Your Email">
@@ -59,14 +59,14 @@
     </div>
     <!-- social -->
     <div class="row mt-5 social" *ngIf="check">
-        <h3 class="mb-3">Other Ways To Reach Us</h3>
+        <h3 class="mb-3">{{data.contact_us_description_title}}</h3>
         <div class="col-12 col-lg-6">
             <div class="row">
                 <div class="col-3">
                     <img [src]="data.contact_us_icon_1" alt="">
                 </div>
                 <div class="col-9">
-                    {{data.contact_us_description_1_en}}
+                    {{data.contact_us_description_1}}
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                     <img [src]="data.contact_us_icon_2" alt="">
                 </div>
                 <div class="col-9">
-                    {{data.contact_us_description_2_en}}
+                    {{data.contact_us_description_2}}
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@
 nav.scroll {
     padding-bottom: 0px;
     position: fixed;
-    top: -100px;
+    top: -350px;
     left: 0;
     width: 100%;
     background: #fff;
@@ -133,4 +133,19 @@ nav.scroll ul.side span.search-icon {
 .dropdown-item.active,
 .dropdown-item:active {
     background-color: #C4644C;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    right: 0;
+    left: unset !important;
+    position: absolute;
+}
+
+@media (max-width: 991px) {
+    /* .main-nav {
+        display: none;
+    }
+    .scroll {
+        top: 0 !important;
+    } */
 }

@@ -1,30 +1,30 @@
 <div class="container mt-5 mb-5">
-  <div class="row">
-    <h2 class="col-12 text-center">About Us</h2>
-    <p class=" col-12 text-center top-text">Lets Know More About The Journey</p>
-  </div>
+    <div class="row">
+        <h2 class="col-12 text-center">About Us</h2>
+        <p class=" col-12 text-center top-text">Lets Know More About The Journey</p>
+    </div>
 
-  <!-- about-us content -->
-  <div class="row content mt-3" *ngIf="check">
-    <div class="col-12 col-lg-6 description">
-        <h2>{{data.about_us_title_1_en}}</h2>
-        <p [innerHTML]="data.about_us_content_body_1_en"></p>
+    <!-- about-us content -->
+    <div class="row content mt-3" *ngIf="check">
+        <div class="col-12 col-lg-6 description">
+            <h2>{{data.about_us_title_1}}</h2>
+            <p [innerHTML]="data.about_us_content_body_1"></p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="img-container">
+                <img [src]="data.about_us_image_1" alt="">
+            </div>
+        </div>
     </div>
-    <div class="col-12 col-lg-6">
-      <div class="img-container">
-        <img [src]="data.about_us_image_1" alt="">
-      </div>
+    <div class="row content mt-5" *ngIf="check">
+        <div class="col-12 col-lg-6">
+            <div class="img-container">
+                <img [src]="data.about_us_image_2" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 description">
+            <h2>{{data.about_us_title_2}}</h2>
+            <p [innerHTML]="data.about_us_content_body_2"></p>
+        </div>
     </div>
-  </div>
-  <div class="row content mt-5" *ngIf="check">
-    <div class="col-12 col-lg-6">
-      <div class="img-container">
-        <img [src]="data.about_us_image_2" alt="">
-      </div>
-    </div>
-    <div class="col-12 col-lg-6 description">
-        <h2>{{data.about_us_title_2_en}}</h2>
-        <p [innerHTML]="data.about_us_content_body_1_en"></p>
-    </div>
-  </div>
 </div>

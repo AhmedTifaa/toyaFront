@@ -19,104 +19,6 @@
 
 /* block product */
 
-
-/* .product {
-    border: 1px solid #d1d1d1;
-    background-color: #f9f9f9;
-    position: relative;
-    display: inline-block;
-    width: calc(95% / 4);
-    margin: 0px 0.6% 10px;
-    box-shadow: 10px 10px 10px #d1d1d1;
-}
-
-.product-top .discount {
-    background-image: url('../../../assets/discount.svg');
-    color: #f9f9f9;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px;
-    position: absolute;
-    left: 0;
-    background-position: right;
-    padding-right: 27px;
-}
-
-.product-top img {
-    width: 196px;
-    height: 180px;
-    margin-top: 20px;
-}
-
-.product p {
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.star {
-    font-size: 1.5rem;
-    color: #b0c4de;
-}
-
-.filled {
-    color: #fc8f77;
-}
-
-.price .off {
-    color: #606060;
-    font-family: Roboto;
-    font-size: 18px;
-    font-weight: 300;
-    display: inline-block;
-    position: relative;
-}
-
-.currency {
-    font-size: 15px;
-}
-
-.line {
-    border-top: 1px solid;
-    width: 90px;
-    display: inline-block;
-    position: absolute;
-    top: 49%;
-    left: 0;
-}
-
-.new {
-    color: #c46449;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    margin-left: 15px;
-}
-
-.product .add-cart {
-    position: absolute;
-    top: 125px;
-    width: 50%;
-    left: 25%;
-    opacity: 0;
-    transition: top ease-in-out 0.3s, opacity 0.5s ease-in-out;
-}
-
-.product .btn {
-    color: #ffffff;
-    font-family: "Raleway Thin";
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: #c45239;
-    line-height: 2.5rem;
-    padding: 0px 10px;
-    border-radius: 15px;
-} */
-
 .product {
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
@@ -252,11 +154,12 @@
 
 /*body*/
 
-@media(max-width: 768px) {
+
+/* @media(max-width: 768px) {
     .product {
         width: 95%;
     }
-}
+} */
 
 @media (max-width: 1200px) and (min-width: 768px) {
     .product {
@@ -299,4 +202,28 @@ app-cart {
 .products {
     text-align: left;
     float: left;
+}
+
+
+/* responsive */
+
+@media(max-width: 991px) {
+    .products .col-lg-4 a {
+        margin: 0;
+    }
+    .product {
+        width: calc(95% / 2);
+        margin: 0px 1% 10px;
+    }
+    .product .add-cart {
+        bottom: 0 !important;
+        top: unset !important;
+        width: 100%;
+        left: 0 !important;
+        opacity: 1;
+    }
+    .product .btn {
+        width: 100%;
+        border-radius: 0;
+    }
 }

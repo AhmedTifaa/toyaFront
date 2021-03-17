@@ -14,7 +14,7 @@ export class ContactUsComponent implements OnInit {
     this.contactUsService.getContactUS().subscribe(data=>{
       this.data = data["contact_us"];
       this.check = true;
-      // console.log(this.data);
+      console.log(this.data);
     });
   }
 

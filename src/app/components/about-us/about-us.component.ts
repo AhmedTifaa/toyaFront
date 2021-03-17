@@ -13,7 +13,7 @@ export class AboutUsComponent implements OnInit {
     this.aboutUsService.getAboutUS().subscribe(data=>{
       this.data = data["about_us"];
       this.check = true;
-      // console.log(this.data);
+      console.log(this.data);
     });
   }
   ngOnInit() {
