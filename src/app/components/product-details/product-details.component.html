@@ -18,9 +18,9 @@
                     <input #quantity type="number" min="1" value="1" />
                 </div>
                 <div (click)="addToCart(data)" class="add-cart">
-                    <button class="btn">Add to cart</button>
+                    <button id="product{{data.id}}" class="btn">Add to cart</button>
                 </div>
-                <div (click)="favourite(data.id)" class="fav">
+                <div (click)="favourite(data.id)" *ngIf="isLogin" class="fav">
                     <img src="../../../assets/heart-product.svg">
                 </div>
             </div>

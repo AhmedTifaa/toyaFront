@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit,ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit,ViewChild, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailsService } from 'src/app/components/product-details/product-details.service';
 import { CartService } from '../cart/cart.service';
@@ -8,10 +8,12 @@ import { CartService } from '../cart/cart.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements AfterViewChecked, OnInit {
   data:any;
   response:any;
   @ViewChild('quantity') input:ElementRef;
+  isLogin:boolean = false;
+  cartProducts:any
   constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService) {
     const routeParams = this.aRoute.snapshot.paramMap;
     const productId = Number(routeParams.get('productId'));
@@ -27,9 +29,32 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product) {
     console.log(this.input.nativeElement.value);
     this.cartService.addToCart(product,this.input.nativeElement.value);
+    let id = product.id;
+    document.querySelectorAll(`button#product${id}`).forEach(element => {
+      element.setAttribute('disabled', 'disabled');
+      element.innerHTML= "added to cart";
+    });
   }
 
   ngOnInit() {
+    if (sessionStorage.getItem('userToken') != null) {
+      this.isLogin = true;
+    }else{
+      this.isLogin = false;
+    }
+  }
+
+  ngAfterViewChecked() {
+    this.cartProducts = this.cartService.getItems();
+    this.cartProducts.forEach(item => {
+      let id = item.id;
+      console.log(id);
+      console.log(document.querySelectorAll(`button#product${id}`));
+      document.querySelectorAll(`button#product${id}`).forEach(element => {
+        element.setAttribute('disabled', 'disabled');
+        element.innerHTML= "added to cart";
+      });
+    });
   }
 
   favourite(id){
