@@ -151,6 +151,14 @@
     color: #fff;
 }
 
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.show>.btn-outline-dark.dropdown-toggle,
+.btn-outline-dark:hover {
+    background-color: #c45239;
+    border-color: #c45239;
+}
+
 
 /*body*/
 

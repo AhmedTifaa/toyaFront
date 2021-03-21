@@ -1,3 +1,18 @@
+<ng-template #mymodal let-modal class="modal">
+    <div class="modal-header">
+        <!-- <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4> -->
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">×</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        Your Product Added To Cart Successfuly.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+</ng-template>
+
 <div class="toya-container">
     <div class="filter-section col-sm-12 col-lg-2">
         <!-- filter section -->
@@ -50,7 +65,7 @@
             </ngb-accordion>
         </div>
     </div>
-    <div class="products col-lg-8 col-md-10 col-sm-12">
+    <div class="products col-lg-8 col-md-10 col-sm-12" *ngIf="check">
         <div class="container filter-details">
             <div class="row mt-4 mb-4">
                 <!-- filter bar -->
@@ -82,7 +97,8 @@
             </a>
 
             <div class="add-cart">
-                <button (click)="addToCart(product)" class="btn">Add to cart</button>
+                <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
             </div>
         </div>
     </div>

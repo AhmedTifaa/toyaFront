@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from "./category.service";
 import { CartService } from "../cart/cart.service";
 
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
@@ -14,11 +16,14 @@ export class ProductsPageComponent implements OnInit {
   space:any;
   filterStatus:boolean = false;
 
+  cartProducts:any;
+  check:boolean = false;
+  closeResult: string;
   // status:boolean = true;
 
   @ViewChild('status') buttonElement:ElementRef;
 
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) {
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService, private modalService: NgbModal) {
 
     const routeParams = this.route.snapshot.paramMap;
     const categoryIdFromRoute = Number(routeParams.get('categoryId'));
@@ -29,6 +34,17 @@ export class ProductsPageComponent implements OnInit {
     this.categoryService.getCategory().subscribe(data=>{
       this.data = data["data"];
       console.log(this.data);
+      this.check = true;
+      this.data.products.data.forEach(el => {
+        this.cartProducts = this.cartService.getItems();
+        this.cartProducts.forEach(item => {
+          let id = item.id;
+          if (el.id == id) {
+            el.addedCart = true;
+          }
+        });
+      });
+
     });
 
     this.categoryService.getFilter().subscribe(data=>{
@@ -42,8 +58,16 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-  addToCart(product) {
+  addToCart(product, content) {
     this.cartService.addToCart(product,1);
+    let id = product.id;
+    this.data.products.data.forEach(el => {
+      if (el.id == id) {
+        el.addedCart = true;
+      }
+    });
+
+    this.open(content);
   }
 
   removeFromCart(id){
@@ -67,5 +91,25 @@ export class ProductsPageComponent implements OnInit {
 
 
   }
+
+    // start modal
+    private getDismissReason(reason: any): string {
+      if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+      } else {
+        return  `with: ${reason}`;
+      }
+    }
+  
+    open(content) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }
+    // end modal
 
 }

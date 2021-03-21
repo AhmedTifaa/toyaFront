@@ -95,6 +95,6 @@
 .btn-outline-dark:not(:disabled):not(.disabled):active,
 .show>.btn-outline-dark.dropdown-toggle,
 .btn-outline-dark:hover {
-    background-color: #62291d;
-    border-color: #62291d;
+    background-color: #c45239;
+    border-color: #c45239;
 }
