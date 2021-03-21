@@ -1,39 +1,56 @@
-import { Component, ElementRef, OnInit,ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, ElementRef, OnInit,ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailsService } from 'src/app/components/product-details/product-details.service';
 import { CartService } from '../cart/cart.service';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements AfterViewChecked, OnInit {
+export class ProductDetailsComponent implements OnInit {
   data:any;
   response:any;
   @ViewChild('quantity') input:ElementRef;
   isLogin:boolean = false;
   cartProducts:any
-  constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService) {
+  
+  closeResult: string;
+
+  constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService, private modalService: NgbModal) {
     const routeParams = this.aRoute.snapshot.paramMap;
     const productId = Number(routeParams.get('productId'));
-    console.log(productId);
+    // console.log(productId);
     this.productService.url =  "http://localhost:8000/api/product/"+productId;
-    console.log(this.router.getCurrentNavigation().extras.state);
+    // console.log(this.router.getCurrentNavigation().extras.state);
     this.productService.getProduct().subscribe(data=>{
-      console.log(data);
+      // console.log(data);
       this.data = data["data"];
-      console.log(this.data);
+      // console.log(this.data);
+
+      this.cartProducts = this.cartService.getItems();
+      this.cartProducts.forEach(item => {
+        let id = item.id;
+        if (this.data.id == id) {
+          this.data.addedCart = true;
+        }
+      });
+
     });
   }
-  addToCart(product) {
+  
+  addToCart(product, content) {
     console.log(this.input.nativeElement.value);
     this.cartService.addToCart(product,this.input.nativeElement.value);
     let id = product.id;
-    document.querySelectorAll(`button#product${id}`).forEach(element => {
-      element.setAttribute('disabled', 'disabled');
-      element.innerHTML= "added to cart";
-    });
+    if (this.data.id == id) {
+      this.data.addedCart = true;
+    }
+
+    this.open(content);
+
   }
 
   ngOnInit() {
@@ -44,19 +61,6 @@ export class ProductDetailsComponent implements AfterViewChecked, OnInit {
     }
   }
 
-  ngAfterViewChecked() {
-    this.cartProducts = this.cartService.getItems();
-    this.cartProducts.forEach(item => {
-      let id = item.id;
-      console.log(id);
-      console.log(document.querySelectorAll(`button#product${id}`));
-      document.querySelectorAll(`button#product${id}`).forEach(element => {
-        element.setAttribute('disabled', 'disabled');
-        element.innerHTML= "added to cart";
-      });
-    });
-  }
-
   favourite(id){
     console.log(id);
     this.productService.data = {'product_id': id};
@@ -65,5 +69,25 @@ export class ProductDetailsComponent implements AfterViewChecked, OnInit {
       this.router.navigate(['/my-account']);  
     });
   }
+
+  // start modal
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  // end modal
 
 }

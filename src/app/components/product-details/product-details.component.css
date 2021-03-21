@@ -90,3 +90,11 @@
 .user-interact .fav img {
     width: 100%;
 }
+
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.show>.btn-outline-dark.dropdown-toggle,
+.btn-outline-dark:hover {
+    background-color: #62291d;
+    border-color: #62291d;
+}

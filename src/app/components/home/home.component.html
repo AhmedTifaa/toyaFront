@@ -9,11 +9,26 @@
     <app-categories></app-categories>
 
 
+    <ng-template #mymodal let-modal class="modal">
+        <div class="modal-header">
+            <!-- <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4> -->
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            Your Product Added To Cart Successfuly.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+    </ng-template>
+
     <div class="sections container mb-4">
         <ngb-tabset>
             <ngb-tab *ngFor="let cat of catData">
                 <ng-template ngbTabTitle>
-                    {{cat.name_en}}
+                    {{cat.name}}
                 </ng-template>
                 <ng-template ngbTabContent>
                     <div class="row mt-5 product">
@@ -31,7 +46,8 @@
                                 </div>
                             </a>
                             <div class="add-cart">
-                                <button (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
+                                <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                                <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
                             </div>
                         </div>
                     </div>
@@ -67,7 +83,8 @@
                     </div>
                 </a>
                 <div class="add-cart">
-                    <button (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
+                    <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                    <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
                 </div>
             </div>
         </div>
