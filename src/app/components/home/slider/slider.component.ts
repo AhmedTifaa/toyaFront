@@ -13,6 +13,7 @@ export class SliderComponent implements OnInit {
   constructor(private sliderService:sliderService) { 
     this.sliderService.getSlider().subscribe(data=>{
       this.data = data["data"];
+      console.log(data);
     });
   }
 

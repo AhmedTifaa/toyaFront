@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailsService } from 'src/app/components/product-details/product-details.service';
 import { CartService } from '../cart/cart.service';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-details',
@@ -19,16 +19,16 @@ export class ProductDetailsComponent implements OnInit {
   
   closeResult: string;
 
+  success:boolean = false;
+  successMessage:string;
+  delay:any;  
+
   constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService, private modalService: NgbModal) {
     const routeParams = this.aRoute.snapshot.paramMap;
     const productId = Number(routeParams.get('productId'));
-    // console.log(productId);
     this.productService.url =  "http://localhost:8000/api/product/"+productId;
-    // console.log(this.router.getCurrentNavigation().extras.state);
     this.productService.getProduct().subscribe(data=>{
-      // console.log(data);
       this.data = data["data"];
-      // console.log(this.data);
 
       this.cartProducts = this.cartService.getItems();
       this.cartProducts.forEach(item => {
@@ -49,7 +49,8 @@ export class ProductDetailsComponent implements OnInit {
       this.data.addedCart = true;
     }
 
-    this.open(content);
+    this.successMessage = "Added To Cart Successfuly"; 
+    this.showAlert();
 
   }
 
@@ -62,32 +63,35 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   favourite(id){
-    console.log(id);
+    // console.log(id);
     this.productService.data = {'product_id': id};
     this.productService.favourite().subscribe(response => {
       this.response = response;
-      this.router.navigate(['/my-account']);  
+      // this.router.navigate(['/my-account']);
+      
+      this.successMessage = "Added To Favourite Successfuly"; 
+      this.showAlert(); 
     });
   }
 
-  // start modal
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  // alert
+  close() {
+    this.success = false;
+    clearTimeout(this.delay);
+  };
+
+
+  showAlert() { 
+    this.success = true;
+    this.delay = setTimeout(() => this.success = false, 6000); 
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+  mouseOver(){
+    clearTimeout(this.delay);
   }
-  // end modal
+
+  mouseOut(){
+    this.delay = setTimeout(() => this.success = false, 6000);
+  }
 
 }

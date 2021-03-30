@@ -8,21 +8,12 @@
 
     <app-categories></app-categories>
 
+    <!-- alert -->
 
-    <ng-template #mymodal let-modal class="modal">
-        <div class="modal-header">
-            <!-- <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4> -->
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">×</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            Your Product Added To Cart Successfuly.
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-        </div>
-    </ng-template>
+    <div (mouseover)="mouseOver()" (mouseout)="mouseOut()" class="alert alert-success alert-dismissible fade" [class.show]="success" role="alert">
+        {{successMessage}}
+        <button (click)="close()" type="button" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+    </div>
 
     <div class="sections container mb-4">
         <ngb-tabset>

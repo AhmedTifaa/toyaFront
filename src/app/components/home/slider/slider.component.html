@@ -1,18 +1,13 @@
-<ngb-carousel (window:resize)="onResize($event)" *ngIf="data" [showNavigationArrows]="false" 
-[showNavigationIndicators]="true"
-interval="10000"
-[keyboard]="true"
-[pauseOnHover]="true"
-[wrap]="true">
-  <ng-template ngbSlide *ngFor="let img of data">
-    <div class="toya-slide">
-      <a target="_blank" *ngIf="img.content_url" [href]="img.content_url"></a>
-      <img [src]="img.image_url" alt="Random first slide" width="{{width}}" height="{{height}}">
-    </div>
-    <div class="carousel-caption">
-      <h3>New Arrival</h3>
-      <p>Discover The New product Coco Oil Now</p>
-      <a class="btn shop">Shop Now</a>
-    </div>
-  </ng-template>
+<ngb-carousel (window:resize)="onResize($event)" *ngIf="data" [showNavigationArrows]="false" [showNavigationIndicators]="true" interval="10000" [keyboard]="true" [pauseOnHover]="true" [wrap]="true">
+    <ng-template ngbSlide *ngFor="let img of data">
+        <div class="toya-slide">
+            <a target="_blank" *ngIf="img.content_url" [href]="img.content_url"></a>
+            <img [src]="img.image_url" alt="Random first slide" width="{{width}}" height="{{height}}">
+        </div>
+        <div class="carousel-caption">
+            <h3>New Arrival</h3>
+            <p>{{img.content}}</p>
+            <a class="btn shop" *ngIf="img.content_url" [routerLink]="[img.content_url]">Shop Now</a>
+        </div>
+    </ng-template>
 </ngb-carousel>

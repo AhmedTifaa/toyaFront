@@ -108,7 +108,7 @@
 .product .btn {
     color: #ffffff;
     font-family: "Raleway Thin";
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: bold;
     background-color: #c45239;
     line-height: 2.5rem;
@@ -210,6 +210,17 @@ app-cart {
 .products {
     text-align: left;
     float: left;
+}
+
+
+/* alert */
+
+.alert {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 300px;
+    z-index: 999;
 }
 
 

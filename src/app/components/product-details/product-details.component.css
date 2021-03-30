@@ -98,3 +98,14 @@
     background-color: #c45239;
     border-color: #c45239;
 }
+
+
+/* alert */
+
+.alert {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 300px;
+    z-index: 999;
+}

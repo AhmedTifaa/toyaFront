@@ -21,6 +21,10 @@ export class ProductsPageComponent implements OnInit {
   closeResult: string;
   // status:boolean = true;
 
+  success:boolean = false;
+  successMessage:string;
+  delay:any;
+
   @ViewChild('status') buttonElement:ElementRef;
 
   constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService, private modalService: NgbModal) {
@@ -67,7 +71,7 @@ export class ProductsPageComponent implements OnInit {
       }
     });
 
-    this.open(content);
+    this.showAlert();
   }
 
   removeFromCart(id){
@@ -92,24 +96,25 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-    // start modal
-    private getDismissReason(reason: any): string {
-      if (reason === ModalDismissReasons.ESC) {
-        return 'by pressing ESC';
-      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-        return 'by clicking on a backdrop';
-      } else {
-        return  `with: ${reason}`;
-      }
-    }
-  
-    open(content) {
-      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-        this.closeResult = `Closed with: ${result}`;
-      }, (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      });
-    }
-    // end modal
+  // alert
+  close() {
+    clearTimeout(this.delay);
+    this.success = false;
+  };
+
+
+  showAlert() { 
+    this.success = true;
+    this.successMessage = "Added To Cart Successfuly"; 
+    this.delay = setTimeout(() => this.success = false, 6000); 
+  }
+
+  mouseOver(){
+    clearTimeout(this.delay);
+  }
+
+  mouseOut(){
+    this.delay = setTimeout(() => this.success = false, 6000);
+  }
 
 }

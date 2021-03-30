@@ -1,119 +1,128 @@
 <div *ngIf="isEmpty" class="toya-container">
-  <div class="cart-head text-center">
-    <h1>Review Cart</h1>
-    <h5>Your Cart Is Empty</h5>
-  </div>
-  <div class="btn-container">
-    <a class="btn checkout">
+    <div class="cart-head text-center">
+        <h1>Review Cart</h1>
+        <h5>Your Cart Is Empty</h5>
+    </div>
+    <div class="btn-container">
+        <a class="btn checkout">
       Shop
     </a>
-  </div>
+    </div>
 </div>
 <div *ngIf="!isEmpty && currentStep < 3" class="toya-container">
-  <div class="cart-head text-center">
-    <h1>Review Cart</h1>
-    <h5>Compelete Your Purchase</h5>
-  </div>
-  <div class="row shop-tracking-status">
-    <div class="col-md-12">
-        <div class="well">
-            <div class="order-status">
+    <div class="cart-head text-center">
+        <h1>Review Cart</h1>
+        <h5>Compelete Your Purchase</h5>
+    </div>
+    <div class="row shop-tracking-status">
+        <div class="col-md-12">
+            <div class="well">
+                <div class="order-status">
 
-                <div class="order-status-timeline">
-                    <!-- class names: c0 c1 c2 c3 and c4 -->
-                    <div class="order-status-timeline-completion" [ngClass]="{'c1': currentStep == 1,'c2': currentStep == 2,'c3': currentStep == 3}"></div>
-                </div>
+                    <div class="order-status-timeline">
+                        <!-- class names: c0 c1 c2 c3 and c4 -->
+                        <div class="order-status-timeline-completion" [ngClass]="{'c1': currentStep == 1,'c2': currentStep == 2,'c3': currentStep == 3}"></div>
+                    </div>
 
-                <div class="image-order-status image-order-status-cart img-circle" [ngClass]="{'active': currentStep == 1}">
-                    <div class="icon">1</div>
-                </div>
-                <div class="image-order-status image-order-status-checkout img-circle" [ngClass]="{'active': currentStep == 2}">
-                    <div class="icon">2</div>
-                </div>
-                <div class="image-order-status image-order-status-thanks img-circle" [ngClass]="{'active': currentStep == 3}">
-                    <div class="icon">3</div>
-                </div>
+                    <div class="image-order-status image-order-status-cart img-circle" [ngClass]="{'active': currentStep == 1}">
+                        <div class="icon">1</div>
+                    </div>
+                    <div class="image-order-status image-order-status-checkout img-circle" [ngClass]="{'active': currentStep == 2}">
+                        <div class="icon">2</div>
+                    </div>
+                    <div class="image-order-status image-order-status-thanks img-circle" [ngClass]="{'active': currentStep == 3}">
+                        <div class="icon">3</div>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
-  <div class="container cart-page">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th class="text-center">Remove </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let product of cartItems">
-                        <td class="col-sm-8 col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{product.images[0].url}}" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{product.name}}</a></h4>
-                                <h5 class="media-heading">{{product.description}}</h5>
+    <div class="container cart-page">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <table class="table table-hover d-none d-md-block">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-center">Remove </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of cartItems">
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{product.images[0].url}}" style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">{{product.name}}</a></h4>
+                                        <h5 class="media-heading">{{product.description}}</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <input (change)="changeQuantity($event,product.id)" type="number" min="1" class="form-control" id="" value="{{currentQuantity}}">
+                            </td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>${{product.price - product.price * product.discount_percentage / 100}}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>${{(product.price - product.price * product.discount_percentage / 100)*product.quantity}}</strong></td>
+                            <td class="text-center col-sm-1 col-md-1">
+                                <img (click)="removeProduct(product.id)" class="del-item" src="../../../assets/delete-icon.svg" />
+                            </td>
+                        </tr>
+                        <tr class="total no-hover">
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>
+                                <h3>Total</h3>
+                            </td>
+                            <td class="text-right">
+                                <h3><strong>${{total}}</strong></h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- start mobile cart products-->
+                <div class="product mb-3 d-md-none" *ngFor="let product of cartItems">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="img-container">
+                                <img src="{{product.images[0].url}}" alt="{{ product.name }}">
                             </div>
-                        </div></td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input (change)="changeQuantity($event,product.id)" type="number" min="1" class="form-control" id="" value="{{currentQuantity}}">
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>${{product.price - product.price * product.discount_percentage / 100}}</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>${{(product.price - product.price * product.discount_percentage / 100)*product.quantity}}</strong></td>
-                        <td class="text-center col-sm-1 col-md-1">
-                          <img (click)="removeProduct(product.id)" class="del-item" src="../../../assets/delete-icon.svg" />
-                        </td>
-                    </tr>
-
-                    <!-- <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                    </tr> -->
-                    <tr class="total no-hover">
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>${{total}}</strong></h3></td>
-                    </tr>
-                    <!-- <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
-                        <td></td>
-                    </tr> -->
-                </tbody>
-            </table>
-            <div class="btn-container">
-              <a (click)='nextStep(2)' class="btn checkout">
-                Checkout
-              </a>
+                            <p class="product-name">{{ product.name }}</p>
+                        </div>
+                        <div class="col-4">
+                            <a class="delete" (click)="removeProduct(product.id)">X</a>
+                            <!-- <img (click)="removeProduct(product.id)" class="del-item delete" src="../../../assets/delete-icon.svg" /> -->
+                            <div class="quantity mt-5">
+                                <input (change)="changeQuantity($event,product.id)" type="number" min="1" class="form-control" id="" value="{{currentQuantity}}">
+                            </div>
+                            <div class="text-center mb-3 mt-2"><strong>${{product.price - product.price * product.discount_percentage / 100}}</strong></div>
+                            <div class="text-center mb-3 ">
+                                <b><strong>${{(product.price - product.price * product.discount_percentage / 100)*product.quantity}}</strong></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-md-none mobile-total text-right mb-2">
+                    <span>
+                        <h3>Total</h3>
+                    </span>
+                    <span class="text-right">
+                        <h3><strong>${{total}}</strong></h3>
+                    </span>
+                </div>
+                <!-- end mobile cart products -->
+                <div class="btn-container">
+                    <a (click)='nextStep(2)' class="btn checkout"> Checkout </a>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>
 <div class="checkout-container">
-  <app-checkout (messageEvent)="receiveMessage($event)" *ngIf="currentStep == 2"></app-checkout>
-  <app-thanks *ngIf="currentStep == 3"></app-thanks>
+    <app-checkout (messageEvent)="receiveMessage($event)" *ngIf="currentStep == 2"></app-checkout>
+    <app-thanks *ngIf="currentStep == 3"></app-thanks>
 </div>

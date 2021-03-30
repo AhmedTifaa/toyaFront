@@ -21,6 +21,10 @@ export class HomeComponent implements  OnInit {
 
   closeResult: string;
 
+  success:boolean = false;
+  successMessage:string;
+  delay:any;
+
   constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService, private cartService:CartService, private modalService: NgbModal) {
     this.recentProductsService.getRecentProduct().subscribe(data=>{
       this.recentData = data["data"];
@@ -92,32 +96,34 @@ export class HomeComponent implements  OnInit {
       });
     });
 
-    this.open(content);
+    this.showAlert();
 
   }
-
   
-  // start modal
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  ngOnInit(): void {
+    
+
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  // end modal
+  // alert
+  close() {
+    this.success = false;
+    clearTimeout(this.delay);
+  };
 
-  ngOnInit() {
+
+  showAlert() { 
+    this.success = true;
+    this.successMessage = "Added To Cart Successfuly"; 
+    this.delay = setTimeout(() => this.success = false, 6000); 
+  }
+
+  mouseOver(){
+    clearTimeout(this.delay);
+  }
+
+  mouseOut(){
+    this.delay = setTimeout(() => this.success = false, 6000);
   }
 
 }

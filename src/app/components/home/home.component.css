@@ -38,7 +38,7 @@ h2 {
     background-color: #f9f9f9;
     position: relative;
     display: inline-block;
-    width: calc(95% / 4);
+    width: calc(100% / 4);
     margin: 0px 4% 10px;
 }
 
@@ -133,6 +133,17 @@ h2 {
 }
 
 
+/* alert */
+
+.alert {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 300px;
+    z-index: 999;
+}
+
+
 /* responsive */
 
 @media(max-width: 991px) {
@@ -140,8 +151,8 @@ h2 {
         margin: 0;
     }
     .cat {
-        width: calc(95% / 2);
-        margin: 0px 1% 10px;
+        width: calc(80% / 1);
+        margin: 0px 10% 10px;
     }
     .cat .add-cart {
         bottom: 0 !important;
