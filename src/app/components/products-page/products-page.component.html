@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="product text-center" *ngFor="let product of data.products.data">
-            <a [routerLink]="['/product', product.id]">
+            <a [routerLink]="['/product', product.slug]">
                 <div class="product-top">
                     <div *ngIf="discountValidate(product.discount_percentage)" class="discount">{{product.discount_percentage}}% OFF</div>
                     <img [src]="product.images[0].url" alt="">

@@ -3,6 +3,7 @@ import { CartService } from '../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
+import { HeaderService } from "../header/header.service";
 
 @Component({
   selector: 'app-header',
@@ -14,21 +15,52 @@ export class HeaderComponent implements OnInit {
   itemsCount:number = 0;
   subscription:Subscription;
   isLogin:boolean ;
-  constructor(private cartService:CartService, private router:Router, private loginService:LoginService) {  
 
-   
+  data:any;
+  check:any;
+  count:number;
+  half:number;
+  firstHalfMenue:any;
+  lastHalfMenue: any;
 
-   }
+  constructor(private cartService:CartService, private router:Router, private loginService:LoginService, private headerService:HeaderService) {  
 
-    hasClass(ele,cls) {
+    this.headerService.getNavbar().subscribe(data=>{
+      this.data = data['data']['items'];
+      // console.log(this.data);
+      this.check = true;
+      this.count = (this.data).length;
+      this.half = this.count / 2;
+      if(this.half % 1 == 0.5){
+        this.half = this.half + 0.5;
+      }
+      for (let index = 0; index < this.half; index++) {
+        if (index == 0) {
+          this.firstHalfMenue = [this.data[index]];          
+        }else{
+          this.firstHalfMenue.push(this.data[index]);
+        }
+      }
+      for (let index = this.half ; index < this.count ; index++) {
+        if (index == this.half) {
+          this.lastHalfMenue = [this.data[index]];          
+        }else{
+          this.lastHalfMenue.push(this.data[index]);
+        }
+      }
+    }); 
+
+  }
+
+  hasClass(ele,cls) {
     return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
   }
 
-   addClass(ele,cls) {
+  addClass(ele,cls) {
     if (!this.hasClass(ele,cls)) ele.className += " "+cls;
   }
 
-   removeClass(ele,cls) {
+  removeClass(ele,cls) {
     if (this.hasClass(ele,cls)) {
       var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
       ele.className=ele.className.replace(reg,' ');
@@ -49,7 +81,6 @@ export class HeaderComponent implements OnInit {
         this.removeClass(ele,"active");
       }
     }
-    // console.log(sessionStorage.getItem('userToken'));
     this.subscription = this.loginService.hasLogin.subscribe(data => this.isLogin = data);
     if (sessionStorage.getItem('userToken') != null) {
       this.isLogin = true;

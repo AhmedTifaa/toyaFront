@@ -2,19 +2,18 @@
 
 <!-- category blocks -->
 <div class="container">
-  <div class="row">
-    <div class="col-md-3 col-6 mb-4" *ngFor="let cat of data">
-      <a class="cat-block" [routerLink]="['/categories', cat.id]">
-        <div class="img-container">
-          <img [src]="cat.icon.url" alt="category icon">
+    <div class="row">
+        <div class="col-md-3 col-6 mb-4" *ngFor="let cat of data">
+            <a class="cat-block" [routerLink]="['/category', cat.url_path]">
+                <div class="img-container">
+                    <img [src]="cat.icon.url" alt="category icon">
+                </div>
+                <p class="name">{{cat.name}}</p>
+            </a>
         </div>
-        <p class="name">{{cat.name}}</p>
-      </a>
     </div>
-  </div>
 </div>
 
 <div class="seperate text-center mt-5 mb-5">
-  <img src="../../../../assets/seperate.png" alt="">
+    <img src="../../../../assets/seperate.png" alt="">
 </div>
-

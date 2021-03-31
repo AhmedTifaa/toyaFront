@@ -25,7 +25,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService, private modalService: NgbModal) {
     const routeParams = this.aRoute.snapshot.paramMap;
-    const productId = Number(routeParams.get('productId'));
+    const productId = routeParams.get('productId');
     this.productService.url =  "http://localhost:8000/api/product/"+productId;
     this.productService.getProduct().subscribe(data=>{
       this.data = data["data"];

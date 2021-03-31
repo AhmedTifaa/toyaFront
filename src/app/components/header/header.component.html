@@ -9,14 +9,11 @@
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
         <ul class="navbar-nav mt-lg-4">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
+            <li class="nav-item" *ngFor="let link of firstHalfMenue">
+                <a *ngIf="link.url_path == 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="['.']" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
-            </li>
-
         </ul>
 
         <div class="d-none d-lg-block">
@@ -24,12 +21,10 @@
         </div>
 
         <ul class="navbar-nav mt-lg-4">
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'contact-us'" (click)="isMenuCollapsed = true">Contact</a>
+            <li class="nav-item" *ngFor="let link of lastHalfMenue">
+                <a *ngIf="link.url_path == 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="['.']" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
             </li>
             <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
@@ -71,32 +66,11 @@
             <a [routerLink]="'.'"> <img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
         </div>
         <ul class="navbar-nav mt-3">
-            <li class="nav-item ml-3 active">
-                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Home</a>
+            <li class="nav-item ml-3" *ngFor="let link of data">
+                <a *ngIf="link.url_path == 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="['.']" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
+                <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
             </li>
-
-            <li class="nav-item ml-3">
-                <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shop</a>
-            </li>
-
-            <li class="nav-item ml-3">
-                <a class="nav-link" [routerLink]="'about-us'" (click)="isMenuCollapsed = true">About</a>
-            </li>
-            <!-- <li ngbDropdown class="nav-item ml-3 d-inline-block">
-        <a class="nav-link" [routerLink]="'.'" id="dropdownBasic1" ngbDropdownToggle>Our Company</a>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Action - 1</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Another Action</button>
-          <button ngbDropdownItem (click)="isMenuCollapsed = true">Something else is here</button>
-        </div>
-      </li> -->
-
-            <li class="nav-item ml-3">
-                <a class="nav-link" [routerLink]="'contact-us'" (click)="isMenuCollapsed = true">Contact</a>
-            </li>
-            <!-- <li class="nav-item ml-3">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
-      </li> -->
         </ul>
 
 

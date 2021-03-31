@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from "./category.service";
 import { CartService } from "../cart/cart.service";
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
@@ -19,26 +17,38 @@ export class ProductsPageComponent implements OnInit {
   cartProducts:any;
   check:boolean = false;
   closeResult: string;
-  // status:boolean = true;
 
   success:boolean = false;
   successMessage:string;
   delay:any;
 
+  categoryIdFromRoute:any;
+
   @ViewChild('status') buttonElement:ElementRef;
 
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService, private modalService: NgbModal) {
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) {
+    this.route.params.subscribe(param => {
+      this.setUpComponent(param['categoryId']);  
+    });
+  }
 
-    const routeParams = this.route.snapshot.paramMap;
-    const categoryIdFromRoute = Number(routeParams.get('categoryId'));
-    this.categoryService.url = "http://localhost:8000/api/category/" + categoryIdFromRoute;
-    this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + categoryIdFromRoute;
-    console.log(this.categoryService.url);
+  setUpComponent(setParam){
+    this.categoryIdFromRoute = setParam
+    
+    this.categoryService.url = "http://localhost:8000/api/category/" + this.categoryIdFromRoute;
 
     this.categoryService.getCategory().subscribe(data=>{
       this.data = data["data"];
-      console.log(this.data);
       this.check = true;
+
+      // filter
+      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.data.id;
+      this.categoryService.getFilter().subscribe(data=>{
+        this.filterData = data["filters"];
+        if(this.filterData.length > 0){
+          this.filterStatus = true;
+        }
+      });
       this.data.products.data.forEach(el => {
         this.cartProducts = this.cartService.getItems();
         this.cartProducts.forEach(item => {
@@ -48,16 +58,6 @@ export class ProductsPageComponent implements OnInit {
           }
         });
       });
-
-    });
-
-    this.categoryService.getFilter().subscribe(data=>{
-      this.filterData = data["filters"];
-      if(this.filterData.length > 0){
-        this.filterStatus = true;
-      }
-      console.log(this.filterStatus);
-      console.log(this.filterData);
     });
 
   }

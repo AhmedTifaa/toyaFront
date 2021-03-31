@@ -24,7 +24,7 @@
                 <ng-template ngbTabContent>
                     <div class="row mt-5 product">
                         <div class="cat text-center mb-3" *ngFor="let product of cat.products">
-                            <a [routerLink]="['/product', product.id]">
+                            <a [routerLink]="['/product', product.slug]">
                                 <div class="cat-top">
                                     <div *ngIf="discountValidate(product.discount_percentage)" class="discount">{{product.discount_percentage}}% OFF</div>
                                     <!-- <div class="discount">{{product.discount_percentage}}% OFF</div> -->
@@ -55,7 +55,7 @@
     <div class="container mb-4">
         <div class="row mt-5 product">
             <div class="cat text-center mb-3" *ngFor="let product of recentData">
-                <a [routerLink]="['/product', product.id]">
+                <a [routerLink]="['/product', product.slug]">
                     <div class="cat-top">
                         <div *ngIf="discountValidate(product.discount_percentage)" class="discount">{{product.discount_percentage}}% OFF</div>
                         <img [src]="product.images[0].url" alt="">

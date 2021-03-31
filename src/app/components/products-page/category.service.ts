@@ -11,12 +11,10 @@ export class CategoryService {
   constructor(private http:HttpClient) { }
     
   getCategory(){
-    console.log(this.url);
     return  this.http.get(this.url,{});
   }
 
   getFilter(){
-    console.log(this.filterUrl);
     return  this.http.get(this.filterUrl,{});
   }
 }
