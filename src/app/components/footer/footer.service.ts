@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class HeaderService {
+export class FooterService {
 
-  url:string = "http://localhost:8000/api/menu/first/top";
+  url:string = "http://localhost:8000/api/footer";
 
   constructor(private http:HttpClient){
 
   }
-  getNavbar(){
+  getFooter(){
     return  this.http.get(this.url,{});
   }
 }
