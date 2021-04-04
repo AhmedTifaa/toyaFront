@@ -36,6 +36,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   setUpComponent(setParam){
+    this.isOn = false;
+    
     this.categoryIdFromRoute = setParam
     
     this.categoryService.url = "http://localhost:8000/api/category/" + this.categoryIdFromRoute;
@@ -106,6 +108,9 @@ export class ProductsPageComponent implements OnInit {
   checkIsOn(){
     if(this.categoryStatus && this.filterStatus){
       this.isOn = true;
+      if(this.isOn){
+        this.categoryStatus = this.filterStatus = false;
+      }
     }
   }
 
