@@ -1,3 +1,9 @@
+<div *ngIf="!isOn" class="overlay-loading">
+    <div class="parent">
+        <div class="entire"></div>
+    </div>
+</div>
+
 <!-- alert -->
 
 <div (mouseover)="mouseOver()" (mouseout)="mouseOut()" class="alert alert-success alert-dismissible fade" [class.show]="success" role="alert">
@@ -8,7 +14,7 @@
 <div class="toya-container">
     <div class="filter-section col-sm-12 col-lg-2">
         <!-- filter section -->
-        <div *ngIf="filterStatus">
+        <div *ngIf="filterCheck">
             <p class="mb-2">Filter</p>
             <!-- <ul class="filter-list">
         <li *ngFor="let filter of filterData">{{filter.property_name_en}} <span>+</span></li>
@@ -89,7 +95,7 @@
             </a>
 
             <div class="add-cart">
-                <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
                 <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
             </div>
         </div>

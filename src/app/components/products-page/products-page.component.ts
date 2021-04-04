@@ -12,8 +12,11 @@ export class ProductsPageComponent implements OnInit {
   data:any;
   filterData:any;
   space:any;
+  categoryStatus:boolean = false;
   filterStatus:boolean = false;
+  isOn:boolean = false;
 
+  filterCheck:boolean = false;
   cartProducts:any;
   check:boolean = false;
   closeResult: string;
@@ -40,14 +43,18 @@ export class ProductsPageComponent implements OnInit {
     this.categoryService.getCategory().subscribe(data=>{
       this.data = data["data"];
       this.check = true;
+      this.categoryStatus = true;
+      this.checkIsOn();
 
       // filter
       this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.data.id;
       this.categoryService.getFilter().subscribe(data=>{
         this.filterData = data["filters"];
         if(this.filterData.length > 0){
-          this.filterStatus = true;
+          this.filterCheck = true;
         }
+        this.filterStatus = true;
+        this.checkIsOn();
       });
       this.data.products.data.forEach(el => {
         this.cartProducts = this.cartService.getItems();
@@ -62,7 +69,7 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-  addToCart(product, content) {
+  addToCart(product) {
     this.cartService.addToCart(product,1);
     let id = product.id;
     this.data.products.data.forEach(el => {
@@ -94,6 +101,12 @@ export class ProductsPageComponent implements OnInit {
   ngOnInit() {
 
 
+  }
+
+  checkIsOn(){
+    if(this.categoryStatus && this.filterStatus){
+      this.isOn = true;
+    }
   }
 
   // alert

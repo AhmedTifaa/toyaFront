@@ -11,14 +11,27 @@ export class MyOrdersComponent implements OnInit {
   orders:any;
   response:any;
 
+  myOrdersStatus:boolean = false;
+  isOn:boolean = false;
+
   constructor(private myOrdersService:MyOrdersService) {
     this.myOrdersService.getOrders().subscribe(data => {
       this.orders = data['data'];
       console.log(this.orders);
+
+      this.myOrdersStatus = true;
+      this.checkIsOn();
+
     });
   }
 
   ngOnInit() {
+  }
+
+  checkIsOn(){
+    if(this.myOrdersStatus){
+      this.isOn = true;
+    }
   }
 
   cancel(id){

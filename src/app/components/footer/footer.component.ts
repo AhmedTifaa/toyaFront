@@ -9,11 +9,11 @@ import { FooterService } from "../footer/footer.service";
 export class FooterComponent implements OnInit {
 
   data:any;
-
+  check:boolean = false;
   constructor( private footerService:FooterService ) { 
     this.footerService.getFooter().subscribe(data => {
       this.data = data;
-      
+      this.check = true;
       console.log(this.data);
     });
   }

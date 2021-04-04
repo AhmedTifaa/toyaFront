@@ -1,4 +1,4 @@
-<ngb-carousel (window:resize)="onResize($event)" *ngIf="data" [showNavigationArrows]="false" [showNavigationIndicators]="true" interval="10000" [keyboard]="true" [pauseOnHover]="true" [wrap]="true">
+<ngb-carousel (window:resize)="onResize($event)" [showNavigationArrows]="false" [showNavigationIndicators]="true" interval="10000" [keyboard]="true" [pauseOnHover]="true" [wrap]="true">
     <ng-template ngbSlide *ngFor="let img of data">
         <div class="toya-slide">
             <a target="_blank" *ngIf="img.content_url" [href]="img.content_url"></a>

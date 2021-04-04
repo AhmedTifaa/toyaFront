@@ -8,6 +8,11 @@
     line-height: normal;
 }
 
+.image {
+    margin: 0 auto;
+    display: block;
+}
+
 .properties {
     list-style: none;
     padding-left: 15px;

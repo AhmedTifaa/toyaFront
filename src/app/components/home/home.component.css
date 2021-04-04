@@ -38,8 +38,8 @@ h2 {
     background-color: #f9f9f9;
     position: relative;
     display: inline-block;
-    width: calc(100% / 4);
-    margin: 0px 4% 10px;
+    width: calc(76% / 4);
+    margin: 0px 3% 10px;
 }
 
 .cat-top .discount {

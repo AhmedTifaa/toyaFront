@@ -17,6 +17,9 @@ export class ProductDetailsComponent implements OnInit {
   isLogin:boolean = false;
   cartProducts:any
   
+  productStatus:boolean = false;
+  isOn:any = false;
+
   closeResult: string;
 
   success:boolean = false;
@@ -38,10 +41,20 @@ export class ProductDetailsComponent implements OnInit {
         }
       });
 
+      this.productStatus = true;
+      this.checkIsOn();
+
     });
   }
   
-  addToCart(product, content) {
+
+  checkIsOn(){
+    if(this.productStatus){
+      this.isOn = true;
+    }
+  }
+
+  addToCart(product) {
     console.log(this.input.nativeElement.value);
     this.cartService.addToCart(product,this.input.nativeElement.value);
     let id = product.id;

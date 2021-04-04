@@ -30,6 +30,9 @@ export class MyAddressComponent implements OnInit {
   success:any;
   error:any;
 
+  myAddressStatus:boolean = false;
+  isOn:boolean = false;
+
   constructor(private formBuilder: FormBuilder, private myAddressService:MyAddressService) {
     this.myAddressService.getAddress().subscribe(data => {
       this.data = data['data'];
@@ -52,6 +55,10 @@ export class MyAddressComponent implements OnInit {
       this.myAddressService.regionUrl = "http://localhost:8000/api/location/regions/" + this.data['city'];
       this.myAddressService.getRegion().subscribe(data => {
         this.regions = data['data'];
+        
+        this.myAddressStatus = true;
+        this.checkIsOn();
+
       });
     });
 
@@ -65,6 +72,12 @@ export class MyAddressComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  checkIsOn(){
+    if(this.myAddressStatus){
+      this.isOn = true;
+    }
   }
 
   onSubmit() {

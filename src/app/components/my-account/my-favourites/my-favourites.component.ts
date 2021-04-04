@@ -10,10 +10,18 @@ import { MyFavouritesService } from './my-favourites.service';
 export class MyFavouritesComponent implements OnInit {
 
   products:any;
+
+  myFavouriteStatus:boolean = false;
+  isOn:boolean = false;
+
   constructor(private myFavouritesService:MyFavouritesService, private cartService:CartService) {
     this.myFavouritesService.getProduct().subscribe(data => {
       this.products = data['data'];
       console.log(this.products);
+
+      this.myFavouriteStatus = true;
+      this.checkIsOn();
+
     });
   }
 
@@ -29,6 +37,12 @@ export class MyFavouritesComponent implements OnInit {
         console.log(this.products);
       });
     });
+  }
+
+  checkIsOn(){
+    if(this.myFavouriteStatus){
+      this.isOn = true;
+    }
   }
 
   ngOnInit() {

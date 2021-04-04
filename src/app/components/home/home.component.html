@@ -37,7 +37,7 @@
                                 </div>
                             </a>
                             <div class="add-cart">
-                                <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                                <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
                                 <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                     </div>
                 </a>
                 <div class="add-cart">
-                    <button *ngIf="!product.addedCart" (click)="addToCart(product, mymodal)" id="product{{product.id}}" class="btn">Add to cart</button>
+                    <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
                     <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
                 </div>
             </div>

@@ -1,3 +1,9 @@
+<div *ngIf="!isOn" class="overlay-loading">
+    <div class="parent">
+        <div class="entire"></div>
+    </div>
+</div>
+
 <!-- alert -->
 
 <div (mouseover)="mouseOver()" (mouseout)="mouseOut()" class="alert alert-success alert-dismissible fade" [class.show]="success" role="alert">
@@ -8,8 +14,8 @@
 <div *ngIf="data" class="toya-container">
     <!-- products section -->
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6 text-right">
-            <img [src]="data.images[0].url">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <img class="image" [src]="data.images[0].url">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6">
             <h3 class="title">{{data.name}}</h3>
@@ -25,7 +31,7 @@
                     <input #quantity type="number" min="1" value="1" />
                 </div>
                 <div class="add-cart">
-                    <button *ngIf="!data.addedCart" (click)="addToCart(data, mymodal)" id="product{{data.id}}" class="btn">Add to cart</button>
+                    <button *ngIf="!data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn">Add to cart</button>
                     <button *ngIf="data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn" disabled>Added to cart</button>
                 </div>
                 <div (click)="favourite(data.id)" *ngIf="isLogin" class="fav">

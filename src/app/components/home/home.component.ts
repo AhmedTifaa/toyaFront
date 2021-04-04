@@ -3,7 +3,6 @@ import { RecentProductsService } from "./recent-products.service";
 import { CatProductsService } from "./cat-products.service";
 import { CartService } from '../cart/cart.service';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +24,7 @@ export class HomeComponent implements  OnInit {
   successMessage:string;
   delay:any;
 
-  constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService, private cartService:CartService, private modalService: NgbModal) {
+  constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService, private cartService:CartService) {
     this.recentProductsService.getRecentProduct().subscribe(data=>{
       this.recentData = data["data"];
       this.recentServiceStatus = true;
@@ -78,7 +77,7 @@ export class HomeComponent implements  OnInit {
     return valid;
   }
 
-  addToCart(product, content) {
+  addToCart(product) {
     this.cartService.addToCart(product,1);
     let id = product.id;
     

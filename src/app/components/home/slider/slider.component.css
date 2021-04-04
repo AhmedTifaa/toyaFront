@@ -1,23 +1,27 @@
-img{
+img {
     width: 100%;
 }
-.carousel-caption{
+
+.carousel-caption {
     left: 100px;
     text-align: left;
 }
-.toya-slide{
+
+.toya-slide {
     position: relative;
 }
-.toya-slide a{
+
+.toya-slide a {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 11;
-} 
+}
+
 .toya-slide::after {
-    content:"";
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -25,20 +29,23 @@ img{
     height: 100%;
     background: #0000003b;
 }
-h3{
+
+h3 {
     color: #c46449;
     font-family: "Great Vibes";
     font-size: 4rem;
     font-weight: 400;
 }
-p{
+
+p {
     color: #c46449;
     font-family: "Raleway Thin";
     font-size: 1.5rem;
     font-weight: 100;
     margin-bottom: 10px;
 }
-.shop{
+
+.shop {
     color: #ffffff;
     font-family: "Raleway Thin";
     font-size: 1.3rem;
@@ -49,7 +56,9 @@ p{
     line-height: 2.5rem;
     border-radius: 3px;
 }
-ngb-carousel{
+
+ngb-carousel {
     outline: none;
     border: none;
+    min-height: 455px;
 }

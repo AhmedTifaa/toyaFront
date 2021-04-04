@@ -1,5 +1,5 @@
 <footer class="container-fluid bg-grey py-5">
-    <div class="container">
+    <div class="container" *ngIf="check">
         <div class="row">
             <div class="col-6 col-md-3">
                 <div class="row">
@@ -8,7 +8,7 @@
                             <a [routerLink]="'.'">
                                 <img src="../../../assets/toya-logo.svg" class="w-50 logo-footer">
                             </a>
-                            <p>7637 Laurel Dr. King Of Prussia, PA 19406</p>
+                            <p>{{data.site_info.address}}</p>
                             <br>
                             <a [routerLink]="'contact-us'" class="btn-footer d-none d-md-inline"> Contact Us</a>
                         </div>
@@ -23,39 +23,26 @@
                     <div class="col-md-6 px-md-5 my-3 my-md-0">
                         <h5> Help us</h5>
                         <div class="row ">
-                            <div class="col-6">
+                            <div class="col-6" *ngFor="let link of data.links">
                                 <ul>
-                                    <li> <a [routerLink]="'.'"> Home</a> </li>
-                                    <li> <a [routerLink]="'about-us'"> About</a> </li>
-                                    <li> <a href="#"> Service</a> </li>
-                                    <li> <a href="#"> Team</a> </li>
-                                    <li> <a href="#"> Help</a> </li>
-                                    <li> <a [routerLink]="'contact-us'"> Contact</a> </li>
-                                </ul>
-                            </div>
-                            <div class="col-6 px-4">
-                                <ul>
-                                    <li> <a href="#"> Cab Faciliy</a> </li>
-                                    <li> <a href="#"> Fax</a> </li>
-                                    <li> <a href="#"> Terms</a> </li>
-                                    <li> <a href="#"> Policy</a> </li>
-                                    <li> <a href="#"> Refunds</a> </li>
-                                    <li> <a href="#"> Paypal</a> </li>
+                                    <li> <a [href]="link.link"> {{link.name_en}}</a> </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 ">
                         <div class="social">
-                            <a href="#"><img src="../../../assets/facebook.svg" alt=""></a>
-                            <a href="#"><img src="../../../assets/instagram.svg" alt=""></a>
+                            <a [href]="data.site_info.facebook"><img src="../../../assets/facebook.svg" alt=""></a>
+                            <a [href]="data.site_info.instagram"><img src="../../../assets/instagram.svg" alt=""></a>
+                            <a [href]="data.site_info.twitter"><img src="../../../assets/twitter.svg" alt=""></a>
+                            <a [href]="data.site_info.youtube"><img src="../../../assets/youtube.svg" alt=""></a>
                         </div>
                         <!-- <form class="form-footer my-3">
                               <input type="text"  placeholder="search here...." name="search">
                               <input type="button" value="Go" >
                            </form> -->
-                        <p class="mb-2 mt-2 sign-text">Sign up now for our discount</p>
-                        <a [routerLink]="'register'" class="btn signup">Sign Up</a>
+                        <p class="mb-2 mt-2 sign-text">{{data.footer_data.footer_body}}</p>
+                        <a [href]="data.footer_data.footer_button_url" class="btn signup">{{data.footer_data.footer_button_name}}</a>
                     </div>
                 </div>
             </div>

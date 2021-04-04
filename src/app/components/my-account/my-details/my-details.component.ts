@@ -25,6 +25,9 @@ export class MyDetailsComponent implements OnInit {
   country1:any;
   country2:any;
 
+  myDetailsStatus:boolean = false;
+  isOn:boolean = false;
+
   constructor(private formBuilder: FormBuilder, private myDetailsService:MyDetailsService) {
     this.myDetailsService.getDetails().subscribe(data => {
       this.data = data['user'];
@@ -40,11 +43,21 @@ export class MyDetailsComponent implements OnInit {
         this.country2 = true;
       }
       this.check = true;
+
+      this.myDetailsStatus = true;
+      this.checkIsOn();
+
     });
   }
 
   ngOnInit() {
 
+  }
+
+  checkIsOn(){
+    if(this.myDetailsStatus){
+      this.isOn = true;
+    }
   }
 
   onSubmit() {
