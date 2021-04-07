@@ -24,7 +24,12 @@ export class HomeComponent implements  OnInit {
   successMessage:string;
   delay:any;
 
+  lang:string;
   constructor(private recentProductsService:RecentProductsService, private catProductsService:CatProductsService, private cartService:CartService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.recentProductsService.lang = this.lang;
+    this.catProductsService.lang =this.lang;
+
     this.recentProductsService.getRecentProduct().subscribe(data=>{
       this.recentData = data["data"];
       this.recentServiceStatus = true;

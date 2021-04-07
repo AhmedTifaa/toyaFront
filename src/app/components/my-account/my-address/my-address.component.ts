@@ -33,7 +33,10 @@ export class MyAddressComponent implements OnInit {
   myAddressStatus:boolean = false;
   isOn:boolean = false;
 
+  lang:string;
   constructor(private formBuilder: FormBuilder, private myAddressService:MyAddressService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.myAddressService.lang = this.lang;
     this.myAddressService.getAddress().subscribe(data => {
       this.data = data['data'];
       this.addressForm = this.formBuilder.group({
@@ -48,6 +51,7 @@ export class MyAddressComponent implements OnInit {
         street: data['data']['street'],
         zip_code: data['data']['zip_code'],
       });
+      console.log(this.data);
       this.myAddressService.cityUrl = "http://localhost:8000/api/location/cities/" + this.data['country'];
       this.myAddressService.getCity().subscribe(data => {
         this.cities = data['data'];

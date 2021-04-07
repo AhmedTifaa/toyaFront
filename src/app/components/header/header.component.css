@@ -10,7 +10,7 @@
 
 .menu {
     position: absolute;
-    top: 40px;
+    top: 43px;
     left: 15px;
 }
 
@@ -139,6 +139,23 @@ nav.scroll ul.side span.search-icon {
     right: 0;
     left: unset !important;
     position: absolute;
+}
+
+.lang {
+    border: none;
+    background: none;
+    color: #b8b8b8;
+    position: absolute;
+    left: 80px;
+    top: 45px;
+}
+
+@media (min-width: 992px) {
+    .scroll .lang {
+        top: 35px;
+        left: unset;
+        right: 160px;
+    }
 }
 
 @media (max-width: 991px) {

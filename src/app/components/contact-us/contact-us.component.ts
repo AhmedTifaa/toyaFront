@@ -12,7 +12,10 @@ export class ContactUsComponent implements OnInit {
   data:any;
   contactUsStatus:boolean = false;
   isOn:boolean = false;
+  lang:string;
   constructor( private contactUsService:ContactUsService) { 
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.contactUsService.lang = this.lang;
     this.contactUsService.getContactUS().subscribe(data=>{
       this.data = data["contact_us"];
       this.check = true;

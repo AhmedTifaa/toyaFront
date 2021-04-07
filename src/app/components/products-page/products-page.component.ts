@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from "./category.service";
 import { CartService } from "../cart/cart.service";
+import { FilterService } from "../../components/products-page/filter.service";
 
 @Component({
   selector: 'app-products-page',
@@ -27,9 +28,13 @@ export class ProductsPageComponent implements OnInit {
 
   categoryIdFromRoute:any;
 
+  lang:string;
+
   @ViewChild('status') buttonElement:ElementRef;
 
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService) {
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService, private cartService:CartService, private filterService:FilterService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+
     this.route.params.subscribe(param => {
       this.setUpComponent(param['categoryId']);  
     });
@@ -37,27 +42,36 @@ export class ProductsPageComponent implements OnInit {
 
   setUpComponent(setParam){
     this.isOn = false;
-    
+
     this.categoryIdFromRoute = setParam
     
     this.categoryService.url = "http://localhost:8000/api/category/" + this.categoryIdFromRoute;
-
+    this.categoryService.lang = this.lang;
     this.categoryService.getCategory().subscribe(data=>{
       this.data = data["data"];
       this.check = true;
       this.categoryStatus = true;
       this.checkIsOn();
 
-      // filter
+      // get filter
       this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.data.id;
       this.categoryService.getFilter().subscribe(data=>{
         this.filterData = data["filters"];
         if(this.filterData.length > 0){
           this.filterCheck = true;
         }
+        console.log(this.filterData);
+        this.filterData.forEach(element => {
+          if (element.input_type == "range") {
+            let rangeArray = element.values;
+            element.min = Math.min.apply(Math, rangeArray);
+            element.max = Math.max.apply(Math, rangeArray);
+          }
+        });
         this.filterStatus = true;
         this.checkIsOn();
       });
+
       this.data.products.data.forEach(el => {
         this.cartProducts = this.cartService.getItems();
         this.cartProducts.forEach(item => {
@@ -100,10 +114,6 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-
-
-  }
 
   checkIsOn(){
     if(this.categoryStatus && this.filterStatus){
@@ -134,5 +144,118 @@ export class ProductsPageComponent implements OnInit {
   mouseOut(){
     this.delay = setTimeout(() => this.success = false, 6000);
   }
+
+  ngOnInit() {
+    // reset filter
+    // let button:HTMLInputElement = document.querySelector('.card button[aria-expanded="false"]');
+
+  }
+
+  // reset filter
+  resetFilter(element:HTMLInputElement){    
+    if ((element.parentElement.className) != "btn btn-link collapsed") {
+      element.parentElement.parentElement.nextElementSibling.remove();  
+      this.applyFilter();
+    }
+  }
+
+  // search filter
+  applyFilter(){
+    this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.data.id;
+    this.filterService.lang = this.lang;
+    let apply = this.collectFilter();
+    let applyData = {
+      properties : apply
+    }
+    this.filterService.filter(applyData).subscribe(data => {
+      let products = {
+        data: data["data"]
+      }
+      this.data = {
+        id: this.data.id,
+        products: products
+      }
+      // console.log(data);
+    })
+    // console.log(apply);
+  }
+
+  collectFilter(){
+    let dataFilter:Array<any> = [];   
+    
+    // range
+    let from:HTMLInputElement = document.querySelector('input.from');
+    let to:HTMLInputElement = document.querySelector('input.to');
+    if (from != null || to != null ) {
+      if (from.value > '0' || to.value > '0') {
+        let data_range_object = {
+          property_name : from.name,
+          from : from.value,
+          to : to.value 
+        }
+        dataFilter.push(data_range_object);
+      }  
+    }
+    
+
+    // color
+    let colorValue:Array<any> = [];
+    let colorName;
+    if (document.querySelectorAll('input.color[type="checkbox"]:checked').length > 0) {
+      document.querySelectorAll('input.color[type="checkbox"]:checked').forEach(element => {
+        colorValue.push(element.getAttribute('value'));
+        colorName = element.getAttribute('name');
+      });
+    }
+    if (colorValue.length > 0) {
+      let data_color_object = {
+        property_name : colorName,
+        values : colorValue
+      }
+      dataFilter.push(data_color_object);
+    };
+      
+
+    // checkbox
+    let checkValue:Array<any> = [];
+    let checkName;
+    if (document.querySelectorAll('input.checkbox[type="checkbox"]:checked').length > 0) {
+      document.querySelectorAll('input.checkbox[type="checkbox"]:checked').forEach(element => {
+        checkValue.push(element.getAttribute('value'));
+        checkName = element.getAttribute('name');
+      });
+    }
+    if (checkValue.length > 0) {
+      let data_check_object = {
+        property_name : checkName,
+        values : checkValue
+      }
+      dataFilter.push(data_check_object);
+    }
+    
+
+    // radio
+    let radioValue:Array<any> = [];
+    let inputValue;
+    let name;
+    if (document.querySelectorAll('input.radio[type="radio"]:checked').length > 0) {
+      inputValue = document.querySelectorAll('input.radio[type="radio"]:checked')[0].getAttribute('value');
+      name = document.querySelectorAll('input.radio[type="radio"]:checked')[0].getAttribute('name');  
+      radioValue.push(inputValue);
+    }
+    if (radioValue.length > 0) {
+      let data_radio_object = {
+        property_name : name,
+        values : radioValue
+      }
+      dataFilter.push(data_radio_object);
+    }    
+
+    return dataFilter;
+    // console.log(dataFilter);
+  }
+
+  // get min value of array
+  
 
 }

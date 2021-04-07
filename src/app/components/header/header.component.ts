@@ -23,8 +23,13 @@ export class HeaderComponent implements OnInit {
   firstHalfMenue:any;
   lastHalfMenue: any;
 
+  lang:string;
+
   constructor(private cartService:CartService, private router:Router, private loginService:LoginService, private headerService:HeaderService) {  
 
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+
+    this.headerService.lang = this.lang;
     this.headerService.getNavbar().subscribe(data=>{
       this.data = data['data']['items'];
       // console.log(this.data);
@@ -93,6 +98,15 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem('userToken');
     this.loginService.checkLogin(false);
     this.router.navigate(['/login']);
+  }
+
+  changeLanguage(lang){
+    if (lang == "en") {
+      sessionStorage.setItem('lang', 'ar');
+    } else {
+      sessionStorage.setItem('lang', 'en');
+    }
+    location.reload();
   }
 
 }

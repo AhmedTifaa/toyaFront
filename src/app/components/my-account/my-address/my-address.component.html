@@ -36,7 +36,7 @@
                 <div class="col-12 col-lg-6 mb-3">
                     <label for="">City</label>
                     <select class="form-select" aria-label="Default select example" formControlName="city" (change)="region($event)">
-                      <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+                      <option *ngFor="let city of cities" [value]="city.name_en">{{city.name}}</option>
                     </select>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="col-12 col-lg-6 mb-3">
                     <label for="">Region</label>
                     <select class="form-select" aria-label="Default select example" formControlName="region">
-                      <option *ngFor="let region of regions" [value]="region.name">{{region.name}}</option>
+                      <option *ngFor="let region of regions" [value]="region.name_en">{{region.name}}</option>
                     </select>
                 </div>
                 <div class="col-12 col-lg-6 mb-3">

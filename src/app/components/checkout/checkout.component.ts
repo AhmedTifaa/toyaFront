@@ -18,7 +18,10 @@ export class CheckoutComponent implements OnInit {
   orderShipping:any;
   orderProducts:Array<object> = [];
   @Output() messageEvent = new EventEmitter<number>();
+  lang:string;
   constructor(private checkoutService:CheckoutService,private cartService:CartService,private formBuilder: FormBuilder) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.checkoutService.lang = this.lang;
     this.checkoutService.getCountry().subscribe(data=>{
       this.countriesList = data['data'];
       console.log(data);

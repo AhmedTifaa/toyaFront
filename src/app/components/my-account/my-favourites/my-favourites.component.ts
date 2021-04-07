@@ -13,8 +13,10 @@ export class MyFavouritesComponent implements OnInit {
 
   myFavouriteStatus:boolean = false;
   isOn:boolean = false;
-
+  lang:string;
   constructor(private myFavouritesService:MyFavouritesService, private cartService:CartService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.myFavouritesService.lang = this.lang;
     this.myFavouritesService.getProduct().subscribe(data => {
       this.products = data['data'];
       console.log(this.products);

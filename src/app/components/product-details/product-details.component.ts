@@ -25,11 +25,13 @@ export class ProductDetailsComponent implements OnInit {
   success:boolean = false;
   successMessage:string;
   delay:any;  
-
+  lang:string;
   constructor(private router:Router,private productService:ProductDetailsService,private aRoute: ActivatedRoute,private cartService:CartService, private modalService: NgbModal) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
     const routeParams = this.aRoute.snapshot.paramMap;
     const productId = routeParams.get('productId');
     this.productService.url =  "http://localhost:8000/api/product/"+productId;
+    this.productService.lang = this.lang;
     this.productService.getProduct().subscribe(data=>{
       this.data = data["data"];
 

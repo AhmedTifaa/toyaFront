@@ -1,5 +1,5 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +7,14 @@ import { HttpClient } from "@angular/common/http";
 export class CategoryService {
   url:string;
   filterUrl:string;
-
+  lang:string;
   constructor(private http:HttpClient) { }
     
   getCategory(){
-    return  this.http.get(this.url,{});
+    return  this.http.get(this.url,{headers: new HttpHeaders({'X-Localization': this.lang })});
   }
 
   getFilter(){
-    return  this.http.get(this.filterUrl,{});
+    return  this.http.get(this.filterUrl,{headers: new HttpHeaders({'X-Localization': this.lang })});
   }
 }

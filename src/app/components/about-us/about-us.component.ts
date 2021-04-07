@@ -11,7 +11,10 @@ export class AboutUsComponent implements OnInit {
   data:any;
   aboutUsStatus:boolean = false;
   isOn:boolean = false;
+  lang:string;
   constructor( private aboutUsService:AboutUsService) { 
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.aboutUsService.lang = this.lang;
     this.aboutUsService.getAboutUS().subscribe(data=>{
       this.data = data["about_us"];
       this.check = true;

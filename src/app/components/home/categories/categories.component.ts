@@ -9,7 +9,10 @@ import { CategoriesService } from './categories.service';
 export class CategoriesComponent implements OnInit {
 
   data:any;
+  lang:string;
   constructor(private categoriesService:CategoriesService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.categoriesService.lang = this.lang;
     this.categoriesService.getCategory().subscribe(data=>{
       this.data = data["data"];
       console.log(this.data);

@@ -28,7 +28,10 @@ export class MyDetailsComponent implements OnInit {
   myDetailsStatus:boolean = false;
   isOn:boolean = false;
 
+  lang:string;
   constructor(private formBuilder: FormBuilder, private myDetailsService:MyDetailsService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.myDetailsService.lang = this.lang;
     this.myDetailsService.getDetails().subscribe(data => {
       this.data = data['user'];
       this.detailsForm = this.formBuilder.group({

@@ -3,8 +3,13 @@
 <nav class="navbar navbar-expand-lg main-nav">
 
     <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-    &#9776;
-  </button>
+        &#9776;
+    </button>
+
+    <button class="lang" (click)="changeLanguage(lang)">
+        {{(lang == 'ar'? 'en' : 'ar') | uppercase}}
+    </button>
+
     <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
@@ -26,9 +31,6 @@
                 <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
                 <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
             </li>
-            <!-- <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Blog</a>
-      </li> -->
         </ul>
 
     </div>
@@ -36,14 +38,17 @@
         <!-- <li class="nav-item mr-4">
       <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
     </li> -->
-        <li class="nav-item mr-4">
+        <li class="nav-item mr-3">
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 
             <div ngbDropdown class="d-inline-block nav-link" *ngIf="isLogin">
-                <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
+                <button class="btn p-0" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <a [routerLink]="'my-account'" ngbDropdownItem>My-account</a>
-                    <a class="logout" (click)="logout()" ngbDropdownItem>Logout</a>
+                    <a [routerLink]="'my-account'" ngbDropdownItem *ngIf="lang == 'en'">My-account</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem *ngIf="lang == 'en'">Logout</a>
+                    <!-- arabic -->
+                    <a [routerLink]="'my-account'" ngbDropdownItem *ngIf="lang == 'ar'">حسابي</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem *ngIf="lang == 'ar'">تسجيل الخروج</a>
                 </div>
             </div>
         </li>
@@ -57,8 +62,13 @@
 <nav class="navbar navbar-expand-lg scroll">
 
     <button class="navbar-toggler menu" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-    &#9776;
-  </button>
+        &#9776;
+    </button>
+
+    <button class="lang" (click)="changeLanguage(lang)">
+        {{(lang == 'ar'? 'en' : 'ar') | uppercase}}
+    </button>
+
     <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
@@ -85,14 +95,17 @@
         </span>
       </a> -->
         </li>
-        <li class="nav-item mr-4">
+        <li class="nav-item mr-3">
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 
-            <div ngbDropdown class="d-inline-block" *ngIf="isLogin">
-                <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
+            <div ngbDropdown class="d-inline-block nav-link" *ngIf="isLogin">
+                <button class="btn p-0" id="dropdownBasic1" ngbDropdownToggle><img src="../../../assets/profile.png" alt=""></button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <a [routerLink]="'my-account'" ngbDropdownItem>My-account</a>
-                    <a class="logout" (click)="logout()" ngbDropdownItem>Logout</a>
+                    <a [routerLink]="'my-account'" ngbDropdownItem *ngIf="lang == 'en'">My-account</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem *ngIf="lang == 'en'">Logout</a>
+                    <!-- arabic -->
+                    <a [routerLink]="'my-account'" ngbDropdownItem *ngIf="lang == 'ar'">حسابي</a>
+                    <a class="logout" (click)="logout()" ngbDropdownItem *ngIf="lang == 'ar'">تسجيل الخروج</a>
                 </div>
             </div>
         </li>
