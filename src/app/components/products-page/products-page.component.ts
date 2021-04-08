@@ -36,7 +36,7 @@ export class ProductsPageComponent implements OnInit {
     this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
 
     this.route.params.subscribe(param => {
-      this.setUpComponent(param['categoryId']);  
+      this.setUpComponent(param['categoryId']);
     });
   }
 
@@ -44,7 +44,7 @@ export class ProductsPageComponent implements OnInit {
     this.isOn = false;
 
     this.categoryIdFromRoute = setParam
-    
+
     this.categoryService.url = "http://localhost:8000/api/category/" + this.categoryIdFromRoute;
     this.categoryService.lang = this.lang;
     this.categoryService.getCategory().subscribe(data=>{
@@ -131,10 +131,10 @@ export class ProductsPageComponent implements OnInit {
   };
 
 
-  showAlert() { 
+  showAlert() {
     this.success = true;
-    this.successMessage = "Added To Cart Successfuly"; 
-    this.delay = setTimeout(() => this.success = false, 6000); 
+    this.successMessage = "Added To Cart Successfuly";
+    this.delay = setTimeout(() => this.success = false, 6000);
   }
 
   mouseOver(){
@@ -152,9 +152,9 @@ export class ProductsPageComponent implements OnInit {
   }
 
   // reset filter
-  resetFilter(element:HTMLInputElement){    
+  resetFilter(element:HTMLInputElement){
     if ((element.parentElement.className) != "btn btn-link collapsed") {
-      element.parentElement.parentElement.nextElementSibling.remove();  
+      element.parentElement.parentElement.nextElementSibling.remove();
       this.applyFilter();
     }
   }
@@ -181,8 +181,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   collectFilter(){
-    let dataFilter:Array<any> = [];   
-    
+    let dataFilter:Array<any> = [];
+
     // range
     let from:HTMLInputElement = document.querySelector('input.from');
     let to:HTMLInputElement = document.querySelector('input.to');
@@ -191,12 +191,12 @@ export class ProductsPageComponent implements OnInit {
         let data_range_object = {
           property_name : from.name,
           from : from.value,
-          to : to.value 
+          to : to.value
         }
         dataFilter.push(data_range_object);
-      }  
+      }
     }
-    
+
 
     // color
     let colorValue:Array<any> = [];
@@ -214,7 +214,7 @@ export class ProductsPageComponent implements OnInit {
       }
       dataFilter.push(data_color_object);
     };
-      
+
 
     // checkbox
     let checkValue:Array<any> = [];
@@ -232,7 +232,7 @@ export class ProductsPageComponent implements OnInit {
       }
       dataFilter.push(data_check_object);
     }
-    
+
 
     // radio
     let radioValue:Array<any> = [];
@@ -240,7 +240,7 @@ export class ProductsPageComponent implements OnInit {
     let name;
     if (document.querySelectorAll('input.radio[type="radio"]:checked').length > 0) {
       inputValue = document.querySelectorAll('input.radio[type="radio"]:checked')[0].getAttribute('value');
-      name = document.querySelectorAll('input.radio[type="radio"]:checked')[0].getAttribute('name');  
+      name = document.querySelectorAll('input.radio[type="radio"]:checked')[0].getAttribute('name');
       radioValue.push(inputValue);
     }
     if (radioValue.length > 0) {
@@ -249,13 +249,13 @@ export class ProductsPageComponent implements OnInit {
         values : radioValue
       }
       dataFilter.push(data_radio_object);
-    }    
+    }
 
     return dataFilter;
     // console.log(dataFilter);
   }
 
   // get min value of array
-  
+
 
 }
