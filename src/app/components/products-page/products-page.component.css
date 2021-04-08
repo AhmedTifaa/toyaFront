@@ -52,6 +52,10 @@
     padding-right: 27px;
 }
 
+.product-top .discount span {
+    display: inline-block;
+}
+
 .product-top img {
     width: 80%;
     margin-top: 20px;

@@ -55,6 +55,10 @@ h2 {
     padding-right: 27px;
 }
 
+.cat-top .discount span {
+    display: inline-block;
+}
+
 .cat-top img {
     width: 80%;
     margin-top: 20px;

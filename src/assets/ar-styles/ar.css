@@ -1,0 +1,153 @@
+/* start ar */
+
+
+/* general */
+
+body {
+    direction: rtl;
+}
+
+
+/* header */
+
+.menu {
+    left: unset;
+    right: 15px;
+}
+
+.lang {
+    left: unset;
+    right: 80px;
+}
+
+.navbar-nav {
+    padding-right: 0;
+    padding-left: 40px;
+    text-align: right;
+}
+
+.side {
+    right: unset !important;
+    left: 26px;
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+.nav-item.mr-3 {
+    margin-right: 0!important;
+    margin-left: 1rem;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    left: 0 !important;
+    right: unset !important;
+    text-align: right;
+}
+
+.scroll .side {
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    .scroll .lang {
+        left: 160px !important;
+        right: unset !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .side {
+        padding-left: 0;
+    }
+}
+
+
+/* home slider */
+
+.carousel-caption {
+    left: 15% !important;
+    right: 100px;
+    text-align: right !important;
+}
+
+
+/* home products */
+
+.cat-top .discount,
+.product-top .discount {
+    transform: rotate(180deg);
+    left: unset !important;
+    right: 0;
+}
+
+.cat-top .discount span,
+.product-top .discount span {
+    transform: rotate(180deg);
+}
+
+.new {
+    margin-left: unset !important;
+    margin-right: 15px;
+}
+
+
+/* footer */
+
+footer .container>.row {
+    text-align: right;
+}
+
+footer .col-md-3 {
+    border-right: none !important;
+    border-left: 1px solid #fff;
+}
+
+footer h5:after {
+    left: unset;
+    right: 0;
+}
+
+footer ul {
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+footer .social a {
+    margin-left: 10px;
+    margin-right: 0 !important;
+}
+
+
+/* category */
+
+.toya-container {
+    text-align: right;
+}
+
+.toya-container.category {
+    display: flex;
+}
+
+.filter-section .card button div {
+    text-align: right;
+}
+
+.filter-section .card button span {
+    left: 0;
+    right: unset;
+}
+
+.form-check-input {
+    margin-left: 1.25rem;
+}
+
+.form-check-label {
+    margin-right: 1.25rem;
+}
+
+.product-cart .product-top {
+    float: right !important;
+}
+
+
+/* end ar */

@@ -52,8 +52,7 @@
                 <div class="col-12 col-lg-6 mb-3">
                     <label>Country</label>
                     <select class="form-select" aria-label="Default select example" formControlName="country_id">
-                      <option value="1" [selected]="country1">Egypt</option>
-                      <option value="2" [selected]="country2">Saudi Arebia</option>
+                        <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
                     </select>
                 </div>
             </div>
