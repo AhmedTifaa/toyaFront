@@ -50,6 +50,10 @@
     padding-right: 27px;
 }
 
+.fav-top .discount span {
+    display: inline-block;
+}
+
 .fav-top img {
     width: 80%;
     margin-top: 20px;

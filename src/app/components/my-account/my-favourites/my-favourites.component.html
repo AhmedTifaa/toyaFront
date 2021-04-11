@@ -16,7 +16,7 @@
         <div class="fav text-center mb-3" *ngFor="let product of products">
             <a [routerLink]="['/product', product.id]">
                 <div class="fav-top">
-                    <div *ngIf="product.discount_percentage" class="discount">{{product.discount_percentage}}% OFF</div>
+                    <div *ngIf="product.discount_percentage" class="discount"><span>{{product.discount_percentage}}% OFF</span></div>
                     <img [src]="product.images[0].url" alt="">
                 </div>
                 <p class="mt-3">{{product.name}}</p>

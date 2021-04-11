@@ -4,7 +4,6 @@
 
 .cart-page thead {
     color: #a1a1a1;
-    font-family: "Raleway Thin";
 }
 
 .cart-page thead th,
@@ -49,7 +48,6 @@
 
 .cart-page .btn.checkout {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 1.2rem;
     font-weight: bold;
     background-color: #c45239;
@@ -63,19 +61,18 @@ div.btn-container {
 }
 
 .cart-head h1 {
-    font-family: "Raleway Thin";
     color: #c45239;
     font-weight: bold;
 }
 
 .cart-head h5 {
-    font-family: "Raleway Thin";
     color: #747474;
     font-weight: 600;
 }
 
 .cart-page input[type='number'] {
     color: #c45239;
+    width: 60px;
 }
 
 .cart-page .del-item {

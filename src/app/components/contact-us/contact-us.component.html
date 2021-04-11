@@ -3,9 +3,9 @@
         <div class="entire"></div>
     </div>
 </div>
-<div class="container mt-5 mb-5">
+<div class="container contact mt-5 mb-5">
     <div class="row">
-        <h2 class="col-12 text-center">Contact Us</h2>
+        <h2 class="col-12 text-center">{{lang == 'ar'? 'تواصل معنا' : 'Contact Us'}}</h2>
         <p class=" col-12 text-center top-text" *ngIf="check">{{data.contact_us_main_title}}</p>
     </div>
     <!-- body -->
@@ -43,10 +43,10 @@
                 <h3 class="text-center">{{data.contact_us_form_title}}</h3>
                 <p class="text-center">{{data.contact_us_form_body}}</p>
                 <form [formGroup]="" (ngSubmit)="onSubmit()">
-                    <input type="text" class="form-control mt-3" placeholder="Your Name">
-                    <input type="email" class="form-control mt-3" placeholder="Your Email">
-                    <input type="text" class="form-control mt-3" placeholder="Number">
-                    <input type="submit" class="btn" value="Send A Message">
+                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}">
+                    <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}">
+                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}">
+                    <input type="submit" class="btn" value="{{lang == 'ar'? 'أرسل رسالة' : 'Send A Message'}}">
                 </form>
             </div>
         </div>
@@ -56,10 +56,10 @@
         <h3 class="text-center">{{data.contact_us_form_title}}</h3>
         <p class="text-center">{{data.contact_us_form_body}}</p>
         <form [formGroup]="" (ngSubmit)="onSubmit()">
-            <input type="text" class="form-control mt-3" placeholder="Your Name">
-            <input type="email" class="form-control mt-3" placeholder="Your Email">
-            <input type="text" class="form-control mt-3" placeholder="Number">
-            <input type="submit" class="btn" value="Send A Message">
+            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}">
+            <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}">
+            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}">
+            <input type="submit" class="btn" value="{{lang == 'ar'? 'أرسل رسالة' : 'Send A Message'}}">
         </form>
     </div>
     <!-- social -->

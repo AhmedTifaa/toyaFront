@@ -1,24 +1,24 @@
 <div>
-  <p class="mb-2">My Bag</p>
-  <div class="cart-container">
-    <div class="row" *ngIf="items != ''; else elsebag">
+    <h3 class="mb-2">{{lang == 'ar'? 'حقيبتي' : 'My Bag'}}</h3>
+    <div class="cart-container">
+        <div class="row" *ngIf="items != ''; else elsebag">
 
-      <div class="product-cart col-12 mb-3 text-center" *ngFor="let item of items">
-        <div class="product-top">
-          <img [src]="item.images[0].url" alt="">
-        </div>
-        <p class="mt-2 mb-2">{{item.name}}</p>
-        <div class="price mt-2 mb-2">
-          <span class="new">{{item.price}}<span class="currency"> EG</span></span>
-        </div>
-      </div>
+            <div class="product-cart col-12 mb-3 text-center" *ngFor="let item of items">
+                <div class="product-top">
+                    <img [src]="item.images[0].url" alt="">
+                </div>
+                <p class="mt-2 mb-2">{{item.name}}</p>
+                <div class="price mt-2 mb-2">
+                    <span class="new">{{item.price - item.price * item.discount_percentage / 100}}<span class="currency"> EG</span></span>
+                </div>
+            </div>
 
+        </div>
+
+        <ng-template #elsebag>
+            <div class="img-container">
+                <img src="../../../assets/bag.svg" alt="cart img">
+            </div>
+        </ng-template>
     </div>
-
-    <ng-template #elsebag>
-      <div class="img-container">
-        <img src="../../../assets/bag.svg" alt="cart img">
-      </div>
-    </ng-template>
-  </div>
 </div>

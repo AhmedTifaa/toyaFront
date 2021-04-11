@@ -1,39 +1,50 @@
 /* links */
-.links{
-    font-family: Raleway;
+
+.links {
     font-size: 20px;
 }
-.links a{
+
+.links a {
     margin: 0 10px;
     color: #a3a3a3;
 }
-.links a:hover{
+
+.links a:hover {
     color: #a3a3a3;
 }
+
+
 /* title */
-h2{
+
+h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 49px;
     font-weight: bold;
     margin: 56px 0 20px;
 }
+
+
 /* menu */
-.menu{
+
+.menu {
     list-style: none;
 }
-.menu li{
+
+.menu li {
     margin: 20px 0;
     cursor: pointer;
 }
-.menu li span{
+
+.menu li span {
     display: inline-block;
     width: 25px;
     margin: 0 10px;
 }
-.menu li span img{
+
+.menu li span img {
     width: 100%;
 }
-.menu li.active{
+
+.menu li.active {
     color: #c46449;
 }

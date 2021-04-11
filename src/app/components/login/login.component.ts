@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
   data: any;
   response: any;
   isLoginError: any;
-
+  lang:string;
   constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router:Router) { 
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
     if(sessionStorage.getItem('userToken') != null){
       this.router.navigate(['/']);
     }

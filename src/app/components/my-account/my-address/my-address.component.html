@@ -8,8 +8,8 @@
     <!-- title -->
     <div class="row content mb-3">
         <div class="col-12">
-            <h2>My Address</h2>
-            <p>Personal Information</p>
+            <h2>{{lang == 'ar'? 'عنواني' : 'My Address'}}</h2>
+            <p>{{lang == 'ar'? 'معلومات شخصية' : 'Personal Information'}}</p>
             <div class="seprator"></div>
         </div>
     </div>
@@ -28,13 +28,13 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Country</label>
-                    <select class="form-select" aria-label="Default select example" formControlName="country" (change)="city($event)">
+                    <label for="">{{lang == 'ar'? 'الدولة' : 'Country'}}</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="{{lang == 'ar'? 'الدولة' : 'Country'}}" (change)="city($event)">
                       <option *ngFor="let country of countries" [value]="country.iso_code">{{country.name}}</option>
                     </select>
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">City</label>
+                    <label for="">{{lang == 'ar'? 'المدينة' : 'City'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="city" (change)="region($event)">
                       <option *ngFor="let city of cities" [value]="city.name_en">{{city.name}}</option>
                     </select>
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Region</label>
+                    <label for="">{{lang == 'ar'? 'المنطقة' : 'Region'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="region">
                       <option *ngFor="let region of regions" [value]="region.name_en">{{region.name}}</option>
                     </select>

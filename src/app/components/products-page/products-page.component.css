@@ -111,7 +111,6 @@
 
 .product .btn {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 0.7rem;
     font-weight: bold;
     background-color: #c45239;
@@ -143,7 +142,6 @@
     width: 173px;
     border: 1px solid #c46449;
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 17px;
     font-weight: bold;
     border-radius: 50px;
@@ -190,7 +188,6 @@
 
 h3 {
     color: #0c2747;
-    font-family: "Raleway Thin";
 }
 
 .filter-section {

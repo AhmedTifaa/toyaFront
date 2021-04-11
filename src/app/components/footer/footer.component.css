@@ -18,19 +18,18 @@ a {
 }
 
 footer h5 {
-    font-family: "Raleway Thin";
     margin-bottom: 40px;
     position: relative;
 }
 
 footer h5:after {
-    position: absolute;
     content: "";
     background: #fff;
-    width: 12%;
+    width: 25%;
     height: 1px;
     left: 0;
     bottom: -20px;
+    position: absolute;
 }
 
 footer .btn-footer {
@@ -112,7 +111,6 @@ footer .logo-part {
 
 footer .sign-text {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 25px;
     font-weight: bold;
 }

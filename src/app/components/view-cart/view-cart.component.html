@@ -1,18 +1,23 @@
+<div *ngIf="!isOn" class="overlay-loading">
+    <div class="parent">
+        <div class="entire"></div>
+    </div>
+</div>
 <div *ngIf="isEmpty" class="toya-container">
     <div class="cart-head text-center">
-        <h1>Review Cart</h1>
-        <h5>Your Cart Is Empty</h5>
+        <h1>{{lang == 'ar'? 'مراجعة عربة التسوق' : 'Review Cart'}}</h1>
+        <h5>{{lang == 'ar'? 'عربة التسوق فارغة' : 'Your Cart Is Empty'}}</h5>
     </div>
     <div class="btn-container">
         <a class="btn checkout">
-      Shop
+      {{lang == 'ar'? 'تسوق' : 'Shop'}}
     </a>
     </div>
 </div>
 <div *ngIf="!isEmpty && currentStep < 3" class="toya-container">
     <div class="cart-head text-center">
-        <h1>Review Cart</h1>
-        <h5>Compelete Your Purchase</h5>
+        <h1>{{lang == 'ar'? 'مراجعة عربة التسوق' : 'Review Cart'}}</h1>
+        <h5>{{lang == 'ar'? 'أكمل عملية الشراء الخاصة بك' : 'Compelete Your Purchase'}}</h5>
     </div>
     <div class="row shop-tracking-status">
         <div class="col-md-12">
@@ -44,11 +49,11 @@
                 <table class="table table-hover d-none d-md-block">
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Total</th>
-                            <th class="text-center">Remove </th>
+                            <th>{{lang == 'ar'? 'المنتج' : 'Product'}}</th>
+                            <th>{{lang == 'ar'? 'الكمية' : 'Quantity'}}</th>
+                            <th class="text-center">{{lang == 'ar'? 'السعر' : 'Price'}}</th>
+                            <th class="text-center">{{lang == 'ar'? 'الإجمالي' : 'Total'}}</th>
+                            <th class="text-center">{{lang == 'ar'? 'إزالة' : 'Remove'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,7 +81,7 @@
                             <td>   </td>
                             <td>   </td>
                             <td>
-                                <h3>Total</h3>
+                                <h3>{{lang == 'ar'? 'الإجمالي' : 'Total'}}</h3>
                             </td>
                             <td class="text-right">
                                 <h3><strong>${{total}}</strong></h3>
@@ -108,7 +113,7 @@
                 </div>
                 <div class="d-md-none mobile-total text-right mb-2">
                     <span>
-                        <h3>Total</h3>
+                        <h3>{{lang == 'ar'? 'الإجمالي' : 'Total'}}</h3>
                     </span>
                     <span class="text-right">
                         <h3><strong>${{total}}</strong></h3>
@@ -116,7 +121,7 @@
                 </div>
                 <!-- end mobile cart products -->
                 <div class="btn-container">
-                    <a (click)='nextStep(2)' class="btn checkout"> Checkout </a>
+                    <a (click)='nextStep(2)' class="btn checkout">  {{lang == 'ar'? 'الدفع' : 'Checkout'}}</a>
                 </div>
             </div>
         </div>

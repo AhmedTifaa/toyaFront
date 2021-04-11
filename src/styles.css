@@ -2,6 +2,7 @@
 
 body {
     position: relative;
+    font-family: "Raleway Thin";
 }
 
 a {
@@ -21,7 +22,6 @@ a {
 
 .nav-tabs .nav-link {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 21px;
     font-weight: 100;
     border: none;
@@ -59,13 +59,16 @@ a {
     text-decoration: none;
     font-size: 20px;
     color: #c46449;
-    font-family: "Raleway Thin";
     font-weight: bold;
 }
 
 .filter-section .card button span {
     position: absolute;
     right: 0;
+}
+
+.filter-section .card-body {
+    font-family: Roboto;
 }
 
 .filter-section .btn.focus,

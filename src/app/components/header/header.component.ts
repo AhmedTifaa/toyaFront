@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject  } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import { HeaderService } from "../header/header.service";
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -25,9 +26,17 @@ export class HeaderComponent implements OnInit {
 
   lang:string;
 
-  constructor(private cartService:CartService, private router:Router, private loginService:LoginService, private headerService:HeaderService) {  
+  constructor(@Inject(DOCUMENT) private document, private cartService:CartService, private router:Router, private loginService:LoginService, private headerService:HeaderService) {  
 
     this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+
+    if (this.lang == 'ar') {
+      var ar_css = this.document.createElement("link");
+      ar_css.setAttribute("rel", "stylesheet");
+      ar_css.setAttribute("id", "ar-css");
+      ar_css.setAttribute("href", "assets/ar-styles/ar.css");
+      this.document.getElementsByTagName("head").item(0).appendChild(ar_css)
+    }
 
     this.headerService.lang = this.lang;
     this.headerService.getNavbar().subscribe(data=>{

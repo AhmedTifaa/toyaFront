@@ -5,6 +5,7 @@
 
 body {
     direction: rtl;
+    font-family: 'Tajawal', sans-serif;
 }
 
 
@@ -117,8 +118,18 @@ footer .social a {
     margin-right: 0 !important;
 }
 
+footer .col-6.d-md-none {
+    text-align: left;
+}
 
-/* category */
+@media (max-width: 991px) {
+    footer .col-md-3 {
+        border-left: none;
+    }
+}
+
+
+/* category page */
 
 .toya-container {
     text-align: right;
@@ -147,6 +158,103 @@ footer .social a {
 
 .product-cart .product-top {
     float: right !important;
+}
+
+@media(max-width: 991px) {
+    .toya-container.category {
+        display: block;
+    }
+}
+
+
+/* product page */
+
+.user-interact input {
+    margin-left: 15px;
+    margin-right: 0 !important;
+}
+
+.description p {
+    text-align: right !important;
+}
+
+
+/* contact us page */
+
+.container.contact {
+    text-align: right;
+}
+
+
+/* about us page */
+
+.container.about {
+    text-align: right;
+}
+
+.content .img-container img {
+    transform: translate(10%, 10%) !important
+}
+
+.content:last-child .img-container img {
+    transform: translate(-10%, 10%) !important;
+}
+
+.about .content h2 {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+
+/* my account page */
+
+.container.my-account {
+    text-align: right;
+}
+
+
+/* my favourite page */
+
+.fav-top .discount,
+.product-top .discount {
+    transform: rotate(180deg);
+    left: unset !important;
+    right: 0;
+}
+
+.fav-top .discount span,
+.product-top .discount span {
+    transform: rotate(180deg);
+}
+
+.delete {
+    right: unset !important;
+    left: 10px;
+}
+
+
+/* cart page */
+
+.shop-tracking-status .image-order-status-cart {
+    left: unset !important;
+    right: 0;
+}
+
+.shop-tracking-status .image-order-status-thanks {
+    right: unset !important;
+    left: 0;
+}
+
+.cart-page tbody .thumbnail {
+    margin-right: unset !important;
+    margin-left: 10px;
+}
+
+.checkout-container {
+    text-align: right;
+}
+
+.form-label[for='address2'] {
+    direction: ltr;
 }
 
 

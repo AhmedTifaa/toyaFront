@@ -1,12 +1,12 @@
 <div class="thanks-container mb-5">
-  <img src="../../../assets/stars-icon.svg" />
-  <div class="message text-center">
-    <h1>Thank You</h1>
-    <h5>thank you for ordering from toya we will contact with you as soon as possible</h5>
-  </div>
-  <div class="btn-container">
-    <a [routerLink]="''" class="btn home">
-      Shop
+    <img src="../../../assets/stars-icon.svg" />
+    <div class="message text-center">
+        <h1>{{lang == 'ar'? 'شكرا' : 'Thank You'}}</h1>
+        <h5>{{lang == 'ar'? 'شكرا للطلب من تويا سنتواصل معك في أقرب وقت ممكن' : 'thank you for ordering from toya we will contact with you as soon as possible'}}</h5>
+    </div>
+    <div class="btn-container">
+        <a [routerLink]="''" class="btn home">
+      {{lang == 'ar'? 'تسوق' : 'Shop'}}
     </a>
-  </div>
+    </div>
 </div>

@@ -1,29 +1,28 @@
-.container.checkout >div{
-  margin: 0 auto;
+.container.checkout>div {
+    margin: 0 auto;
 }
+
 .checkout-head h1 {
-  font-family: "Raleway Thin";
-  color: #c45239;
-  font-weight: bold;
+    color: #c45239;
+    font-weight: bold;
 }
 
 .checkout-head h5 {
-  font-family: "Raleway Thin";
-  color: #747474;
-  font-weight: 600;
-}
-.container.checkout .btn.checkout {
-  color: #ffffff;
-  font-family: "Raleway Thin";
-  font-size: 1.1rem;
-  font-weight: bold;
-  background-color: #c45239;
-  line-height: 2.4rem;
-  padding: 0px 26px;
-  border-radius: 5px;
+    color: #747474;
+    font-weight: 600;
 }
 
-.container.checkout select.is-invalid{
+.container.checkout .btn.checkout {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #c45239;
+    line-height: 2.4rem;
+    padding: 0px 26px;
+    border-radius: 5px;
+}
+
+.container.checkout select.is-invalid {
     border-color: #dc3545;
     padding-right: calc(1.5em + .75rem);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -33,13 +32,19 @@
 }
 
 .container.checkout div.btn-container {
-  text-align: center;
-  margin: 30px 0 70px;
+    text-align: center;
+    margin: 30px 0 70px;
 }
-.container.checkout select{
-  display: block;
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #9e9e9ea3;
-  border-radius: 4px;
+
+.container.checkout select {
+    display: block;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #9e9e9ea3;
+    border-radius: 4px;
+}
+
+.container.checkout label {
+    margin-top: .5rem;
+    font-weight: bold;
 }

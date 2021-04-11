@@ -15,7 +15,7 @@
     <div class="filter-section col-sm-12 col-lg-2">
         <!-- filter section -->
         <div *ngIf="filterCheck">
-            <p class="mb-2">Filter</p>
+            <h3 class="mb-2">{{lang == 'ar'? 'فلتر' : 'Filter'}}</h3>
             <!-- <ul class="filter-list">
                 <li *ngFor="let filter of filterData">{{filter.property_name_en}} <span>+</span></li>
             </ul> -->
@@ -69,7 +69,7 @@
             <div class="row mt-4 mb-4">
                 <!-- filter bar -->
                 <div class="filter-bar col-12">
-                    <p class="filter-text mr-2">Filter By</p>
+                    <p class="filter-text mr-2">{{lang == 'ar'? 'فلتر ب' : 'Filter By'}}</p>
                     <p class="match mr-2"></p>
                     <p class="result mr-2">0</p>
                 </div>
@@ -90,15 +90,15 @@
                         </ng-template>
                         </ngb-rating>
                     </div> -->
-                    <div class="price mt-3 mb-3">
+                    <div class="price mt-3 mb-5">
                         <div class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
                         <span class="new">{{product.price - product.price * product.discount_percentage / 100}}<span class="currency"> EG</span></span>
                     </div>
                 </a>
 
                 <div class="add-cart">
-                    <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
-                    <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
+                    <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">{{lang == 'ar'? 'أضف للسلة' : 'Add to cart'}}</button>
+                    <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>{{lang == 'ar'? 'أضيف للسلة' : 'Added to cart'}}</button>
                 </div>
             </div>
         </div>

@@ -13,8 +13,16 @@ export class ViewCartComponent implements OnInit {
   total:number = 0;
   currentStep:number = 1;
   currentQuantity:number = 1;
+  viewCartStatus:boolean = false;
+  isOn:boolean = false;
+  lang:string;
   constructor(private cartService:CartService) {
-    this.cartItems = this.cartService.getItems();
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.cartItems =this.cartService.getItems()
+    if (this.cartItems) {
+      this.viewCartStatus = true;
+      this.checkIsOn();
+    }
     this.cartItems.length > 0 ? this.isEmpty = false : this.isEmpty = true;
     this.cartItems.forEach(product => {
       this.currentQuantity = product.quantity;
@@ -26,6 +34,12 @@ export class ViewCartComponent implements OnInit {
     console.log(this.cartItems);
 
   }
+  checkIsOn(){
+    if(this.viewCartStatus){
+      this.isOn = true;
+    }
+  }
+
   removeProduct(id){
     // console.log(id);
     this.cartService.delItem(id);

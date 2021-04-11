@@ -1,105 +1,106 @@
 <div class="checkout-head text-center">
-  <h1>Shipping Details</h1>
-  <h5>Type Your Personal Data</h5>
+    <h1>{{lang == 'ar'? 'تفاصيل الشحن' : 'Shipping Details'}}</h1>
+    <h5>{{lang == 'ar'? 'أدخل معلوماتك' : 'Type Your Personal Data'}}</h5>
 </div>
 <div class="container checkout mb-5 mt-5">
-  <div class="col-md-6 col-lg-6 col-sm-12">
-    <form [formGroup]="confirmForm" (ngSubmit)="confirm()">
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <form [formGroup]="confirmForm" (ngSubmit)="confirm()">
 
             <div class="row">
-              <div class="col-sm-6">
-                <label for="firstName" class="form-label">First name</label>
-                <input formControlName="firstName" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.firstName.errors }" id="firstName">
-                <div *ngIf="submitted && confirmForm.controls.firstName.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.firstName.errors.required">First Name is required</div>
-                  <div *ngIf="confirmForm.controls.firstName.errors.minlength">First Name must more than 2 characters</div>
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">{{lang == 'ar'? 'الإسم الأول' : 'First Name'}}</label>
+                    <input formControlName="firstName" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.firstName.errors }" id="firstName">
+                    <div *ngIf="submitted && confirmForm.controls.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.firstName.errors.required">{{lang == 'ar'? 'الإسم الأول مطلوب' : 'First Name is required'}}</div>
+                        <div *ngIf="confirmForm.controls.firstName.errors.minlength">{{lang == 'ar'? 'الإسم الأول يجب الا يقل عن حرفين' : 'First Name must more than 2 characters'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-sm-6">
-                <label for="lastName" class="form-label">Last name</label>
-                <input formControlName="lastName" type="text" class="form-control" id="lastName" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.lastName.errors }">
-                <div *ngIf="submitted && confirmForm.controls.lastName.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.lastName.errors.required">Last Name is required</div>
-                  <div *ngIf="confirmForm.controls.lastName.errors.minlength">Last Name must more than 2 characters</div>
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">{{lang == 'ar'? 'الإسم الأخير' : 'last Name'}}</label>
+                    <input formControlName="lastName" type="text" class="form-control" id="lastName" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.lastName.errors }">
+                    <div *ngIf="submitted && confirmForm.controls.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.lastName.errors.required">{{lang == 'ar'? 'الإسم الأخير مطلوب' : 'Last Name is required'}}</div>
+                        <div *ngIf="confirmForm.controls.lastName.errors.minlength">{{lang == 'ar'? 'الإسم الأخير يجب الا يقل عن حرفين' : 'Last Name must more than 2 characters'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-12">
-                <label for="email" class="form-label">Email</label>
-                <input formControlName="email" type="email" class="form-control" id="email" placeholder="you@example.com"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.email.errors }">
-                <div *ngIf="submitted && confirmForm.controls.email.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.email.errors.required">Email is required</div>
+                <div class="col-12">
+                    <label for="email" class="form-label">{{lang == 'ar'? 'البريد الإلكتروني' : 'Email'}}</label>
+                    <input formControlName="email" type="email" class="form-control" id="email" placeholder="you@example.com" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.email.errors }">
+                    <div *ngIf="submitted && confirmForm.controls.email.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.email.errors.required">{{lang == 'ar'? 'البريد الإلكتروني مطلوب' : 'Email is required'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-12">
-                <label for="phone" class="form-label">Phone</label>
-                <input formControlName="phone" type="phone" class="form-control" id="phone"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.phone.errors }">
-                <div *ngIf="submitted && confirmForm.controls.phone.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.phone.errors.required">phone is required</div>
-                  <div *ngIf="confirmForm.controls.phone.errors.pattern">Invalid Phone Number</div>
+                <div class="col-12">
+                    <label for="phone" class="form-label">{{lang == 'ar'? 'الهاتف' : 'Phone'}}</label>
+                    <input formControlName="phone" type="phone" class="form-control" id="phone" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.phone.errors }">
+                    <div *ngIf="submitted && confirmForm.controls.phone.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.phone.errors.required">{{lang == 'ar'? 'الهاتف مطلوب' : 'phone is required'}}</div>
+                        <div *ngIf="confirmForm.controls.phone.errors.pattern">{{lang == 'ar'? 'الهاتف غير صحيح' : 'Invalid Phone Number'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-12">
-                <label for="address" class="form-label">Address</label>
-                <input formControlName="address" type="text" class="form-control" id="address"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.address.errors }">
-                <div *ngIf="submitted && confirmForm.controls.address.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.address.errors.required">Address is required</div>
+                <div class="col-12">
+                    <label for="address" class="form-label">{{lang == 'ar'? 'العنوان' : 'Address'}}</label>
+                    <input formControlName="address" type="text" class="form-control" id="address" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.address.errors }">
+                    <div *ngIf="submitted && confirmForm.controls.address.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.address.errors.required">{{lang == 'ar'? 'العنوان مطلوب' : 'Address is required'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-12">
-                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                <input address2="firstName" type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-              </div>
+                <div class="col-12">
+                    <label *ngIf="lang != 'ar'" for="address2" class="form-label"><span>Address 2</span> <span class="text-muted">(Optional)</span></label>
+                    <label *ngIf="lang == 'ar'" for="address2" class="form-label"><span class="text-muted">(إختياري)</span> <span>العنوان 2</span></label>
+                    <input address2="firstName" type="text" class="form-control" id="address2" placeholder="{{lang == 'ar'? 'شقة أو جناح' : 'Apartment or suite'}}">
+                </div>
 
-              <div class="col-12">
-                <label for="country" class="form-label">Country</label>
-                <select  formControlName="country" (change)="onChangeCountry($event)" class="form-select" id="country"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.country.errors }">
-                  <option value="">Choose...</option>
+                <div class="col-12">
+                    <label for="country" class="form-label">{{lang == 'ar'? 'الدولة' : 'Country'}}</label>
+                    <select formControlName="country" (change)="onChangeCountry($event)" class="form-select" id="country" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.country.errors }">
+                  <option value="">{{lang == 'ar'? 'إختر...' : 'Choose...'}}</option>
                   <option *ngFor="let country of countriesList" value="{{country.iso_code}}">{{country.name}}</option>
                 </select>
-                <div *ngIf="submitted && confirmForm.controls.country.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.country.errors.required">Country is required</div>
+                    <div *ngIf="submitted && confirmForm.controls.country.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.country.errors.required">{{lang == 'ar'? 'الدولة مطلوبة' : 'Country is required'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-md-4">
-                <label for="city" class="form-label">City</label>
-                <select  formControlName="city" (change)="onChangeCity($event)" class="form-select" id="city"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.city.errors }">
-                  <option value="">Choose...</option>
+                <div class="col-md-4">
+                    <label for="city" class="form-label">{{lang == 'ar'? 'المدينة' : 'City'}}</label>
+                    <select formControlName="city" (change)="onChangeCity($event)" class="form-select" id="city" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.city.errors }">
+                  <option value="">{{lang == 'ar'? 'إختر...' : 'Choose...'}}</option>
                   <option *ngFor="let city of citiesList" value="{{city.name_en}}">{{city.name}}</option>
                 </select>
-                <div *ngIf="submitted && confirmForm.controls.city.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.city.errors.required">City is required</div>
+                    <div *ngIf="submitted && confirmForm.controls.city.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.city.errors.required">{{lang == 'ar'? 'المدينة مطلوبة' : 'City is required'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-md-4">
-                <label for="region" class="form-label">Region</label>
-                <select  formControlName="region" class="form-select" id="region"  [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.region.errors }">
-                  <option value="">Choose...</option>
+                <div class="col-md-4">
+                    <label for="region" class="form-label">{{lang == 'ar'? 'المنطقة' : 'Region'}}</label>
+                    <select formControlName="region" class="form-select" id="region" [ngClass]="{ 'is-invalid': submitted && confirmForm.controls.region.errors }">
+                  <option value="">{{lang == 'ar'? 'إختر...' : 'Choose...'}}</option>
                   <option *ngFor="let region of regionsList" value="{{region.name_en}}">{{region.name}}</option>
                 </select>
-                <div *ngIf="submitted && confirmForm.controls.region.errors" class="invalid-feedback">
-                  <div *ngIf="confirmForm.controls.region.errors.required">Region is required</div>
+                    <div *ngIf="submitted && confirmForm.controls.region.errors" class="invalid-feedback">
+                        <div *ngIf="confirmForm.controls.region.errors.required">{{lang == 'ar'? 'المنطقة مطلوبة' : 'Region is required'}}</div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-md-3">
-                <label for="zip" class="form-label">Zip</label>
-                <input  formControlName="zip" type="text" class="form-control" id="zip" placeholder="" required="">
-              </div>
+                <div class="col-md-3">
+                    <label for="zip" class="form-label">{{lang == 'ar'? 'الرمز البريدي' : 'Zip'}}</label>
+                    <input formControlName="zip" type="text" class="form-control" id="zip" placeholder="" required="">
+                </div>
             </div>
             <div class="btn-container">
-              <button type="submit" class="btn checkout">
-                Confirm Order
+                <button type="submit" class="btn checkout">
+                {{lang == 'ar'? 'أكد الطلب' : 'Confirm Order'}}
               </button>
             </div>
-          </form>
+        </form>
 
-        </div>
+    </div>
 
 </div>

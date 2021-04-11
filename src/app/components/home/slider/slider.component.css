@@ -39,7 +39,6 @@ h3 {
 
 p {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 1.5rem;
     font-weight: 100;
     margin-bottom: 10px;
@@ -47,7 +46,6 @@ p {
 
 .shop {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 1.3rem;
     font-weight: bold;
     width: 11rem;
@@ -60,5 +58,6 @@ p {
 ngb-carousel {
     outline: none;
     border: none;
-    min-height: 455px;
+    /* min-height: 455px; */
+    min-height: 333px;
 }

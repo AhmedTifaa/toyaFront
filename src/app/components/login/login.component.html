@@ -1,37 +1,39 @@
 <div class="container mt-5 mb-5">
     <div class="row">
-        <h2 class="col-12 text-center">Welcome Back</h2>
-        <p class=" col-12 text-center top-text">Sign to continue</p>
+        <h2 class="col-12 text-center">{{lang == 'ar'? 'مرحبا بعودتك' : 'Welcome Back'}}</h2>
+        <p class=" col-12 text-center top-text">{{lang == 'ar'? 'قم بتسجيل الدخول للمتابعة' : 'Sign to continue'}}</p>
     </div>
     <div class="row mt-4">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-lg-6">
             <div *ngIf="isLoginError" class="alert ">
-                incorrect username or password
+                {{lang == 'ar'? 'اسم المستخدم أو كلمة المرور غير صحيحة' : 'incorrect username or password'}}
             </div>
             <div class="input-group mb-5">
-                <label>Email</label>
+                <label>{{lang == 'ar'? 'البريد الإلكتروني' : 'Email'}}</label>
                 <span class="icon">
           <img src="../../../assets/email-icon.svg" alt="email icon">
         </span>
-                <input type="email" class="form-control" placeholder="email" formControlName="email">
+                <input type="email" class="form-control" placeholder="{{lang == 'ar'? 'البريد الإلكتروني' : 'Email'}}" formControlName="email">
             </div>
 
             <div class="input-group mb-5">
-                <label>Password</label>
+                <label>{{lang == 'ar'? 'كلمة المرور' : 'Password'}}</label>
                 <span class="icon">
           <img src="../../../assets/password-icon.svg" alt="password icon">
         </span>
-                <input type="password" class="form-control" placeholder="password" formControlName="password">
+                <input type="password" class="form-control" placeholder="{{lang == 'ar'? 'كلمة المرور' : 'Password'}}" formControlName="password">
             </div>
 
-            <a href="">Forgot Password?</a>
-            <button class="btn mt-3" type="submit">Login</button>
+            <a href="">{{lang == 'ar'? 'هل نسيت كلمة السر ؟' : 'Forgot Password?'}}</a>
+            <button class="btn mt-3" type="submit">{{lang == 'ar'? 'تسجيل الدخول' : 'Login'}}</button>
         </form>
     </div>
     <div class="row mt-3">
-        <p class="col-12 text-center">Don't have account? <a routerLink="/register">Creat New Account</a></p>
+        <p class="col-12 text-center">{{lang == 'ar'? 'ليس لديك حساب ؟' : "Don't have account ?"}} <a routerLink="/register">{{lang == 'ar'? 'إنشاء حساب جديد' : 'Creat New Account'}}</a></p>
     </div>
     <div class="row mt-3">
-        <p class="col-6 text-center"> Sign up for an account to take advantage of order history as well as pre-ﬁlled forms during checkout on subsequent orders.</p>
+        <p class="col-6 text-center">{{lang == 'ar'? 'قم بالتسجيل للحصول على حساب للاستفادة من سجل الطلبات بالإضافة إلى النماذج الجاهزة أثناء الدفع على الطلبات اللاحقة.' : 'Sign up for an account to take advantage of order history as well as pre-ﬁlled forms during checkout on subsequent
+            orders.'}}
+        </p>
     </div>
 </div>
