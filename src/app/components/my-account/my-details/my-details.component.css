@@ -2,14 +2,12 @@
 
 .content h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 46px;
     font-weight: bold;
 }
 
 .content p {
     color: #fc8f77;
-    font-family: "Raleway Thin";
     font-size: 31px;
     font-weight: bold;
 }
@@ -24,7 +22,6 @@
 
 .form label {
     color: #fc8f77;
-    font-family: "Raleway Thin";
     font-size: 31px;
 }
 
@@ -41,7 +38,6 @@
 
 button[type="submit"] {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 1.3rem;
     font-weight: bold;
     width: 100%;

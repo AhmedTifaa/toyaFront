@@ -3,6 +3,13 @@
         <div class="entire"></div>
     </div>
 </div>
+<!-- alert -->
+
+<div (mouseover)="mouseOver()" (mouseout)="mouseOut()" class="alert  alert-dismissible fade" [class.show]="show" [ngClass]="success ? 'alert-success' : 'alert-danger'" role="alert">
+    {{response}}
+    <button (click)="close()" type="button" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+</div>
+
 <div class="container contact mt-5 mb-5">
     <div class="row">
         <h2 class="col-12 text-center">{{lang == 'ar'? 'تواصل معنا' : 'Contact Us'}}</h2>
@@ -42,10 +49,11 @@
             <div class="form">
                 <h3 class="text-center">{{data.contact_us_form_title}}</h3>
                 <p class="text-center">{{data.contact_us_form_body}}</p>
-                <form [formGroup]="" (ngSubmit)="onSubmit()">
-                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}">
-                    <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}">
-                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}">
+                <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}" formControlName="name">
+                    <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}" formControlName="email">
+                    <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}" formControlName="mobile">
+                    <textarea class="form-control mt-3" rows="3" placeholder="{{lang == 'ar'? 'الرسالة' : 'Message'}}" formControlName="message"></textarea>
                     <input type="submit" class="btn" value="{{lang == 'ar'? 'أرسل رسالة' : 'Send A Message'}}">
                 </form>
             </div>
@@ -55,10 +63,11 @@
     <div class="form mobile-form d-lg-none mt-4" *ngIf="check">
         <h3 class="text-center">{{data.contact_us_form_title}}</h3>
         <p class="text-center">{{data.contact_us_form_body}}</p>
-        <form [formGroup]="" (ngSubmit)="onSubmit()">
-            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}">
-            <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}">
-            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}">
+        <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'إسمك' : 'Your Name'}}" formControlName="name">
+            <input type="email" class="form-control mt-3" placeholder="{{lang == 'ar'? 'بريدك الإلكتروني' : 'Your Email'}}" formControlName="email">
+            <input type="text" class="form-control mt-3" placeholder="{{lang == 'ar'? 'الرقم' : 'Number'}}" formControlName="mobile">
+            <textarea class="form-control mt-3" rows="3" placeholder="{{lang == 'ar'? 'الرسالة' : 'Message'}}" formControlName="message"></textarea>
             <input type="submit" class="btn" value="{{lang == 'ar'? 'أرسل رسالة' : 'Send A Message'}}">
         </form>
     </div>

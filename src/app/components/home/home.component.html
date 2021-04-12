@@ -37,8 +37,8 @@
                                 </div>
                             </a>
                             <div class="add-cart">
-                                <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
-                                <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
+                                <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">{{lang == 'ar'? 'أضف للسلة' : 'Add to cart'}}</button>
+                                <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>{{lang == 'ar'? 'أضيف للسلة' : 'Added to cart'}}</button>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
 
     <!-- product -->
 
-    <h2 class="text-center">Recent Products</h2>
+    <h2 class="text-center">{{lang == 'ar'? 'المنتجات الأخيرة' : 'Recent Products'}}</h2>
     <div class="container mb-4">
         <div class="row mt-5 product">
             <div class="cat text-center mb-3" *ngFor="let product of recentData">
@@ -74,8 +74,8 @@
                     </div>
                 </a>
                 <div class="add-cart">
-                    <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">Add to cart</button>
-                    <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>Added to cart</button>
+                    <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">{{lang == 'ar'? 'أضف للسلة' : 'Add to cart'}}</button>
+                    <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>{{lang == 'ar'? 'أضيف للسلة' : 'Added to cart'}}</button>
                 </div>
             </div>
         </div>

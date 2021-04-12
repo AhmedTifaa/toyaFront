@@ -8,7 +8,7 @@
     <!-- title -->
     <div class="row content mb-3">
         <div class="col-12">
-            <h2>My Orders</h2>
+            <h2>{{lang == 'ar'? 'طلباتي' : 'My Orders'}}</h2>
         </div>
     </div>
     <!-- products -->
@@ -22,7 +22,7 @@
                 <a *ngFor="let product of order.product_order" [routerLink]="['/product', product.id]">
                     <p class="title">{{product.name}}</p>
                 </a>
-                <p class="date">18 jan 2021 13:12</p>
+                <!-- <p class="date">18 jan 2021 13:12</p> -->
                 <p class="order-id">Order Id: {{order.id}}</p>
                 <p class="d-lg-none">{{order.status}}</p>
             </div>
@@ -32,7 +32,7 @@
             <div class="col-12 col-lg-4" *ngIf="order.status === 'Pending'">
                 <div class="row">
                     <div class="col-6">
-                        <a (click)="cancel(order.id)" class="btn">Cancel</a>
+                        <a (click)="cancel(order.id)" class="btn">{{lang == 'ar'? 'إلغاء' : 'Cancel'}}</a>
                     </div>
                 </div>
             </div>

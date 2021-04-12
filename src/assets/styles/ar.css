@@ -5,7 +5,7 @@
 
 body {
     direction: rtl;
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Tajawal', sans-serif !important;
 }
 
 
@@ -160,6 +160,25 @@ footer .col-6.d-md-none {
     float: right !important;
 }
 
+.filter-bar {
+    height: 35px;
+}
+
+.filter-bar p.filter-text {
+    position: absolute;
+    right: 15px;
+}
+
+.filter-bar div.match {
+    position: absolute;
+    right: 60px;
+}
+
+.filter-bar .result {
+    right: unset !important;
+    left: 15px;
+}
+
 @media(max-width: 991px) {
     .toya-container.category {
         display: block;
@@ -176,6 +195,16 @@ footer .col-6.d-md-none {
 
 .description p {
     text-align: right !important;
+}
+
+.properties {
+    padding-right: 15px;
+    padding-left: 40px;
+}
+
+.properties li span {
+    margin-right: unset !important;
+    margin-left: 12px;
 }
 
 

@@ -10,7 +10,7 @@ import { MyFavouritesService } from './my-favourites.service';
 export class MyFavouritesComponent implements OnInit {
 
   products:any;
-
+  cartProducts:any;
   myFavouriteStatus:boolean = false;
   isOn:boolean = false;
   lang:string;
@@ -21,14 +21,31 @@ export class MyFavouritesComponent implements OnInit {
       this.products = data['data'];
       console.log(this.products);
 
+      this.products.forEach(el => {
+        this.cartProducts = this.cartService.getItems();
+        this.cartProducts.forEach(item => {
+          let id = item.id;
+          if (el.id == id) {
+            el.addedCart = true;
+          }
+        });
+      });
+      
       this.myFavouriteStatus = true;
       this.checkIsOn();
-
+      
     });
   }
 
   addToCart(product) {
     this.cartService.addToCart(product,1);
+    let id = product.id;
+    
+    this.products.forEach(el => {
+      if (el.id == id) {
+        el.addedCart = true;
+      }
+    });
   }
 
   delete(id){

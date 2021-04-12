@@ -126,3 +126,14 @@ h2 {
     padding: 10px 30px;
     border-radius: 0;
 }
+
+
+/* alert */
+
+.alert {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 300px;
+    z-index: 999;
+}

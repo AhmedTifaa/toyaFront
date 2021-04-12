@@ -70,13 +70,15 @@
                 <!-- filter bar -->
                 <div class="filter-bar col-12">
                     <p class="filter-text mr-2">{{lang == 'ar'? 'فلتر ب' : 'Filter By'}}</p>
-                    <p class="match mr-2"></p>
-                    <p class="result mr-2">0</p>
+                    <div class="match">
+                        <p *ngFor="let property of filterProperties" class="mr-2">{{property.property_name}}</p>
+                    </div>
+                    <p *ngIf="check" class="result mr-2">{{data.meta.total}}</p>
                 </div>
             </div>
         </div>
         <div *ngIf="check">
-            <div class="product text-center" *ngFor="let product of data.products.data">
+            <div class="product text-center" *ngFor="let product of data.data">
                 <a [routerLink]="['/product', product.slug]">
                     <div class="product-top">
                         <div *ngIf="discountValidate(product.discount_percentage)" class="discount"><span>{{product.discount_percentage}}% OFF</span></div>

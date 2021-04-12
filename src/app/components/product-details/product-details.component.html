@@ -31,15 +31,15 @@
                     <input #quantity type="number" min="1" value="1" />
                 </div>
                 <div class="add-cart">
-                    <button *ngIf="!data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn">Add to cart</button>
-                    <button *ngIf="data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn" disabled>Added to cart</button>
+                    <button *ngIf="!data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn">{{lang == 'ar'? 'أضف للسلة' : 'Add to cart'}}</button>
+                    <button *ngIf="data.addedCart" (click)="addToCart(data)" id="product{{data.id}}" class="btn" disabled>{{lang == 'ar'? 'أضيف للسلة' : 'Added to cart'}}</button>
                 </div>
                 <div (click)="favourite(data.id)" *ngIf="isLogin" class="fav">
                     <img src="../../../assets/heart-product.svg">
                 </div>
             </div>
             <div class="description">
-                <h5>Description</h5>
+                <h5>{{lang == 'ar'? 'الوصف' : 'Description'}}</h5>
                 <p>
                     {{data.description}}
                 </p>

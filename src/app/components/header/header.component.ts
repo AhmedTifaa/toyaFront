@@ -33,8 +33,8 @@ export class HeaderComponent implements OnInit {
     if (this.lang == 'ar') {
       var ar_css = this.document.createElement("link");
       ar_css.setAttribute("rel", "stylesheet");
-      ar_css.setAttribute("id", "ar-css");
-      ar_css.setAttribute("href", "assets/ar-styles/ar.css");
+      ar_css.setAttribute("type", "text/css");
+      ar_css.setAttribute("href", "/assets/styles/ar.css");
       this.document.getElementsByTagName("head").item(0).appendChild(ar_css)
     }
 

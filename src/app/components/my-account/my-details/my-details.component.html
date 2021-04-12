@@ -8,8 +8,8 @@
     <!-- title -->
     <div class="row content mb-3">
         <div class="col-12">
-            <h2>My Details</h2>
-            <p>Personal Information</p>
+            <h2>{{lang == 'ar'? 'تفاصيلي' : 'My Details'}}</h2>
+            <p>{{lang == 'ar'? 'معلومات شخصية' : 'Personal Information'}}</p>
             <div class="seprator"></div>
         </div>
     </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Name</label>
+                    <label for="">{{lang == 'ar'? 'الإسم' : 'Name'}}</label>
                     <input type="text" [value]="data['name']" formControlName="name">
                 </div>
                 <!-- <div class="col-12 col-lg-6 mb-3">
@@ -38,19 +38,19 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">E-mail</label>
+                    <label for="">{{lang == 'ar'? 'البريد الإلكتروني' : 'E-mail'}}</label>
                     <input type="email" value="{{data['email']}}" formControlName="email">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Phone Number</label>
+                    <label for="">{{lang == 'ar'? 'رقم الهاتف' : 'Phone Number'}}</label>
                     <input type="text" value="{{data['mobile']}}" formControlName="mobile">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label>Country</label>
+                    <label for="">{{lang == 'ar'? 'الدولة' : 'Country'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="country_id">
                         <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
                     </select>
@@ -58,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button class="btn mt-3" type="submit">Save</button>
+                    <button class="btn mt-3" type="submit">{{lang == 'ar'? 'حفظ' : 'Save'}}</button>
                 </div>
             </div>
         </form>

@@ -8,7 +8,8 @@
     <!-- title -->
     <div class="row content mb-3">
         <div class="col-12">
-            <h2>My Favourites</h2>
+            <h2>{{lang == 'ar'? 'المفضلة' : 'My Favourites'}}</h2>
+            <div class="seprator"></div>
         </div>
     </div>
     <!-- products -->
@@ -27,7 +28,8 @@
             </a>
             <div class="delete" (click)="delete(product.id)">x</div>
             <div class="add-cart">
-                <button (click)="addToCart(product)" class="btn">Add to cart</button>
+                <button *ngIf="!product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn">{{lang == 'ar'? 'أضف للسلة' : 'Add to cart'}}</button>
+                <button *ngIf="product.addedCart" (click)="addToCart(product)" id="product{{product.id}}" class="btn" disabled>{{lang == 'ar'? 'أضيف للسلة' : 'Added to cart'}}</button>
             </div>
         </div>
     </div>
