@@ -3,10 +3,10 @@
         <div class="entire"></div>
     </div>
 </div>
-<div class="container mt-5 mb-5">
+<div class="container about mt-5 mb-5">
     <div class="row">
-        <h2 class="col-12 text-center">About Us</h2>
-        <p class=" col-12 text-center top-text">Lets Know More About The Journey</p>
+        <h2 class="col-12 text-center">{{lang == 'ar'? 'من نحن' : 'About Us'}}</h2>
+        <p *ngIf="check" class=" col-12 text-center top-text">{{data.about_us_main_title}}</p>
     </div>
 
     <!-- about-us content -->

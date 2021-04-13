@@ -8,8 +8,8 @@
     <!-- title -->
     <div class="row content mb-3">
         <div class="col-12">
-            <h2>My Address</h2>
-            <p>Personal Information</p>
+            <h2>{{lang == 'ar'? 'عنواني' : 'My Address'}}</h2>
+            <p>{{lang == 'ar'? 'معلومات شخصية' : 'Personal Information'}}</p>
             <div class="seprator"></div>
         </div>
     </div>
@@ -28,13 +28,13 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Country</label>
+                    <label for="">{{lang == 'ar'? 'الدولة' : 'Country'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="country" (change)="city($event)">
                       <option *ngFor="let country of countries" [value]="country.iso_code">{{country.name}}</option>
                     </select>
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">City</label>
+                    <label for="">{{lang == 'ar'? 'المدينة' : 'City'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="city" (change)="region($event)">
                       <option *ngFor="let city of cities" [value]="city.name_en">{{city.name}}</option>
                     </select>
@@ -42,49 +42,49 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Region</label>
+                    <label for="">{{lang == 'ar'? 'المنطقة' : 'Region'}}</label>
                     <select class="form-select" aria-label="Default select example" formControlName="region">
                       <option *ngFor="let region of regions" [value]="region.name_en">{{region.name}}</option>
                     </select>
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Address 1</label>
+                    <label for="">{{lang == 'ar'? 'عنوان 1' : 'Address 1'}}</label>
                     <input type="text" formControlName="address" value="{{addressForm['address']}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Address 2</label>
+                    <label for="">{{lang == 'ar'? 'عنوان 2' : 'Address 2'}}</label>
                     <input type="text" formControlName="address2" value="{{addressForm['address2']}}">
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Floor Number</label>
+                    <label for="">{{lang == 'ar'? 'رقم الدور' : 'Floor Number'}}</label>
                     <input type="text" formControlName="floor_number" value="{{addressForm['floor_number']}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Department number</label>
+                    <label for="">{{lang == 'ar'? 'رقم القسم' : 'Department number'}}</label>
                     <input type="text" formControlName="department_number" value="{{addressForm['department_number']}}">
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Area</label>
+                    <label for="">{{lang == 'ar'? 'منطقة' : 'Area'}}</label>
                     <input type="text" formControlName="area" value="{{addressForm['area']}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">Street</label>
+                    <label for="">{{lang == 'ar'? 'شارع' : 'Street'}}</label>
                     <input type="text" formControlName="street" value="{{addressForm['street']}}">
                 </div>
                 <div class="col-12 col-lg-6 mb-3">
-                    <label for="">ZIP Code</label>
+                    <label for="">{{lang == 'ar'? 'الرمز البريدي' : 'ZIP Code'}}</label>
                     <input type="text" formControlName="zip_code" value="{{addressForm['zip_code']}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button class="btn mt-3" type="submit">Save</button>
+                    <button class="btn mt-3" type="submit">{{lang == 'ar'? 'حفظ' : 'Street'}}</button>
                 </div>
             </div>
         </form>

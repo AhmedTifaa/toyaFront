@@ -118,7 +118,8 @@ export class HomeComponent implements  OnInit {
 
   showAlert() { 
     this.success = true;
-    this.successMessage = "Added To Cart Successfuly"; 
+    this.lang == 'ar'? this.successMessage =  'تم الإضافة للسلة بنجاح' : this.successMessage =  "Added To Cart Successfuly";
+    // this.successMessage = "Added To Cart Successfuly"; 
     this.delay = setTimeout(() => this.success = false, 6000); 
   }
 

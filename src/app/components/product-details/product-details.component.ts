@@ -46,6 +46,7 @@ export class ProductDetailsComponent implements OnInit {
       this.productStatus = true;
       this.checkIsOn();
 
+      console.log(this.data);
     });
   }
   
@@ -64,7 +65,7 @@ export class ProductDetailsComponent implements OnInit {
       this.data.addedCart = true;
     }
 
-    this.successMessage = "Added To Cart Successfuly"; 
+    this.lang == 'ar'? this.successMessage =  'تم الإضافة للسلة بنجاح' : this.successMessage =  "Added To Cart Successfuly"; 
     this.showAlert();
 
   }
@@ -83,8 +84,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.favourite().subscribe(response => {
       this.response = response;
       // this.router.navigate(['/my-account']);
-      
-      this.successMessage = "Added To Favourite Successfuly"; 
+      this.lang == 'ar'? this.successMessage =  'تم الإضافة للمفضلة بنجاح' : this.successMessage =  "Added To Favourite Successfuly";
+      // this.successMessage = "Added To Favourite Successfuly"; 
       this.showAlert(); 
     });
   }

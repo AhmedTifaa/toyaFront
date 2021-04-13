@@ -1,62 +1,72 @@
-h2{
+h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 49px;
     font-weight: 400;
     margin: 0 0 20px;
     font-weight: bold;
 }
-.top-text{
+
+.top-text {
     color: #828282;
-    font-family: "Raleway Thin";
     font-size: 29px;
     font-weight: 100;
     font-style: normal;
     letter-spacing: normal;
     line-height: normal;
 }
+
+
 /* body */
+
+
 /* form */
-.body{
+
+.body {
     background-color: #c46449;
     padding: 30px;
-    font-family: "Raleway Thin";
 }
+
 .body h2,
-.body h6{
+.body h6 {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 50px;
     font-weight: bold;
 }
-.body h6{
+
+.body h6 {
     font-size: 20px;
 }
-.body p{
+
+.body p {
     color: #ddd;
 }
-.form{
+
+.form {
     background-color: #fff;
     padding: 20px;
-    font-family: "Raleway Thin";
 }
-.form h3{
+
+.form h3 {
     color: #c46449;
     font-weight: bold;
 }
-.form p{
+
+.form p {
     color: #a3a3a3;
 }
-.form input{
+
+.form input {
     border: 0;
     border-bottom: 1px solid #ddd;
     border-radius: 0;
 }
-.form .form-control:focus{
+
+.form .form-control:focus {
     border-color: unset;
     box-shadow: unset;
 }
-.form input[type = submit]{
+
+.form input[type=submit] {
     margin: 35px auto;
     display: block;
     color: #ffffff;
@@ -65,43 +75,65 @@ h2{
     padding: 10px 20px;
     border-radius: 10px;
 }
+
+
 /* mobile form */
-.mobile-form{
+
+.mobile-form {
     box-shadow: 10px 10px 10px #ddd;
     border-radius: 10px;
 }
+
+
 /* social */
-.social h3{
+
+.social h3 {
     color: #c46449;
-    font-family: "Raleway Thin";
     width: 100%;
     font-weight: bold;
 }
-.social .col-3 img{
+
+.social .col-3 img {
     width: 100%;
 }
-.social .col-9{
+
+.social .col-9 {
     color: #a3a3a3;
-    font-family: "Raleway Thin";
 }
+
+
 /* subscripe */
-.subscripe{
+
+.subscripe {
     background-color: #0c2747;
     padding: 40px 30px;
 }
-.subscripe .col-9{
+
+.subscripe .col-9 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 40px;
     font-weight: bold;
 }
-.subscripe .col-3{
+
+.subscripe .col-3 {
     text-align: right;
 }
-.subscripe .col-3 button{
+
+.subscripe .col-3 button {
     color: #ffffff;
     font-size: 20px;
     background-color: #fc8f77;
     padding: 10px 30px;
     border-radius: 0;
+}
+
+
+/* alert */
+
+.alert {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 300px;
+    z-index: 999;
 }

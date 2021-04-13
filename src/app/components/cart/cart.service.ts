@@ -10,7 +10,7 @@ export class CartService {
   currentitemsCount = this.itemsCount.asObservable() ;
 
   getItems() {
-    console.log(this.items);
+    // console.log(this.items);
     return this.items;
   }
 
@@ -21,8 +21,8 @@ export class CartService {
     window.sessionStorage.setItem('cart',JSON.stringify(this.sessionItems));
     window.sessionStorage.setItem('cart-toya',JSON.stringify(this.items));
     this.changeItemsCount(this.itemsCount.value + 1);
-    console.log(product);
-    console.log(this.itemsCount);
+    // console.log(product);
+    // console.log(this.itemsCount);
     // console.log(this.items);
     // this.getItems();
   }

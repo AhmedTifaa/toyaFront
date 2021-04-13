@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./thanks.component.css']
 })
 export class ThanksComponent implements OnInit {
-
-  constructor() { }
+  lang:string;
+  constructor() { 
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+  }
 
   ngOnInit() {
   }

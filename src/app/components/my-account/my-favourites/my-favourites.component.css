@@ -2,16 +2,19 @@
 
 .content h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 46px;
     font-weight: bold;
 }
 
 .content p {
     color: #fc8f77;
-    font-family: "Raleway Thin";
     font-size: 31px;
     font-weight: bold;
+}
+
+.content .seprator {
+    width: 100%;
+    border: 1px solid #c46449;
 }
 
 
@@ -48,6 +51,10 @@
     left: 0;
     background-position: right;
     padding-right: 27px;
+}
+
+.fav-top .discount span {
+    display: inline-block;
 }
 
 .fav-top img {
@@ -105,7 +112,6 @@
 
 .fav .btn {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 0.9rem;
     font-weight: bold;
     background-color: #c45239;

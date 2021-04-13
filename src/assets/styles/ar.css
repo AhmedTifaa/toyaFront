@@ -1,0 +1,290 @@
+/* start ar */
+
+
+/* general */
+
+body {
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+
+/* header */
+
+.menu {
+    left: unset;
+    right: 15px;
+}
+
+.lang {
+    left: unset;
+    right: 80px;
+}
+
+.navbar-nav {
+    padding-right: 0;
+    padding-left: 40px;
+    text-align: right;
+}
+
+.side {
+    right: unset !important;
+    left: 26px;
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+.nav-item.mr-3 {
+    margin-right: 0!important;
+    margin-left: 1rem;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    left: 0 !important;
+    right: unset !important;
+    text-align: right;
+}
+
+.scroll .side {
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    .scroll .lang {
+        left: 160px !important;
+        right: unset !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .side {
+        padding-left: 0;
+    }
+}
+
+
+/* home slider */
+
+.carousel-caption {
+    left: 15% !important;
+    right: 100px;
+    text-align: right !important;
+}
+
+
+/* home products */
+
+.cat-top .discount,
+.product-top .discount {
+    transform: rotate(180deg);
+    left: unset !important;
+    right: 0;
+}
+
+.cat-top .discount span,
+.product-top .discount span {
+    transform: rotate(180deg);
+}
+
+.new {
+    margin-left: unset !important;
+    margin-right: 15px;
+}
+
+
+/* footer */
+
+footer .container>.row {
+    text-align: right;
+}
+
+footer .col-md-3 {
+    border-right: none !important;
+    border-left: 1px solid #fff;
+}
+
+footer h5:after {
+    left: unset;
+    right: 0;
+}
+
+footer ul {
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+footer .social a {
+    margin-left: 10px;
+    margin-right: 0 !important;
+}
+
+footer .col-6.d-md-none {
+    text-align: left;
+}
+
+@media (max-width: 991px) {
+    footer .col-md-3 {
+        border-left: none;
+    }
+}
+
+
+/* category page */
+
+.toya-container {
+    text-align: right;
+}
+
+.toya-container.category {
+    display: flex;
+}
+
+.filter-section .card button div {
+    text-align: right;
+}
+
+.filter-section .card button span {
+    left: 0;
+    right: unset;
+}
+
+.form-check-input {
+    margin-left: 1.25rem;
+}
+
+.form-check-label {
+    margin-right: 1.25rem;
+}
+
+.product-cart .product-top {
+    float: right !important;
+}
+
+.filter-bar {
+    height: 35px;
+}
+
+.filter-bar p.filter-text {
+    position: absolute;
+    right: 15px;
+}
+
+.filter-bar div.match {
+    position: absolute;
+    right: 60px;
+}
+
+.filter-bar .result {
+    right: unset !important;
+    left: 15px;
+}
+
+@media(max-width: 991px) {
+    .toya-container.category {
+        display: block;
+    }
+}
+
+
+/* product page */
+
+.user-interact input {
+    margin-left: 15px;
+    margin-right: 0 !important;
+}
+
+.description p {
+    text-align: right !important;
+}
+
+.properties {
+    padding-right: 15px;
+    padding-left: 40px;
+}
+
+.properties li span {
+    margin-right: unset !important;
+    margin-left: 12px;
+}
+
+
+/* contact us page */
+
+.container.contact {
+    text-align: right;
+}
+
+
+/* about us page */
+
+.container.about {
+    text-align: right;
+}
+
+.content .img-container img {
+    transform: translate(10%, 10%) !important
+}
+
+.content:last-child .img-container img {
+    transform: translate(-10%, 10%) !important;
+}
+
+.about .content h2 {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+
+/* my account page */
+
+.container.my-account {
+    text-align: right;
+}
+
+
+/* my favourite page */
+
+.fav-top .discount,
+.product-top .discount {
+    transform: rotate(180deg);
+    left: unset !important;
+    right: 0;
+}
+
+.fav-top .discount span,
+.product-top .discount span {
+    transform: rotate(180deg);
+}
+
+.delete {
+    right: unset !important;
+    left: 10px;
+}
+
+
+/* cart page */
+
+.shop-tracking-status .image-order-status-cart {
+    left: unset !important;
+    right: 0;
+}
+
+.shop-tracking-status .image-order-status-thanks {
+    right: unset !important;
+    left: 0;
+}
+
+.cart-page tbody .thumbnail {
+    margin-right: unset !important;
+    margin-left: 10px;
+}
+
+.checkout-container {
+    text-align: right;
+}
+
+.form-label[for='address2'] {
+    direction: ltr;
+}
+
+
+/* end ar */

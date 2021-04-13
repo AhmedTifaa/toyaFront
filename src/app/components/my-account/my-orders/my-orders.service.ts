@@ -8,16 +8,17 @@ export class MyOrdersService {
 
   getUrl:string = "http://localhost:8000/api/order";
   cancelUrl:string;
+  lang:string;
   constructor(private http:HttpClient) {
 
   }
 
   getOrders(){
-    return  this.http.get(this.getUrl, {headers: new HttpHeaders({'Authorization':'Bearer ' + sessionStorage.getItem('userToken')})});
+    return  this.http.get(this.getUrl, {headers: new HttpHeaders({'Authorization':'Bearer ' + sessionStorage.getItem('userToken'), 'X-Localization': this.lang})});
   }
 
   cancelOrders(){
-    return  this.http.post(this.cancelUrl, "",{headers: new HttpHeaders({'Authorization':'Bearer ' + sessionStorage.getItem('userToken')})});
+    return  this.http.post(this.cancelUrl, "",{headers: new HttpHeaders({'Authorization':'Bearer ' + sessionStorage.getItem('userToken'), 'X-Localization': this.lang})});
   }
 
 }

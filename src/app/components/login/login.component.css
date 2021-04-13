@@ -1,6 +1,5 @@
 h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 49px;
     font-weight: bold;
     margin: 56px 0 20px;
@@ -8,7 +7,6 @@ h2 {
 
 .top-text {
     color: #828282;
-    font-family: "Raleway Thin";
     font-size: 29px;
     font-weight: 100;
     font-style: normal;
@@ -36,7 +34,6 @@ form label {
     background-color: #fff;
     left: 50px;
     color: #adadad;
-    font-family: "Raleway Thin";
     font-size: 17px;
     font-weight: 100;
 }
@@ -58,7 +55,6 @@ form .icon img {
 
 form input {
     color: #000000;
-    font-family: Raleway;
     font-weight: 300;
     padding-left: 50px;
     border-radius: 0;
@@ -78,7 +74,6 @@ form a {
 
 form button {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 1.3rem;
     font-weight: bold;
     width: 100%;
@@ -92,7 +87,6 @@ form button {
 
 a {
     color: #254ef4;
-    font-family: "Raleway Thin";
     font-weight: bold;
     text-decoration: none;
     font-size: 18px;
@@ -100,7 +94,6 @@ a {
 
 p {
     color: #828282;
-    font-family: "Raleway Thin";
     font-size: 20px;
     font-weight: 100;
     margin: 0 auto;

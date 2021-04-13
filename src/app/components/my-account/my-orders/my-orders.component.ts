@@ -14,7 +14,10 @@ export class MyOrdersComponent implements OnInit {
   myOrdersStatus:boolean = false;
   isOn:boolean = false;
 
+  lang:string;
   constructor(private myOrdersService:MyOrdersService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
+    this.myOrdersService.lang = this.lang;
     this.myOrdersService.getOrders().subscribe(data => {
       this.orders = data['data'];
       console.log(this.orders);

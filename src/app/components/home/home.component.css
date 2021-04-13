@@ -24,7 +24,6 @@
 
 h2 {
     color: #c46449;
-    font-family: "Raleway Thin";
     font-size: 49px;
     font-weight: bold;
     margin: 56px 0 20px;
@@ -53,6 +52,10 @@ h2 {
     left: 0;
     background-position: right;
     padding-right: 27px;
+}
+
+.cat-top .discount span {
+    display: inline-block;
 }
 
 .cat-top img {
@@ -110,7 +113,6 @@ h2 {
 
 .cat .btn {
     color: #ffffff;
-    font-family: "Raleway Thin";
     font-size: 0.9rem;
     font-weight: bold;
     background-color: #c45239;

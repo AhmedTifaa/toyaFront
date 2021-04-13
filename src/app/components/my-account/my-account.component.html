@@ -1,14 +1,14 @@
-<div class="container">
+<div class="container my-account">
     <!-- links -->
     <div class="row links">
         <div class="col-12">
-            <a routerLink="/">home </a> / <a routerLink="/my-account"> My Account</a>
+            <a routerLink="/"> {{lang == 'ar'? 'الرئيسية' : 'home'}}</a> / <a routerLink="/my-account"> {{lang == 'ar'? 'حسابي' : 'My Account'}}</a>
         </div>
     </div>
     <!-- title -->
     <div class="row mb-3">
         <div class="col-12">
-            <h2>My Account</h2>
+            <h2>{{lang == 'ar'? 'حسابي' : 'My Account'}}</h2>
         </div>
     </div>
     <!-- body -->
@@ -16,10 +16,10 @@
         <!-- menu -->
         <div class="col-12 col-lg-3">
             <ul class="menu">
-                <li #element1 (click)='active(element1)' class="active" data-content="app-my-details"><span><img src="../../../assets/profile.svg" alt=""></span> My Details</li>
-                <li #element2 (click)='active(element2)' data-content="app-my-address"><span><img src="../../../assets/location2.svg" alt=""></span> My Address</li>
-                <li #element3 (click)='active(element3)' data-content="app-my-orders"><span><img src="../../../assets/cart.png" alt=""></span> My Orders</li>
-                <li #element4 (click)='active(element4)' data-content="app-my-favourites"><span><img src="../../../assets/heart-icon.svg" alt=""></span> My Favourites</li>
+                <li #element1 (click)='active(element1)' class="active" data-content="app-my-details"><span><img src="../../../assets/profile.svg" alt=""></span> {{lang == 'ar'? 'تفاصيلي' : 'My Details'}}</li>
+                <li #element2 (click)='active(element2)' data-content="app-my-address"><span><img src="../../../assets/location2.svg" alt=""></span> {{lang == 'ar'? 'عنواني' : 'My Address'}}</li>
+                <li #element3 (click)='active(element3)' data-content="app-my-orders"><span><img src="../../../assets/cart.png" alt=""></span> {{lang == 'ar'? 'طلباتي' : 'My Orders'}}</li>
+                <li #element4 (click)='active(element4)' data-content="app-my-favourites"><span><img src="../../../assets/heart-icon.svg" alt=""></span> {{lang == 'ar'? 'المفضلة' : 'My Favourites'}}</li>
                 <!-- <li #element5 (click) = 'active(element5)' data-content="app-newsletters"><span><img src="../../../assets/newsletters.svg" alt=""></span> My Newsletters</li>
         <li #element6 (click) = 'active(element6)' data-content="app-settings"><span><img src="../../../assets/setting.svg" alt=""></span> Settings</li> -->
             </ul>

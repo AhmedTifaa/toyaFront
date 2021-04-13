@@ -10,6 +10,7 @@ import { FilterService } from "../../components/products-page/filter.service";
   styleUrls: ['./products-page.component.css']
 })
 export class ProductsPageComponent implements OnInit {
+  id:any;
   data:any;
   filterData:any;
   space:any;
@@ -17,6 +18,7 @@ export class ProductsPageComponent implements OnInit {
   filterStatus:boolean = false;
   isOn:boolean = false;
 
+  filterProperties:any;
   filterCheck:boolean = false;
   cartProducts:any;
   check:boolean = false;
@@ -48,19 +50,17 @@ export class ProductsPageComponent implements OnInit {
     this.categoryService.url = "http://localhost:8000/api/category/" + this.categoryIdFromRoute;
     this.categoryService.lang = this.lang;
     this.categoryService.getCategory().subscribe(data=>{
-      this.data = data["data"];
-      this.check = true;
-      this.categoryStatus = true;
-      this.checkIsOn();
+      this.id = data["data"].id;
+
 
       // get filter
-      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.data.id;
+      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
       this.categoryService.getFilter().subscribe(data=>{
         this.filterData = data["filters"];
         if(this.filterData.length > 0){
           this.filterCheck = true;
         }
-        console.log(this.filterData);
+        // console.log(this.filterData);
         this.filterData.forEach(element => {
           if (element.input_type == "range") {
             let rangeArray = element.values;
@@ -72,15 +72,7 @@ export class ProductsPageComponent implements OnInit {
         this.checkIsOn();
       });
 
-      this.data.products.data.forEach(el => {
-        this.cartProducts = this.cartService.getItems();
-        this.cartProducts.forEach(item => {
-          let id = item.id;
-          if (el.id == id) {
-            el.addedCart = true;
-          }
-        });
-      });
+      this.applyFilter()
     });
 
   }
@@ -88,7 +80,7 @@ export class ProductsPageComponent implements OnInit {
   addToCart(product) {
     this.cartService.addToCart(product,1);
     let id = product.id;
-    this.data.products.data.forEach(el => {
+    this.data.data.forEach(el => {
       if (el.id == id) {
         el.addedCart = true;
       }
@@ -133,7 +125,8 @@ export class ProductsPageComponent implements OnInit {
 
   showAlert() {
     this.success = true;
-    this.successMessage = "Added To Cart Successfuly";
+    this.lang == 'ar'? this.successMessage =  'تم الإضافة للسلة بنجاح' : this.successMessage =  "Added To Cart Successfuly";
+    // this.successMessage = "Added To Cart Successfuly";
     this.delay = setTimeout(() => this.success = false, 6000);
   }
 
@@ -161,21 +154,28 @@ export class ProductsPageComponent implements OnInit {
 
   // search filter
   applyFilter(){
-    this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.data.id;
+    this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.id ;
     this.filterService.lang = this.lang;
     let apply = this.collectFilter();
     let applyData = {
       properties : apply
     }
     this.filterService.filter(applyData).subscribe(data => {
-      let products = {
-        data: data["data"]
-      }
-      this.data = {
-        id: this.data.id,
-        products: products
-      }
-      // console.log(data);
+      console.log(data);
+      this.filterProperties = apply;
+      this.data = data;
+      this.check = true;
+      this.categoryStatus = true;
+      this.checkIsOn();
+      this.data.data.forEach(el => {
+        this.cartProducts = this.cartService.getItems();
+        this.cartProducts.forEach(item => {
+          let id = item.id;
+          if (el.id == id) {
+            el.addedCart = true;
+          }
+        });
+      });
     })
     // console.log(apply);
   }
