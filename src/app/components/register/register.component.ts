@@ -24,8 +24,9 @@ export class RegisterComponent implements OnInit {
   data:any;
   response:any;
   error: any = false;
-
+  lang:string;
   constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private router: Router, private loginService:LoginService) {
+    this.lang = (sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'en');
     if(sessionStorage.getItem('userToken') != null){
       this.router.navigate(['/']);
     }
