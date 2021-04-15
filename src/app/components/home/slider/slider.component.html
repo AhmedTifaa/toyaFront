@@ -5,7 +5,7 @@
             <img [src]="img.image_url" alt="Random first slide" width="{{width}}" height="{{height}}">
         </div>
         <div class="carousel-caption">
-            <h3>{{lang == 'ar'? 'قادم جديد' : 'New Arrival'}}</h3>
+            <h3>{{img.title}}</h3>
             <p>{{img.content}}</p>
             <a class="btn shop" *ngIf="img.content_url" [routerLink]="[img.content_url]">{{lang == 'ar'? 'تسوق الأن' : 'Shop Now'}}</a>
         </div>
