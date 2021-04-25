@@ -54,13 +54,14 @@ export class ProductsPageComponent implements OnInit {
       
 
       // get filter
-      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
+      // this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
+      this.paginate();
       this.categoryService.getFilter().subscribe(data=>{
         this.filterData = data["filters"];
         if(this.filterData.length > 0){
           this.filterCheck = true;
         }
-        // console.log(this.filterData);
+        console.log(this.filterData);
         this.filterData.forEach(element => {
           if (element.input_type == "range") {
             let rangeArray = element.values;
@@ -74,6 +75,15 @@ export class ProductsPageComponent implements OnInit {
 
       this.applyFilter()
     });
+
+  }
+
+  paginate(url = null){
+    if (url == null) {
+      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
+    }else{
+      this.categoryService.filterUrl = url;
+    }
 
   }
 

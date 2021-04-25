@@ -10,8 +10,9 @@
 
 .menu {
     position: absolute;
-    top: 43px;
+    top: 35px;
     left: 15px;
+    color: #c46449;
 }
 
 .navbar-brand {
@@ -29,7 +30,7 @@
 nav.scroll {
     padding-bottom: 0px;
     position: fixed;
-    top: -350px;
+    top: -1000px;
     left: 0;
     width: 100%;
     background: #fff;
@@ -51,18 +52,25 @@ nav.scroll.active {
     top: 0px;
 }
 
-nav.scroll .navbar-collapse {
+nav .navbar-collapse {
     justify-content: initial;
+    width: 85%;
+    flex-grow: 0;
+}
+
+nav .navbar-collapse .navbar-nav {
+    margin: auto;
 }
 
 nav.scroll .navbar-collapse img {
     width: 70px;
 }
 
-nav.scroll .navbar-collapse .nav-link {
+
+/* nav.scroll .navbar-collapse .nav-link {
     font-size: 16px;
     color: #000;
-}
+} */
 
 nav.scroll ul.side input#search-box {
     outline: none;
@@ -100,6 +108,11 @@ nav.scroll ul.side span.search-icon {
     border: none;
     vertical-align: unset;
     margin-left: 0.5em;
+}
+
+.nav-link .dropdown {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .side {
@@ -145,11 +158,11 @@ nav.scroll ul.side span.search-icon {
     color: #b8b8b8;
     position: absolute;
     left: 80px;
-    top: 45px;
+    top: 35px;
 }
 
 @media (min-width: 992px) {
-    .scroll .lang {
+    .lang {
         top: 35px;
         left: unset;
         right: 160px;

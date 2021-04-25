@@ -1,4 +1,6 @@
-<div class="bar"></div>
+<!-- <div class="bar"></div> -->
+
+
 
 <nav class="navbar navbar-expand-lg main-nav">
 
@@ -10,34 +12,32 @@
         {{(lang == 'ar'? 'en' : 'ع') | uppercase}}
     </button>
 
-    <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
+    <a class="navbar-brand nav-logo navbar-toggler" [routerLink]="'.'"><img src="../../../assets/nav-logo-scroll.svg" alt="nav logo"> </a>
 
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse mt-1">
-        <ul class="navbar-nav mt-lg-4">
-            <li class="nav-item" *ngFor="let link of firstHalfMenue">
-                <a *ngIf="link.url_path == 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="['.']" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
-                <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
-                <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
-            </li>
-        </ul>
-
         <div class="d-none d-lg-block">
             <a [routerLink]="'.'"> <img src="../../../assets/nav-logo.svg" alt="nav logo"> </a>
         </div>
-
-        <ul class="navbar-nav mt-lg-4">
-            <li class="nav-item" *ngFor="let link of lastHalfMenue">
+        <ul class="navbar-nav mt-3">
+            <li class="nav-item ml-3" *ngFor="let link of data">
                 <a *ngIf="link.url_path == 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="['.']" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
                 <a *ngIf="link.url_path != 'home' && link.type != 'custom_link'" class="nav-link" [routerLink]="[link.type === 'page' ? '/' : '/' + link.type, link.url_path]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
                 <a *ngIf="link.type == 'custom_link'" class="nav-link" [href]="[link.url]" (click)="isMenuCollapsed = true">{{link.display_name}}</a>
             </li>
         </ul>
 
+
+
     </div>
-    <ul class="navbar-nav mt-4 side">
+    <ul class="navbar-nav mt-3 side">
         <!-- <li class="nav-item mr-4">
-      <a class="nav-link" [routerLink]="'.'" ><img src="../../../assets/search.png" alt=""></a>
-    </li> -->
+            <a class="nav-link" [routerLink]="'.'" >
+                <input type="text" name="search" id="search-box" placeholder="Search..." />
+                <span class="search-icon">
+                <img src="../../../assets/search-white.svg" alt="">
+                </span>
+            </a>
+        </li> -->
         <li class="nav-item mr-3">
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 
@@ -58,6 +58,7 @@
     </ul>
 
 </nav>
+
 <!-- NavBar with Window Scroll -->
 <nav class="navbar navbar-expand-lg scroll">
 
@@ -87,14 +88,14 @@
 
     </div>
     <ul class="navbar-nav mt-3 side">
-        <li class="nav-item mr-4">
-            <!-- <a class="nav-link" [routerLink]="'.'" >
-        <input type="text" name="search" id="search-box" placeholder="Search..." />
-        <span class="search-icon">
-          <img src="../../../assets/search-white.svg" alt="">
-        </span>
-      </a> -->
-        </li>
+        <!-- <li class="nav-item mr-4">
+            <a class="nav-link" [routerLink]="'.'" >
+                <input type="text" name="search" id="search-box" placeholder="Search..." />
+                <span class="search-icon">
+                <img src="../../../assets/search-white.svg" alt="">
+                </span>
+            </a>
+        </li> -->
         <li class="nav-item mr-3">
             <a class="nav-link" *ngIf="!isLogin" [routerLink]="'login'"><img src="../../../assets/profile.png" alt=""></a>
 

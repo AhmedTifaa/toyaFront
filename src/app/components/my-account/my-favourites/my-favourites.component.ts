@@ -64,6 +64,14 @@ export class MyFavouritesComponent implements OnInit {
     }
   }
 
+  discountValidate(discountValue){
+    var valid = false;
+    if(parseInt(discountValue) > 0){
+      valid = true;
+    }
+    return valid;
+  }
+
   ngOnInit() {
   }
 

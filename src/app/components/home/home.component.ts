@@ -34,7 +34,7 @@ export class HomeComponent implements  OnInit {
       this.recentData = data["data"];
       this.recentServiceStatus = true;
       this.checkIsOn();
-  
+      // console.log(this.recentData);
       this.recentData.forEach(el => {
         this.cartProducts = this.cartService.getItems();
         this.cartProducts.forEach(item => {

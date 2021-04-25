@@ -6,6 +6,12 @@
     font-size: 14px;
 }
 
+.filter-bar .match {
+    position: absolute;
+    left: 70px;
+    top: 8px;
+}
+
 .filter-bar p {
     display: inline-block;
     margin-bottom: 0;
@@ -14,6 +20,7 @@
 .filter-bar .result {
     position: absolute;
     right: 15px;
+    top: 8px
 }
 
 
@@ -113,7 +120,7 @@
     color: #ffffff;
     font-size: 0.7rem;
     font-weight: bold;
-    background-color: #c45239;
+    background-color: #fc8f77;
     line-height: 2.5rem;
     padding: 0px 10px;
     border-radius: 15px;
@@ -188,6 +195,7 @@
 
 h3 {
     color: #0c2747;
+    font-weight: bold;
 }
 
 .filter-section {
@@ -246,4 +254,34 @@ app-cart {
         width: 100%;
         border-radius: 0;
     }
+}
+
+
+/* pagination */
+
+.pagination {
+    justify-content: center;
+}
+
+.page-link {
+    color: #c46449;
+    background-color: #fff;
+    border: 1px solid #c46449;
+    margin: 0 10px;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #c46449;
+    border-color: #c46449;
+}
+
+.page-link:hover {
+    color: #ffffff;
+    background-color: #c46449;
+    border-color: #c46449;
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgb(196 100 73 / 25%);
 }

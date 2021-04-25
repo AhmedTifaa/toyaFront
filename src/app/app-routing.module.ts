@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AboutUsComponent } from "./components/about-us/about-us.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { MyAccountComponent } from "./components/my-account/my-account.component";
+import { RecentProductComponent } from "./components/recent-product/recent-product.component";
 
 import { ViewCartComponent } from "./components/view-cart/view-cart.component";
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'cart', component: ViewCartComponent },
   { path: 'about-us', component:AboutUsComponent },
   { path: 'contact-us', component:ContactUsComponent },
-  { path: 'my-account', component:MyAccountComponent, canActivate:[AuthGuard] }
+  { path: 'my-account', component:MyAccountComponent, canActivate:[AuthGuard] },
+  { path: 'recent-product', component: RecentProductComponent }
 ];
 
 @NgModule({

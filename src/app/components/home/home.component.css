@@ -1,30 +1,30 @@
 /* cat product */
 
-
-/* .viewall{
+.viewall {
     justify-content: center;
 }
-.viewall .btn{
-  width: 173px;
-  border: 1px solid #c46449;
-  color: #c46449;
-  font-family: "Raleway Thin";
-  font-size: 17px;
-  font-weight: bold;
-  border-radius: 50px;
-  line-height: 2rem;
+
+.viewall .btn {
+    width: 173px;
+    border: 1px solid #c46449;
+    color: #c46449;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 2rem;
 }
-.viewall .btn:hover{
-  background-color: #c46449;
-  color: #fff;
-} */
+
+.viewall .btn:hover {
+    background-color: #c46449;
+    color: #fff;
+}
 
 
 /* recent section */
 
 h2 {
     color: #c46449;
-    font-size: 49px;
+    font-size: 36px;
     font-weight: bold;
     margin: 56px 0 20px;
 }
@@ -75,9 +75,10 @@ h2 {
     color: #606060;
     font-family: Roboto;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     display: inline-block;
     position: relative;
+    margin-right: 15px;
 }
 
 .currency {
@@ -99,7 +100,7 @@ h2 {
     font-size: 20px;
     font-weight: bold;
     font-style: normal;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 
 .cat .add-cart {
@@ -115,7 +116,7 @@ h2 {
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: bold;
-    background-color: #c45239;
+    background-color: #fc8f77;
     line-height: 2.5rem;
     padding: 0px 10px;
     border-radius: 15px;
