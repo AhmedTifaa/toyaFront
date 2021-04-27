@@ -61,13 +61,13 @@
                         <img [src]="product.images[0].url" alt="">
                     </div>
                     <p class="mt-3">{{product.name}}</p>
-                    <!-- <div>
-          <ngb-rating [max]="6" [(rate)]="currentRate">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-            </ng-template>
-          </ngb-rating>
-        </div> -->
+                    <div class="rate" (click)="$event.preventDefault();$event.stopPropagation();">
+                        <ngb-rating [max]="6" [(rate)]="product.rate">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span (change)="rate(product.rate)" class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
                     <div class="price mt-3 mb-5">
                         <div *ngIf="discountValidate(product.discount_percentage)" class="off">{{product.price}}<span class="currency"> EG</span><span class="line"></span></div>
                         <span class="new">{{product.price - product.price * product.discount_percentage / 100}}<span class="currency"> EG</span></span>

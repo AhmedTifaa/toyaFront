@@ -54,8 +54,8 @@ export class ProductsPageComponent implements OnInit {
       
 
       // get filter
-      // this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
-      this.paginate();
+      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
+      
       this.categoryService.getFilter().subscribe(data=>{
         this.filterData = data["filters"];
         if(this.filterData.length > 0){
@@ -72,19 +72,19 @@ export class ProductsPageComponent implements OnInit {
         this.filterStatus = true;
         this.checkIsOn();
       });
-
-      this.applyFilter()
+      this.paginate(null);
     });
 
   }
 
-  paginate(url = null){
+  paginate(url){
     if (url == null) {
-      this.categoryService.filterUrl = "http://localhost:8000/api/filter/get/category/" + this.id ;
+      this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.id ;
     }else{
-      this.categoryService.filterUrl = url;
+      this.filterService.url = url;
     }
-
+    this.applyFilter()
+    // console.log(url);
   }
 
   addToCart(product) {
@@ -164,9 +164,12 @@ export class ProductsPageComponent implements OnInit {
 
   // search filter
   applyFilter(){
-    this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.id ;
+    // this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.id ;
     this.filterService.lang = this.lang;
     let apply = this.collectFilter();
+    if (apply.length > 0) {
+      this.filterService.url = 'http://localhost:8000/api/filter/search/category/' + this.id ;
+    }
     let applyData = {
       properties : apply
     }
