@@ -87,9 +87,9 @@
                     <p class="mt-3">{{product.name}}</p>
                     <!-- <div>
                         <ngb-rating [max]="6" [(rate)]="currentRate">
-                        <ng-template let-fill="fill" let-index="index">
-                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
                         </ngb-rating>
                     </div> -->
                     <div class="price mt-3 mb-5">
@@ -104,16 +104,16 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="mt-3">
             <ul *ngIf="check" class="pagination">
                 <li *ngFor="let link of data.meta.links" class="page-item" [ngClass]="link.active? 'active' : '' ">
-                    <button class="page-link" [disabled]="link.url == null" (onclick)="paginate(link.url)">
+                    <button class="page-link" [disabled]="link.url == null" (click)="paginate(link.url)">
                         {{link.label}}
                     </button>
                 </li>
             </ul>
         </div>
     </div>
-    <app-cart class="col-sm-12 col-md-2 col-lg-2 p-0"></app-cart>
+    <app-cart class="d-none d-md-block col-md-2 col-lg-2 p-0"></app-cart>
     <div class="clear"></div>
 </div>

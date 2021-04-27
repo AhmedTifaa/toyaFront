@@ -11,6 +11,8 @@ import { CartService } from '../cart/cart.service';
 })
 export class HomeComponent implements  OnInit {
 
+  // currentRate = 3;
+
   recentData:any;
   recentServiceStatus:boolean = false;
   catServiceStatus:boolean = false;
@@ -105,7 +107,6 @@ export class HomeComponent implements  OnInit {
   }
   
   ngOnInit(): void {
-    
 
   }
 
@@ -129,6 +130,11 @@ export class HomeComponent implements  OnInit {
 
   mouseOut(){
     this.delay = setTimeout(() => this.success = false, 6000);
+  }
+
+  // rate
+  rate(rate){
+    console.log(rate);
   }
 
 }
