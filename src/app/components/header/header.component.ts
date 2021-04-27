@@ -19,10 +19,10 @@ export class HeaderComponent implements OnInit {
 
   data:any;
   check:any;
-  count:number;
-  half:number;
-  firstHalfMenue:any;
-  lastHalfMenue: any;
+  // count:number;
+  // half:number;
+  // firstHalfMenue:any;
+  // lastHalfMenue: any;
 
   lang:string;
 
@@ -43,25 +43,25 @@ export class HeaderComponent implements OnInit {
       this.data = data['data']['items'];
       // console.log(this.data);
       this.check = true;
-      this.count = (this.data).length;
-      this.half = this.count / 2;
-      if(this.half % 1 == 0.5){
-        this.half = this.half + 0.5;
-      }
-      for (let index = 0; index < this.half; index++) {
-        if (index == 0) {
-          this.firstHalfMenue = [this.data[index]];          
-        }else{
-          this.firstHalfMenue.push(this.data[index]);
-        }
-      }
-      for (let index = this.half ; index < this.count ; index++) {
-        if (index == this.half) {
-          this.lastHalfMenue = [this.data[index]];          
-        }else{
-          this.lastHalfMenue.push(this.data[index]);
-        }
-      }
+      // this.count = (this.data).length;
+      // this.half = this.count / 2;
+      // if(this.half % 1 == 0.5){
+      //   this.half = this.half + 0.5;
+      // }
+      // for (let index = 0; index < this.half; index++) {
+      //   if (index == 0) {
+      //     this.firstHalfMenue = [this.data[index]];          
+      //   }else{
+      //     this.firstHalfMenue.push(this.data[index]);
+      //   }
+      // }
+      // for (let index = this.half ; index < this.count ; index++) {
+      //   if (index == this.half) {
+      //     this.lastHalfMenue = [this.data[index]];          
+      //   }else{
+      //     this.lastHalfMenue.push(this.data[index]);
+      //   }
+      // }
     }); 
 
   }

@@ -31,6 +31,7 @@ import { NewslettersComponent } from './components/my-account/newsletters/newsle
 import { SettingsComponent } from './components/my-account/settings/settings.component';
 import { MyFavouritesComponent } from './components/my-account/my-favourites/my-favourites.component';
 import { AuthGuard } from './components/auth/auth.guard';
+import { RecentProductComponent } from './components/recent-product/recent-product.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { AuthGuard } from './components/auth/auth.guard';
     NewslettersComponent,
     SettingsComponent,
     MyFavouritesComponent,
+    RecentProductComponent,
 
   ],
   imports: [

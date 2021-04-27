@@ -50,6 +50,10 @@ body {
 }
 
 @media (min-width: 992px) {
+    .lang {
+        left: 180px !important;
+        right: unset !important;
+    }
     .scroll .lang {
         left: 160px !important;
         right: unset !important;
@@ -79,6 +83,7 @@ body {
     transform: rotate(180deg);
     left: unset !important;
     right: 0;
+    font-family: 'Tajawal', sans-serif !important;
 }
 
 .cat-top .discount span,
@@ -170,8 +175,8 @@ footer .col-6.d-md-none {
 }
 
 .filter-bar div.match {
-    position: absolute;
     right: 60px;
+    left: unset !important;
 }
 
 .filter-bar .result {

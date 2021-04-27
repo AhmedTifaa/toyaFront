@@ -104,6 +104,15 @@
                 </div>
             </div>
         </div>
+        <div>
+            <ul *ngIf="check" class="pagination">
+                <li *ngFor="let link of data.meta.links" class="page-item" [ngClass]="link.active? 'active' : '' ">
+                    <button class="page-link" [disabled]="link.url == null" (onclick)="paginate(link.url)">
+                        {{link.label}}
+                    </button>
+                </li>
+            </ul>
+        </div>
     </div>
     <app-cart class="col-sm-12 col-md-2 col-lg-2 p-0"></app-cart>
     <div class="clear"></div>

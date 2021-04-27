@@ -26,7 +26,7 @@
                         <div class="cat text-center mb-3" *ngFor="let product of cat.products">
                             <a [routerLink]="['/product', product.slug]">
                                 <div class="cat-top">
-                                    <div *ngIf="discountValidate(product.discount_percentage)" class="discount"><span>{{product.discount_percentage}}% OFF</span></div>
+                                    <div *ngIf="discountValidate(product.discount_percentage)" class="discount"><span>{{product.discount_percentage}}% {{lang == 'ar'? 'خصم' : 'OFF'}}</span></div>
                                     <!-- <div class="discount">{{product.discount_percentage}}% OFF</div> -->
                                     <img [src]="product.images[0].url" alt="">
                                 </div>
@@ -57,7 +57,7 @@
             <div class="cat text-center mb-3" *ngFor="let product of recentData">
                 <a [routerLink]="['/product', product.slug]">
                     <div class="cat-top">
-                        <div *ngIf="discountValidate(product.discount_percentage)" class="discount"><span>{{product.discount_percentage}}% OFF</span></div>
+                        <div *ngIf="discountValidate(product.discount_percentage)" class="discount"><span>{{product.discount_percentage}}% {{lang == 'ar'? 'خصم' : 'OFF'}}</span></div>
                         <img [src]="product.images[0].url" alt="">
                     </div>
                     <p class="mt-3">{{product.name}}</p>
@@ -79,8 +79,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row mt-5 viewall">
-      <a class="btn">View All</a>
-    </div> -->
+        <div class="row mt-5 viewall">
+            <a [routerLink]="'recent-product'" class="btn">{{lang == 'ar'? 'المزيد' : 'View All'}}</a>
+        </div>
     </div>
 </div>
